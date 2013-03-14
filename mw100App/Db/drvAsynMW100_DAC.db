@@ -1,0 +1,60 @@
+record(ai,"$(P)$(DAU):$(LABEL):DAC")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynFloat64")
+    field(PREC, "3")
+    field(INP,  "@asyn($(PORT),$(ADDR)) DAC")
+    field(SCAN, "I/O Intr")
+}
+record(ao,"$(P)$(DAU):$(LABEL):DAC_Set")
+{
+    field(DTYP, "asynFloat64")
+    field(PREC, "3")
+    field(OUT,  "@asyn($(PORT),$(ADDR)) DAC")
+}
+
+record(stringin,"$(P)$(DAU):$(LABEL):DAC_Unit")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT),$(ADDR)) DAC_UNIT")
+    field(SCAN, "I/O Intr")
+}
+
+record(mbbi,"$(P)$(DAU):$(LABEL):DAC_Status")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR)) DAC_STATUS")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+
+record(ao, "$(P)$(DAU):$(LABEL):DAC_TweakVal") 
+{
+    field(PREC,"3")
+}
+
+record(calcout, "$(P)$(DAU):$(LABEL):DAC_TweakFwd") {
+    field( INPA, "$(P)$(DAU):$(LABEL):DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):$(LABEL):DAC_TweakVal NPP NMS")
+    field( CALC, "A+B")
+    field( OUT,  "$(P)$(DAU):$(LABEL):DAC_Set PP NMS")
+}
+record(calcout, "$(P)$(DAU):$(LABEL):DAC_TweakBkwd") {
+    field( INPA, "$(P)$(DAU):$(LABEL):DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):$(LABEL):DAC_TweakVal NPP NMS")
+    field( CALC, "A-B")
+    field( OUT,  "$(P)$(DAU):$(LABEL):DAC_Set PP NMS")
+}
+
+record(stringout,"$(P)$(DAU):$(LABEL):Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):$(LABEL):DAC.DESC PP")
+}

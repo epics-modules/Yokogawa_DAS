@@ -1,0 +1,13 @@
+record( bo, "$(P)$(DAU):$(LABEL):Relay")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT),$(ADDR)) RELAY")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+
+record(stringout,"$(P)$(DAU):$(LABEL):Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):$(LABEL):Relay.DESC PP")
+}

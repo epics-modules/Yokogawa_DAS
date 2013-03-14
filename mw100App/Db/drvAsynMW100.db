@@ -1,0 +1,101 @@
+record(bi,"$(P)$(DAU):OpMode")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT)) OP_MODE")
+    field(ZNAM, "Measurement")
+    field(ONAM, "Settings")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(bo,"$(P)$(DAU):OpModeSet")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT)) OP_MODE")
+    field(ZNAM, "Measurement")
+    field(ONAM, "Settings")
+}
+
+record(bi,"$(P)$(DAU):Computation")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT)) COMPUTE")
+    field(ZNAM, "Stopped")
+    field(ONAM, "Running")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+# redefined 0 and 1 operations, as 0 as run is dumb
+record(mbbo,"$(P)$(DAU):ComputationSet")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT)) COMPUTE")
+    field(ZRST, "Stop")
+    field(ZRVL, "0")
+    field(ONST, "Start") 
+    field(ONVL, "1") 
+    field(TWST, "Reset")
+    field(TWVL, "2")
+    field(THST, "Clear")
+    field(THVL, "3")
+}
+
+
+record(stringin,"$(P)$(DAU):StatusPoll")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT)) STATUS_POLL")
+    field(SCAN, "1 second")
+#    field(SCAN, "Passive")
+}
+record(stringin,"$(P)$(DAU):ADCPoll")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT)) INPUT_POLL")
+    field(SCAN, "1 second")
+#    field(SCAN, "Passive")
+}
+record(stringin,"$(P)$(DAU):DACPoll")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT)) OUTPUT_POLL")
+    field(SCAN, "1 second")
+#    field(SCAN, "Passive")
+}
+
+record(bi,"$(P)$(DAU):ErrorFlag")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT)) ERROR_FLAG")
+    field(ZNAM, "No Error")
+    field(ONAM, "Error")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(stringin,"$(P)$(DAU):ErrorMessage1")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT)) ERROR_MSG_1")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(stringin,"$(P)$(DAU):ErrorMessage2")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT)) ERROR_MSG_2")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(stringin,"$(P)$(DAU):ErrorMessage3")
+{
+    field(DTYP, "asynOctetRead")
+    field(INP,  "@asyn($(PORT)) ERROR_MSG_3")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+
+record(bo,"$(P)$(DAU):ErrorClear")
+{
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asyn($(PORT)) ERROR_CLEAR")
+}
+

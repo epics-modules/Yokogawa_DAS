@@ -1,0 +1,40 @@
+#!/bin/bash
+
+EPICS_APP=/home/oxygen/DOHNARMS/epics_modules/hardware/Yokogawa_MW100
+EPICS_APP_ADL_DIR=${EPICS_APP}/mw100/mw100App/op/adl
+
+ASYN=/APSshare/epics/synApps_5_6/support/asyn-4-18
+
+#######################################
+# Prepare MEDM path
+# EDP is temporary EPICS_DISPLAY_PATH
+#
+function append_EDP { # note: in bash, macros are not expanded in aliases
+  if [ -d $1 ]  # this will keep keep out nonexistent directories
+  then
+    EDP=${EDP}:$1
+  fi
+}
+EDP=.
+append_EDP  ${EPICS_APP_ADL_DIR}
+append_EDP  ${ASYN}/opi/medm
+
+if [ -z "$EPICS_DISPLAY_PATH" ] 
+then
+    export EPICS_DISPLAY_PATH=${EDP}
+else
+    export EPICS_DISPLAY_PATH=${EDP}:${EPICS_DISPLAY_PATH}
+fi
+echo ${EPICS_DISPLAY_PATH}
+
+if [ -z "${MEDM_EXEC_LIST}" ] 
+then
+    export MEDM_EXEC_LIST='Probe;probe &P &'
+fi
+
+# This should agree with the environment variable set by the ioc
+# see 'putenv "EPICS_CA_MAX_ARRAY_BYTES=64008"' in iocBoot/ioc<target>/st.cmd
+#export EPICS_CA_MAX_ARRAY_BYTES=64008
+
+cd ${EPICS_APP_ADL_DIR}
+medm test.adl &

@@ -1,0 +1,10 @@
+*_BAK.adl
+.svn
+O.*
+bin/
+db/
+dbd/
+lib/
+iocBoot/iocmw100Ex/envPaths
+mw100App/src/mw100Support.dbd
+

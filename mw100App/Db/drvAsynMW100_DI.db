@@ -1,0 +1,49 @@
+record(bi,"$(P)$(DAU):$(LABEL):DI")
+{
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR)) DI")
+    field(SCAN, "I/O Intr")
+    field(ZNAM, "Low")
+    field(ONAM, "High")
+}
+
+record(mbbi,"$(P)$(DAU):$(LABEL):DI_Status")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR)) DI_STATUS")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+
+record(mbbi,"$(P)$(DAU):$(LABEL):DI_Alarm")
+{
+    field(PINI, "YES")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(PORT),$(ADDR)) DI_ALARM")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "None")
+    field(ONVL, "1")
+    field(ONST, "Overrange")
+    field(TWVL, "2")
+    field(TWST, "Underrange")
+    field(THVL, "3")
+    field(THST, "Skip/Off")
+    field(FRVL, "4")
+    field(FRST, "Error")
+    field(FVVL, "5")
+    field(FVST, "Uncertain")
+}
+
+
+record(stringout,"$(P)$(DAU):$(LABEL):Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):$(LABEL):DI.DESC PP")
+}
