@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen25/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/mw100/mw100App/op/adl/mw100_constant_label.adl"
+	name="/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/direct_mw100/mw100App/op/adl/mw100_constant_label.adl"
 	version=030107
 }
 display {
@@ -87,134 +87,6 @@ display {
 		1a7309,
 	}
 }
-"text entry" {
-	object {
-		x=295
-		y=60
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L1):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=295
-		y=85
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L2):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=295
-		y=110
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L3):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=295
-		y=135
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L4):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=295
-		y=160
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L5):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=295
-		y=185
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L6):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=295
-		y=210
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L7):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=295
-		y=235
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L8):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
 text {
 	object {
 		x=55
@@ -226,110 +98,6 @@ text {
 		clr=14
 	}
 	textix="$(P)$(DAU) Constants"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=160
-		y=60
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L1)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=160
-		y=85
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L2)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=160
-		y=110
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L3)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=160
-		y=135
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L4)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=160
-		y=160
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L5)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=160
-		y=185
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L6)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=160
-		y=210
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L7)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=160
-		y=235
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L8)"
 	align="horiz. centered"
 }
 polyline {
@@ -346,234 +114,6 @@ polyline {
 	points {
 		(1,31)
 		(373,31)
-	}
-}
-"text update" {
-	object {
-		x=210
-		y=235
-		width=81
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L8):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=210
-		y=210
-		width=80
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L7):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=210
-		y=185
-		width=80
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L6):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=210
-		y=160
-		width=80
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L5):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=210
-		y=135
-		width=80
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L4):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=210
-		y=110
-		width=80
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L3):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=210
-		y=85
-		width=80
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L2):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=210
-		y=60
-		width=80
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L1):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=295
-		y=260
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L9):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
-"text entry" {
-	object {
-		x=295
-		y=285
-		width=75
-		height=20
-	}
-	control {
-		chan="$(P)$(DAU):$(L10):Constant_Set"
-		clr=14
-		bclr=55
-	}
-	format="compact"
-	limits {
-	}
-}
-text {
-	object {
-		x=160
-		y=260
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L9)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=160
-		y=285
-		width=40
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L10)"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=210
-		y=285
-		width=81
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L10):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=210
-		y=260
-		width=80
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L9):Constant"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="compact"
-	limits {
 	}
 }
 text {
@@ -861,5 +401,465 @@ composite {
 	"dynamic attribute" {
 		vis="if zero"
 		chan="$(P)$(DAU):OpMode"
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=60
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L1):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=85
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L2):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=110
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L3):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=135
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L4):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=160
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L5):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=185
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L6):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=210
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L7):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=235
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L8):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+text {
+	object {
+		x=160
+		y=60
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L1)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=160
+		y=85
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L2)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=160
+		y=110
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L3)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=160
+		y=135
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L4)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=160
+		y=160
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L5)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=160
+		y=185
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L6)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=160
+		y=210
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L7)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=160
+		y=235
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L8)"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=210
+		y=235
+		width=81
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L8)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=210
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L7)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=185
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L6)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=160
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L5)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=135
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L4)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=110
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L3)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=85
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L2)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=60
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L1)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=260
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L9):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=295
+		y=285
+		width=75
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):$(L10):Set"
+		clr=14
+		bclr=55
+	}
+	format="compact"
+	limits {
+	}
+}
+text {
+	object {
+		x=160
+		y=260
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L9)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=160
+		y=285
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L10)"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=210
+		y=285
+		width=81
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L10)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=260
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L9)"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="compact"
+	limits {
 	}
 }

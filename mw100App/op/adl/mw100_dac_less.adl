@@ -1,7 +1,7 @@
 
 file {
-	name="/home/oxygen/DOHNARMS/epics_modules/hardware/Yokogawa_MW100/mw100/mw100App/op/adl/mw100_dac_less.adl"
-	version=030107
+	name="/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/direct_mw100/mw100App/op/adl/mw100_dac_less.adl"
+	version=030111
 }
 display {
 	object {
@@ -316,7 +316,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="$(P)$(DAU):$(L1):DAC_Unit"
+				chan="$(P)$(DAU):$(L1):Unit"
 				clr=14
 				bclr=50
 			}
@@ -327,7 +327,7 @@ composite {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="$(P)$(DAU):$(L1):DAC_Status"
+		chan="$(P)$(DAU):$(L1):ChStatus"
 	}
 }
 composite {
@@ -362,7 +362,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="$(P)$(DAU):$(L2):DAC_Unit"
+				chan="$(P)$(DAU):$(L2):Unit"
 				clr=14
 				bclr=50
 			}
@@ -373,7 +373,7 @@ composite {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="$(P)$(DAU):$(L2):DAC_Status"
+		chan="$(P)$(DAU):$(L2):ChStatus"
 	}
 }
 composite {
@@ -393,7 +393,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="$(P)$(DAU):$(L3):DAC_Unit"
+				chan="$(P)$(DAU):$(L3):Unit"
 				clr=14
 				bclr=50
 			}
@@ -419,7 +419,7 @@ composite {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="$(P)$(DAU):$(L3):DAC_Status"
+		chan="$(P)$(DAU):$(L3):ChStatus"
 	}
 }
 composite {
@@ -439,7 +439,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="$(P)$(DAU):$(L4):DAC_Unit"
+				chan="$(P)$(DAU):$(L4):Unit"
 				clr=14
 				bclr=50
 			}
@@ -465,7 +465,7 @@ composite {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="$(P)$(DAU):$(L4):DAC_Status"
+		chan="$(P)$(DAU):$(L4):ChStatus"
 	}
 }
 composite {
@@ -500,7 +500,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="$(P)$(DAU):$(L8):DAC_Unit"
+				chan="$(P)$(DAU):$(L8):Unit"
 				clr=14
 				bclr=50
 			}
@@ -511,7 +511,7 @@ composite {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="$(P)$(DAU):$(L8):DAC_Status"
+		chan="$(P)$(DAU):$(L8):ChStatus"
 	}
 }
 composite {
@@ -531,7 +531,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="$(P)$(DAU):$(L7):DAC_Unit"
+				chan="$(P)$(DAU):$(L7):Unit"
 				clr=14
 				bclr=50
 			}
@@ -557,7 +557,7 @@ composite {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="$(P)$(DAU):$(L7):DAC_Status"
+		chan="$(P)$(DAU):$(L7):ChStatus"
 	}
 }
 composite {
@@ -592,7 +592,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="$(P)$(DAU):$(L6):DAC_Unit"
+				chan="$(P)$(DAU):$(L6):Unit"
 				clr=14
 				bclr=50
 			}
@@ -603,7 +603,7 @@ composite {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="$(P)$(DAU):$(L6):DAC_Status"
+		chan="$(P)$(DAU):$(L6):ChStatus"
 	}
 }
 composite {
@@ -638,7 +638,7 @@ composite {
 				height=20
 			}
 			monitor {
-				chan="$(P)$(DAU):$(L5):DAC_Unit"
+				chan="$(P)$(DAU):$(L5):Unit"
 				clr=14
 				bclr=50
 			}
@@ -649,7 +649,7 @@ composite {
 	}
 	"dynamic attribute" {
 		vis="if not zero"
-		chan="$(P)$(DAU):$(L5):DAC_Status"
+		chan="$(P)$(DAU):$(L5):ChStatus"
 	}
 }
 text {

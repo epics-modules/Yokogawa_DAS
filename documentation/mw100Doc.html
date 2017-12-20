@@ -12,21 +12,22 @@ content="text/html; charset=iso-8859-1">
 
 <P><a href="mw100ReleaseNotes.html">Release Notes</a>
 
-This module is for Asyn-based support for the Yokogawa MW100 Digital
-Acquisition Unit.  This device uses a network interface to
-communicate, and has a modular design to allow the mixing of DAC, ADC,
-relay, TTL, and other modules.  It is also an industrial device
-primarily used for monitoring, so its design is not optimized for high
-performance operation.  The system is actually quite complex, as it
-can: read modbus channels over both serial and the network, perform
-calculations on the measurements if the math option is present, set
-alarms, do logging, etc.  The purpose of this support is to turn into
-PVs the simpler values that can either be read or set; there is no
-attempt made to utilize the full capability of the device from EPICS,
-although this support does not preclude using it externally.
+This module supports the Yokogawa MW100 Digital Acquisition Unit, and
+depends on the /M1 math option.  It was written for Linux IOCs, while
+others might work as well.
 
-The support uses the base C-level support from Asyn, using the
-asynFloat64, asynInt32, and asynOctetRead device types.
+This device uses a network interface to communicate, and has a modular
+design to allow the mixing of DAC, ADC, relay, TTL, and other modules.
+It is also an industrial device primarily used for monitoring, so its
+design is not optimized for high performance operation.  The system is
+actually quite complex, as it can: read modbus channels over both
+serial and the network, perform calculations on the measurements, set
+alarms, do logging, etc.  Some subset of the functionality is
+supported, and features have been added as needed. However, there is
+no attempt made to utilize the full capability of the device from
+EPICS, although the device can be simultaneously controlled by vendor
+software or the built-in web server, as it supports multiple
+simultaneous and independent connections.
 
 I assume that the support works for all modules, but this has been
 tested only with the following: MX110-UNV-M10, MX115-D05-H10,
@@ -35,10 +36,9 @@ MX120-VAO-M08, and MX125-MKC-M10.
 <h2>Channel descriptions</h2>
 
 The MW100 can handle up to 60 measurement channels, referred to as
-channels 001-060.  If the math option is also purchased, then the
-supported channels are also 300 computation channels (A001-A300) and
-300 communication input channels (C001-C300); there are more channels,
-but they are not supported.
+channels 001-060.  The math option adds 300 computation channels
+(A001-A300), 300 communication input channels (C001-C300), and 60
+constant channels (K01-K60).
 
 The module bus can have up to 6 modules on it.  The maximum number
 of I/O channels for the MW100 is 60 (referred to as channels 001-060),
@@ -54,15 +54,15 @@ Due to the complexity of the MW100, the configuration of the unit
 currently needs to be done through its web interface.  This includes
 not only service configuration, but also channel configuration.  The
 way the unit works is that there are modes of operation.  Any
-configuration needs to be done while in the "Settings" mode, while all
-data acquisition is done in the "Meaurements" mode.  The mode can be
-toggle from EPICS or through the native web browser.  So to do
-configuration changes, make sure the unit is in Settings mode or it
-will not save any changes.
+configuration needs to be done while in the "Settings" mode and
+computations are stopped, while all data acquisition is done in the
+"Meaurements" mode and the computations should be started.  The mode
+can be toggled from EPICS or through the native web server.  So to do
+configuration changes, make sure the unit is in Settings mode and do
+the changes through the web server.
 
 Upon getting the unit, get it on your network, as described in the
 manual.
-
 
 Plug your modules into the module bus, realizing that each module
 location to the left of the main module oper
@@ -71,15 +71,9 @@ location to the left of the main module oper
 
 <h2>Operation</h2>
 
-Once the unit is configured and running on the network, The EPICS
+Once the unit is configured and running on the network, the EPICS
 support in this module will work for reading data while in Measurement
-mode.  When the unit is switched to Settings mode, it will still poll
-for values, but the values will not change.  
-
-The changing of mode should be done from EPICS so that it knows to
-query the settings values when the unit is switched from Settings mode
-to Measurement mode.  The settings values for instance sets the scale
-factor for the measurement values (which are read as integers).
+mode and calculations are enabled.
 
 The default way the measurements are done is that there are two
 records that trigger reading all of the values on the device, one for
@@ -95,24 +89,74 @@ be returned; however, the associated status, unit, and alarm records
 for the measurement will return cached values only.  This means that
 to do read an independent channel is to read the measurement value,
 then forward link to all the associated records to grab the cached
-values from that read.
+values from that read.  
 
-If the math option was bought, there are also calculations and
-communication inputs to be read by the pollers. The calculations
-(which need to be defined through the web interface right now) allow
-the transformation of measurements with the communication input values
-and predefined constants.  The first 60 calculation channels allow for
-a long calculation (string length of 120 characters), while the last
-240 channels allow for short calculations (8 or 10 characters,
-depending on firmware version).
+The operational status values also have a similar record for
+triggering periodic reads.  These values regard the mode the device is
+in, as well as if calculaions are enabled.
+
+There are calculations, communication inputs, and constants to be read
+by the pollers. The calculations (which need to be defined through the
+web interface) allow the transformation of measurements with the
+communication input values and predefined constants.  The first 60
+calculation channels allow for a long calculation (string length of
+120 characters), while the last 240 channels allow for short
+calculations (8 or 10 characters, depending on firmware version).
 
 When an error happpens, the error string is displayed, split into
 three 40-character string records.  The error can be cleared, which
 also clears it from the units LED display.
 
+<h3>Modules</h3>
+
+The analog output modules are only directly controlled by EPICS if
+they are put into communication mode ("Comm. Input").  If a channel is
+put into the other mode ("Trans"), the value will still be read.
+
+The digital output modules (relays) are typically used in two modes.
+One is direct control from EPICS ("Comm. Input"), and the other is for
+it to be controlled by an alarm ("Alarm").  The two modes can not be
+used at the same time.
+
+The analog input modules have many configuration options, with one of
+the most useful is being configured as a thermocouple reader, giving a
+result through EPICS as a temperature value and units.
+
+<h2>Records</h2>
+
+There are currently 7 records supported for various purposes: ai, ao,
+bi, bo, mbbi, mbbo, and stringout.  When using them, <b>DTYP</b> needs
+to be set to "Yokogawa MW100".  For each instrument initialized with
+the driver, a handle is associated for use with record device support
+in the <b>INP</b> field.
+<p>
+For record commands that can refer to multiple items or locations,
+addressing is used.  Certain commands also need sub-addressing.
+<p>
+The general format of the <b>INP</b> field is one of the following:
+<ul>
+  <li>"@handle command"
+  <li>"@handle command:address"
+  <li>"@handle command:address.sub_address"
+</ul>
+
+Here's a summary of the commands:
+<dl>
+  <dt><b>VAL</b></dt>
+  <dd>Requires address:
+    <ul>
+      <li>001-060
+      <li>A001-A0300
+    </ul>
+</dd>
+</dl>
+
+
+
 <h2>EPICS Databases</h2>
 
 There are 
+
 
 <h2>MEDM display files</h2>
 

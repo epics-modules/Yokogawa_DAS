@@ -1,13 +1,13 @@
 
 file {
-	name="/home/oxygen/DOHNARMS/epics_modules/hardware/Yokogawa_MW100/mw100/mw100App/op/adl/mw100_relay_label.adl"
-	version=030107
+	name="/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/direct_mw100/mw100App/op/adl/mw100_relay_label.adl"
+	version=030111
 }
 display {
 	object {
-		x=1022
-		y=391
-		width=305
+		x=1273
+		y=617
+		width=520
 		height=330
 	}
 	clr=14
@@ -89,7 +89,7 @@ display {
 }
 text {
 	object {
-		x=45
+		x=165
 		y=5
 		width=200
 		height=20
@@ -102,7 +102,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=50
 		width=30
 		height=20
@@ -115,7 +115,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=75
 		width=30
 		height=20
@@ -128,7 +128,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=100
 		width=30
 		height=20
@@ -141,7 +141,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=125
 		width=30
 		height=20
@@ -154,7 +154,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=150
 		width=30
 		height=20
@@ -167,7 +167,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=175
 		width=30
 		height=20
@@ -180,7 +180,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=200
 		width=30
 		height=20
@@ -193,7 +193,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=225
 		width=30
 		height=20
@@ -206,7 +206,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=250
 		width=30
 		height=20
@@ -219,7 +219,7 @@ text {
 }
 text {
 	object {
-		x=165
+		x=380
 		y=275
 		width=30
 		height=20
@@ -232,13 +232,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=50
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L1):Relay"
+		chan="$(P)$(DAU):$(L1):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -246,13 +246,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=75
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L2):Relay"
+		chan="$(P)$(DAU):$(L2):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -260,13 +260,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=100
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L3):Relay"
+		chan="$(P)$(DAU):$(L3):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -274,13 +274,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=125
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L4):Relay"
+		chan="$(P)$(DAU):$(L4):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -288,13 +288,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=150
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L5):Relay"
+		chan="$(P)$(DAU):$(L5):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -302,13 +302,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=175
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L6):Relay"
+		chan="$(P)$(DAU):$(L6):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -316,13 +316,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=200
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L7):Relay"
+		chan="$(P)$(DAU):$(L7):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -330,13 +330,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=225
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L8):Relay"
+		chan="$(P)$(DAU):$(L8):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -344,13 +344,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=250
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L9):Relay"
+		chan="$(P)$(DAU):$(L9):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -358,13 +358,13 @@ text {
 }
 "choice button" {
 	object {
-		x=200
+		x=415
 		y=275
 		width=100
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L10):Relay"
+		chan="$(P)$(DAU):$(L10):RelaySet"
 		clr=14
 		bclr=55
 	}
@@ -374,7 +374,7 @@ polyline {
 	object {
 		x=0
 		y=25
-		width=298
+		width=519
 		height=2
 	}
 	"basic attribute" {
@@ -383,14 +383,14 @@ polyline {
 	}
 	points {
 		(1,26)
-		(297,26)
+		(518,26)
 	}
 }
 polyline {
 	object {
 		x=0
 		y=300
-		width=298
+		width=519
 		height=2
 	}
 	"basic attribute" {
@@ -399,7 +399,7 @@ polyline {
 	}
 	points {
 		(1,301)
-		(297,301)
+		(518,301)
 	}
 }
 text {
@@ -599,7 +599,7 @@ text {
 }
 text {
 	object {
-		x=220
+		x=435
 		y=30
 		width=50
 		height=20
@@ -612,7 +612,7 @@ text {
 }
 "related display" {
 	object {
-		x=260
+		x=475
 		y=305
 		width=40
 		height=20
@@ -625,4 +625,523 @@ text {
 	clr=0
 	bclr=64
 	label="-Less"
+}
+"text update" {
+	object {
+		x=290
+		y=225
+		width=81
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L8):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=290
+		y=200
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L7):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=290
+		y=175
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L6):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=290
+		y=150
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L5):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=290
+		y=125
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L4):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=290
+		y=100
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L3):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=290
+		y=75
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L2):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=305
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Value"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=290
+		y=50
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L1):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=290
+		y=275
+		width=81
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L10):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=290
+		y=250
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L9):Relay"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=165
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Status"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=160
+		y=50
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L1):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=75
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L2):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=100
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L3):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=125
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L4):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=150
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L5):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=175
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L6):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=200
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L7):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=225
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L8):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=250
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L9):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=160
+		y=275
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L10):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=230
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Mode"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=225
+		y=50
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L1):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=225
+		y=75
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L2):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=225
+		y=100
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L3):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=225
+		y=125
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L4):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=225
+		y=150
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L5):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=225
+		y=175
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L6):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=225
+		y=200
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L7):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=225
+		y=225
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L8):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=225
+		y=250
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L9):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=225
+		y=275
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L10):ChMode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
 }

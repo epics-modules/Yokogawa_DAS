@@ -1,22 +1,20 @@
 TOP=../..
 include $(TOP)/configure/CONFIG
 #----------------------------------------
-#  ADD MACRO DEFINITIONS AFTER THIS LINE
+#  ADD MACRO DEFINITIONS BELOW HERE
 
-#----------------------------------------------------
-#  Optimization of db files using dbst (DEFAULT: NO)
-#DB_OPT = YES
+# Install databases, templates & substitutions like this
+#DB += MW100test.db
 
-#----------------------------------------------------
-# Create and install (or just install)
-# databases, templates, substitutions like this
-DB += drvAsynMW100.db
+#DB += MW100_channel.db
+#DB += MW100.substitutions
 
-#----------------------------------------------------
+#DB += dbExample2.db
+
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>
 
 include $(TOP)/configure/RULES
 #----------------------------------------
-#  ADD RULES AFTER THIS LINE
+#  ADD EXTRA GNUMAKE RULES BELOW HERE
 

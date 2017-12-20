@@ -1,14 +1,14 @@
 
 file {
-	name="/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/mw100/mw100App/op/adl/mw100_main.adl"
-	version=030107
+	name="/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/direct_mw100/mw100App/op/adl/mw100_main.adl"
+	version=030111
 }
 display {
 	object {
-		x=1088
-		y=397
-		width=350
-		height=240
+		x=860
+		y=283
+		width=300
+		height=300
 	}
 	clr=14
 	bclr=3
@@ -89,7 +89,7 @@ display {
 }
 text {
 	object {
-		x=55
+		x=27
 		y=5
 		width=250
 		height=20
@@ -102,8 +102,8 @@ text {
 }
 "related display" {
 	object {
-		x=155
-		y=40
+		x=99
+		y=62
 		width=60
 		height=20
 	}
@@ -118,7 +118,7 @@ text {
 }
 "related display" {
 	object {
-		x=90
+		x=99
 		y=40
 		width=60
 		height=20
@@ -134,8 +134,8 @@ text {
 }
 "related display" {
 	object {
-		x=285
-		y=40
+		x=161
+		y=62
 		width=60
 		height=20
 	}
@@ -150,8 +150,8 @@ text {
 }
 text {
 	object {
-		x=5
-		y=105
+		x=14
+		y=128
 		width=150
 		height=20
 	}
@@ -163,7 +163,7 @@ text {
 }
 "related display" {
 	object {
-		x=220
+		x=161
 		y=40
 		width=60
 		height=20
@@ -179,8 +179,8 @@ text {
 }
 "text update" {
 	object {
-		x=160
-		y=105
+		x=169
+		y=128
 		width=100
 		height=16
 	}
@@ -195,8 +195,8 @@ text {
 }
 "related display" {
 	object {
-		x=155
-		y=70
+		x=164
+		y=94
 		width=60
 		height=20
 	}
@@ -205,14 +205,39 @@ text {
 		name="mw100_math.adl"
 		args="P=$(P),DAU=$(DAU),L1=A001,L2=A002,L3=A003,L4=A004,L5=A005,L6=A006,L7=A007,L8=A008,L9=A009,L10=A010"
 	}
+	display[1] {
+		label="A011-A020"
+		name="mw100_math.adl"
+		args="P=$(P),DAU=$(DAU),L1=A011,L2=A012,L3=A013,L4=A014,L5=A015,L6=A016,L7=A017,L8=A018,L9=A019,L10=A020"
+	}
+	display[2] {
+		label="A021-A030"
+		name="mw100_math.adl"
+		args="P=$(P),DAU=$(DAU),L1=A021,L2=A022,L3=A023,L4=A024,L5=A025,L6=A026,L7=A027,L8=A028,L9=A029,L10=A030"
+	}
+	display[3] {
+		label="A031-A040"
+		name="mw100_math.adl"
+		args="P=$(P),DAU=$(DAU),L1=A031,L2=A032,L3=A033,L4=A034,L5=A035,L6=A036,L7=A037,L8=A038,L9=A039,L10=A040"
+	}
+	display[4] {
+		label="A041-A050"
+		name="mw100_math.adl"
+		args="P=$(P),DAU=$(DAU),L1=A041,L2=A042,L3=A043,L4=A044,L5=A045,L6=A046,L7=A047,L8=A048,L9=A049,L10=A050"
+	}
+	display[5] {
+		label="A051-A060"
+		name="mw100_math.adl"
+		args="P=$(P),DAU=$(DAU),L1=A051,L2=A052,L3=A053,L4=A054,L5=A055,L6=A056,L7=A057,L8=A058,L9=A059,L10=A060"
+	}
 	clr=0
 	bclr=64
 	label="-Calc"
 }
 text {
 	object {
-		x=35
-		y=160
+		x=44
+		y=179
 		width=120
 		height=20
 	}
@@ -224,8 +249,8 @@ text {
 }
 "text update" {
 	object {
-		x=165
-		y=165
+		x=174
+		y=184
 		width=100
 		height=16
 	}
@@ -238,85 +263,10 @@ text {
 	limits {
 	}
 }
-composite {
-	object {
-		x=90
-		y=185
-		width=255
-		height=20
-	}
-	"composite name"=""
-	children {
-		"message button" {
-			object {
-				x=90
-				y=185
-				width=60
-				height=20
-			}
-			control {
-				chan="$(P)$(DAU):ComputationSet"
-				clr=14
-				bclr=55
-			}
-			label="Stop"
-			press_msg="0"
-		}
-		"message button" {
-			object {
-				x=155
-				y=185
-				width=60
-				height=20
-			}
-			control {
-				chan="$(P)$(DAU):ComputationSet"
-				clr=14
-				bclr=55
-			}
-			label="Start"
-			press_msg="1"
-		}
-		"message button" {
-			object {
-				x=220
-				y=185
-				width=60
-				height=20
-			}
-			control {
-				chan="$(P)$(DAU):ComputationSet"
-				clr=14
-				bclr=55
-			}
-			label="Reset"
-			press_msg="2"
-		}
-		"message button" {
-			object {
-				x=285
-				y=185
-				width=60
-				height=20
-			}
-			control {
-				chan="$(P)$(DAU):ComputationSet"
-				clr=14
-				bclr=55
-			}
-			label="Clear"
-			press_msg="3"
-		}
-	}
-	"dynamic attribute" {
-		vis="if zero"
-		chan="$(P)$(DAU):OpMode"
-	}
-}
 "related display" {
 	object {
-		x=90
-		y=70
+		x=99
+		y=94
 		width=60
 		height=20
 	}
@@ -325,13 +275,38 @@ composite {
 		name="mw100_comm_input.adl"
 		args="P=$(P),DAU=$(DAU),L1=C001,L2=C002,L3=C003,L4=C004,L5=C005,L6=C006,L7=C007,L8=C008,L9=C009,L10=C010"
 	}
+	display[1] {
+		label="Comm Input C011-C020"
+		name="mw100_comm_input.adl"
+		args="P=$(P),DAU=$(DAU),L1=C011,L2=C012,L3=C013,L4=C014,L5=C015,L6=C016,L7=C017,L8=C018,L9=C019,L10=C020"
+	}
+	display[2] {
+		label="Comm Input C021-C030"
+		name="mw100_comm_input.adl"
+		args="P=$(P),DAU=$(DAU),L1=C021,L2=C022,L3=C023,L4=C024,L5=C025,L6=C026,L7=C027,L8=C028,L9=C029,L10=C030"
+	}
+	display[3] {
+		label="Comm Input C031-C040"
+		name="mw100_comm_input.adl"
+		args="P=$(P),DAU=$(DAU),L1=C031,L2=C032,L3=C033,L4=C034,L5=C035,L6=C036,L7=C037,L8=C038,L9=C039,L10=C040"
+	}
+	display[4] {
+		label="Comm Input C041-C050"
+		name="mw100_comm_input.adl"
+		args="P=$(P),DAU=$(DAU),L1=C041,L2=C042,L3=C043,L4=C044,L5=C045,L6=C046,L7=C047,L8=C048,L9=C049,L10=C050"
+	}
+	display[5] {
+		label="Comm Input C051-C060"
+		name="mw100_comm_input.adl"
+		args="P=$(P),DAU=$(DAU),L1=C051,L2=C052,L3=C053,L4=C054,L5=C055,L6=C056,L7=C057,L8=C058,L9=C059,L10=C060"
+	}
 	clr=0
 	bclr=64
 	label="-Inputs"
 }
 text {
 	object {
-		x=5
+		x=11
 		y=40
 		width=80
 		height=20
@@ -340,12 +315,12 @@ text {
 		clr=14
 	}
 	textix="Hardware"
-	align="horiz. centered"
+	align="horiz. right"
 }
 text {
 	object {
-		x=5
-		y=70
+		x=11
+		y=94
 		width=80
 		height=20
 	}
@@ -353,13 +328,13 @@ text {
 		clr=14
 	}
 	textix="Math"
-	align="horiz. centered"
+	align="horiz. right"
 }
 polyline {
 	object {
-		x=0
-		y=210
-		width=399
+		x=10
+		y=270
+		width=281
 		height=2
 	}
 	"basic attribute" {
@@ -367,14 +342,14 @@ polyline {
 		width=2
 	}
 	points {
-		(1,211)
-		(398,211)
+		(11,271)
+		(290,271)
 	}
 }
 text {
 	object {
-		x=5
-		y=215
+		x=14
+		y=275
 		width=150
 		height=20
 	}
@@ -389,8 +364,8 @@ text {
 }
 "related display" {
 	object {
-		x=285
-		y=215
+		x=225
+		y=275
 		width=60
 		height=20
 	}
@@ -421,8 +396,8 @@ polyline {
 }
 composite {
 	object {
-		x=170
-		y=125
+		x=112
+		y=150
 		width=175
 		height=20
 	}
@@ -430,8 +405,8 @@ composite {
 	children {
 		"message button" {
 			object {
-				x=260
-				y=125
+				x=202
+				y=150
 				width=85
 				height=20
 			}
@@ -445,8 +420,8 @@ composite {
 		}
 		"message button" {
 			object {
-				x=170
-				y=125
+				x=112
+				y=150
 				width=85
 				height=20
 			}
@@ -466,17 +441,176 @@ composite {
 }
 "related display" {
 	object {
-		x=220
-		y=70
+		x=229
+		y=94
 		width=60
 		height=20
 	}
 	display[0] {
-		label="Constants K001-K010"
+		label="Constants K01-K10"
 		name="mw100_constant.adl"
-		args="P=$(P),DAU=$(DAU),L1=K001,L2=K002,L3=K003,L4=K004,L5=K005,L6=K006,L7=K007,L8=K008,L9=K009,L10=K010"
+		args="P=$(P),DAU=$(DAU),L1=K01,L2=K02,L3=K03,L4=K04,L5=K05,L6=K06,L7=K07,L8=K08,L9=K09,L10=K10"
+	}
+	display[1] {
+		label="Constants K11-K20"
+		name="mw100_constant.adl"
+		args="P=$(P),DAU=$(DAU),L1=K11,L2=K12,L3=K13,L4=K14,L5=K15,L6=K16,L7=K17,L8=K18,L9=K19,L10=K20"
+	}
+	display[2] {
+		label="Constants K21-K30"
+		name="mw100_constant.adl"
+		args="P=$(P),DAU=$(DAU),L1=K21,L2=K22,L3=K23,L4=K24,L5=K25,L6=K26,L7=K27,L8=K28,L9=K29,L10=K30"
+	}
+	display[3] {
+		label="Constants K31-K40"
+		name="mw100_constant.adl"
+		args="P=$(P),DAU=$(DAU),L1=K31,L2=K32,L3=K33,L4=K34,L5=K35,L6=K36,L7=K37,L8=K38,L9=K39,L10=K40"
+	}
+	display[4] {
+		label="Constants K41-K50"
+		name="mw100_constant.adl"
+		args="P=$(P),DAU=$(DAU),L1=K41,L2=K42,L3=K43,L4=K44,L5=K45,L6=K46,L7=K47,L8=K48,L9=K49,L10=K50"
+	}
+	display[5] {
+		label="Constants K51-K60"
+		name="mw100_constant.adl"
+		args="P=$(P),DAU=$(DAU),L1=K51,L2=K52,L3=K53,L4=K54,L5=K55,L6=K56,L7=K57,L8=K58,L9=K59,L10=K60"
 	}
 	clr=0
 	bclr=64
 	label="-Const"
+}
+composite {
+	object {
+		x=30
+		y=205
+		width=255
+		height=20
+	}
+	"composite name"=""
+	children {
+		"message button" {
+			object {
+				x=30
+				y=205
+				width=60
+				height=20
+			}
+			control {
+				chan="$(P)$(DAU):ComputationSet"
+				clr=14
+				bclr=55
+			}
+			label="Stop"
+			press_msg="1"
+		}
+		"message button" {
+			object {
+				x=95
+				y=205
+				width=60
+				height=20
+			}
+			control {
+				chan="$(P)$(DAU):ComputationSet"
+				clr=14
+				bclr=55
+			}
+			label="Start"
+			press_msg="0"
+		}
+		"message button" {
+			object {
+				x=160
+				y=205
+				width=60
+				height=20
+			}
+			control {
+				chan="$(P)$(DAU):ComputationSet"
+				clr=14
+				bclr=55
+			}
+			label="Reset"
+			press_msg="2"
+		}
+		"message button" {
+			object {
+				x=225
+				y=205
+				width=60
+				height=20
+			}
+			control {
+				chan="$(P)$(DAU):ComputationSet"
+				clr=14
+				bclr=55
+			}
+			label="Clear"
+			press_msg="3"
+		}
+	}
+	"dynamic attribute" {
+		vis="if zero"
+		chan="$(P)$(DAU):OpMode"
+	}
+}
+text {
+	object {
+		x=60
+		y=240
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Alarm"
+	align="horiz. right"
+}
+"message button" {
+	object {
+		x=135
+		y=240
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):AlarmAck.PROC"
+		clr=14
+		bclr=32
+	}
+	label="Acknowledge"
+	press_msg="1"
+}
+polyline {
+	object {
+		x=10
+		y=230
+		width=281
+		height=2
+	}
+	"basic attribute" {
+		clr=44
+		width=2
+	}
+	points {
+		(11,231)
+		(290,231)
+	}
+}
+oval {
+	object {
+		x=25
+		y=240
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):AlarmFlag"
+	}
 }

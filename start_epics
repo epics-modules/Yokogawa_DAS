@@ -1,9 +1,7 @@
 #!/bin/bash
 
-EPICS_APP=/home/oxygen/DOHNARMS/epics_modules/hardware/Yokogawa_MW100
-EPICS_APP_ADL_DIR=${EPICS_APP}/mw100/mw100App/op/adl
-
-ASYN=/APSshare/epics/synApps_5_6/support/asyn-4-18
+EPICS_APP=/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100
+EPICS_APP_ADL_DIR=${EPICS_APP}/direct_mw100/mw100App/op/adl
 
 #######################################
 # Prepare MEDM path
@@ -17,7 +15,6 @@ function append_EDP { # note: in bash, macros are not expanded in aliases
 }
 EDP=.
 append_EDP  ${EPICS_APP_ADL_DIR}
-append_EDP  ${ASYN}/opi/medm
 
 if [ -z "$EPICS_DISPLAY_PATH" ] 
 then

@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/DOHNARMS/epics_modules/hardware/Yokogawa_MW100/mw100/mw100App/op/adl/mw100_comm_input.adl"
+	name="/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/direct_mw100/mw100App/op/adl/mw100_comm_input.adl"
 	version=030107
 }
 display {
@@ -95,7 +95,7 @@ display {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L1):CommInput_Set"
+		chan="$(P)$(DAU):$(L1):Set"
 		clr=14
 		bclr=55
 	}
@@ -111,7 +111,7 @@ display {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L2):CommInput_Set"
+		chan="$(P)$(DAU):$(L2):Set"
 		clr=14
 		bclr=55
 	}
@@ -127,7 +127,7 @@ display {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L3):CommInput_Set"
+		chan="$(P)$(DAU):$(L3):Set"
 		clr=14
 		bclr=55
 	}
@@ -143,7 +143,7 @@ display {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L4):CommInput_Set"
+		chan="$(P)$(DAU):$(L4):Set"
 		clr=14
 		bclr=55
 	}
@@ -159,7 +159,7 @@ display {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L5):CommInput_Set"
+		chan="$(P)$(DAU):$(L5):Set"
 		clr=14
 		bclr=55
 	}
@@ -175,7 +175,7 @@ display {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L6):CommInput_Set"
+		chan="$(P)$(DAU):$(L6):Set"
 		clr=14
 		bclr=55
 	}
@@ -191,7 +191,7 @@ display {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L7):CommInput_Set"
+		chan="$(P)$(DAU):$(L7):Set"
 		clr=14
 		bclr=55
 	}
@@ -207,7 +207,7 @@ display {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L8):CommInput_Set"
+		chan="$(P)$(DAU):$(L8):Set"
 		clr=14
 		bclr=55
 	}
@@ -356,7 +356,7 @@ polyline {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L8):CommInput"
+		chan="$(P)$(DAU):$(L8)"
 		clr=14
 		bclr=50
 	}
@@ -373,7 +373,7 @@ polyline {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L7):CommInput"
+		chan="$(P)$(DAU):$(L7)"
 		clr=14
 		bclr=50
 	}
@@ -390,7 +390,7 @@ polyline {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L6):CommInput"
+		chan="$(P)$(DAU):$(L6)"
 		clr=14
 		bclr=50
 	}
@@ -407,7 +407,7 @@ polyline {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L5):CommInput"
+		chan="$(P)$(DAU):$(L5)"
 		clr=14
 		bclr=50
 	}
@@ -424,7 +424,7 @@ polyline {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L4):CommInput"
+		chan="$(P)$(DAU):$(L4)"
 		clr=14
 		bclr=50
 	}
@@ -441,7 +441,7 @@ polyline {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L3):CommInput"
+		chan="$(P)$(DAU):$(L3)"
 		clr=14
 		bclr=50
 	}
@@ -458,7 +458,7 @@ polyline {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L2):CommInput"
+		chan="$(P)$(DAU):$(L2)"
 		clr=14
 		bclr=50
 	}
@@ -475,7 +475,7 @@ polyline {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L1):CommInput"
+		chan="$(P)$(DAU):$(L1)"
 		clr=14
 		bclr=50
 	}
@@ -492,7 +492,7 @@ polyline {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L9):CommInput_Set"
+		chan="$(P)$(DAU):$(L9):Set"
 		clr=14
 		bclr=55
 	}
@@ -508,7 +508,7 @@ polyline {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L10):CommInput_Set"
+		chan="$(P)$(DAU):$(L10):Set"
 		clr=14
 		bclr=55
 	}
@@ -550,7 +550,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L10):CommInput"
+		chan="$(P)$(DAU):$(L10)"
 		clr=14
 		bclr=50
 	}
@@ -567,7 +567,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L9):CommInput"
+		chan="$(P)$(DAU):$(L9)"
 		clr=14
 		bclr=50
 	}

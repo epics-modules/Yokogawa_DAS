@@ -1,0 +1,577 @@
+
+record(ai, "$(P)$(DAU):011:DAC")
+{
+    alias("$(P)$(DAU):011")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 VAL:011")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+record(ao, "$(P)$(DAU):011:DAC_Set")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@net1 VAL:011")
+    field(PREC, "4")
+    field(FLNK, "$(P)$(DAU):011:DAC")
+}
+record(stringin, "$(P)$(DAU):011:Unit")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 UNIT:011")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):011:ChStatus")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@net1 CH_STATUS:011")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+record(mbbi,"$(P)$(DAU):011:ChMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 CH_MODE:011")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Trans")
+    field(ONVL, "1")
+    field(ONST, "Comm")
+    field(TWVL, "2")
+    field(TWST, "Skip")
+    field(THVL, "3")
+    field(THST, "Unknown")
+}
+record(ao, "$(P)$(DAU):011:DAC_TweakVal") 
+{
+    field(PREC,"3")
+}
+record(calcout, "$(P)$(DAU):011:DAC_TweakFwd") {
+    field( INPA, "$(P)$(DAU):011:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):011:DAC_TweakVal NPP NMS")
+    field( CALC, "A+B")
+    field( OUT,  "$(P)$(DAU):011:DAC_Set PP NMS")
+}
+record(calcout, "$(P)$(DAU):011:DAC_TweakBkwd") {
+    field( INPA, "$(P)$(DAU):011:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):011:DAC_TweakVal NPP NMS")
+    field( CALC, "A-B")
+    field( OUT,  "$(P)$(DAU):011:DAC_Set PP NMS")
+}
+record(stringout,"$(P)$(DAU):011:Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):011:DAC.DESC PP")
+}
+
+record(ai, "$(P)$(DAU):012:DAC")
+{
+    alias("$(P)$(DAU):012")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 VAL:012")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+record(ao, "$(P)$(DAU):012:DAC_Set")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@net1 VAL:012")
+    field(PREC, "4")
+    field(FLNK, "$(P)$(DAU):012:DAC")
+}
+record(stringin, "$(P)$(DAU):012:Unit")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 UNIT:012")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):012:ChStatus")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@net1 CH_STATUS:012")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+record(mbbi,"$(P)$(DAU):012:ChMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 CH_MODE:012")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Trans")
+    field(ONVL, "1")
+    field(ONST, "Comm")
+    field(TWVL, "2")
+    field(TWST, "Skip")
+    field(THVL, "3")
+    field(THST, "Unknown")
+}
+record(ao, "$(P)$(DAU):012:DAC_TweakVal") 
+{
+    field(PREC,"3")
+}
+record(calcout, "$(P)$(DAU):012:DAC_TweakFwd") {
+    field( INPA, "$(P)$(DAU):012:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):012:DAC_TweakVal NPP NMS")
+    field( CALC, "A+B")
+    field( OUT,  "$(P)$(DAU):012:DAC_Set PP NMS")
+}
+record(calcout, "$(P)$(DAU):012:DAC_TweakBkwd") {
+    field( INPA, "$(P)$(DAU):012:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):012:DAC_TweakVal NPP NMS")
+    field( CALC, "A-B")
+    field( OUT,  "$(P)$(DAU):012:DAC_Set PP NMS")
+}
+record(stringout,"$(P)$(DAU):012:Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):012:DAC.DESC PP")
+}
+
+record(ai, "$(P)$(DAU):013:DAC")
+{
+    alias("$(P)$(DAU):013")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 VAL:013")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+record(ao, "$(P)$(DAU):013:DAC_Set")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@net1 VAL:013")
+    field(PREC, "4")
+    field(FLNK, "$(P)$(DAU):013:DAC")
+}
+record(stringin, "$(P)$(DAU):013:Unit")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 UNIT:013")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):013:ChStatus")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@net1 CH_STATUS:013")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+record(mbbi,"$(P)$(DAU):013:ChMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 CH_MODE:013")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Trans")
+    field(ONVL, "1")
+    field(ONST, "Comm")
+    field(TWVL, "2")
+    field(TWST, "Skip")
+    field(THVL, "3")
+    field(THST, "Unknown")
+}
+record(ao, "$(P)$(DAU):013:DAC_TweakVal") 
+{
+    field(PREC,"3")
+}
+record(calcout, "$(P)$(DAU):013:DAC_TweakFwd") {
+    field( INPA, "$(P)$(DAU):013:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):013:DAC_TweakVal NPP NMS")
+    field( CALC, "A+B")
+    field( OUT,  "$(P)$(DAU):013:DAC_Set PP NMS")
+}
+record(calcout, "$(P)$(DAU):013:DAC_TweakBkwd") {
+    field( INPA, "$(P)$(DAU):013:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):013:DAC_TweakVal NPP NMS")
+    field( CALC, "A-B")
+    field( OUT,  "$(P)$(DAU):013:DAC_Set PP NMS")
+}
+record(stringout,"$(P)$(DAU):013:Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):013:DAC.DESC PP")
+}
+
+record(ai, "$(P)$(DAU):014:DAC")
+{
+    alias("$(P)$(DAU):014")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 VAL:014")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+record(ao, "$(P)$(DAU):014:DAC_Set")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@net1 VAL:014")
+    field(PREC, "4")
+    field(FLNK, "$(P)$(DAU):014:DAC")
+}
+record(stringin, "$(P)$(DAU):014:Unit")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 UNIT:014")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):014:ChStatus")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@net1 CH_STATUS:014")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+record(mbbi,"$(P)$(DAU):014:ChMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 CH_MODE:014")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Trans")
+    field(ONVL, "1")
+    field(ONST, "Comm")
+    field(TWVL, "2")
+    field(TWST, "Skip")
+    field(THVL, "3")
+    field(THST, "Unknown")
+}
+record(ao, "$(P)$(DAU):014:DAC_TweakVal") 
+{
+    field(PREC,"3")
+}
+record(calcout, "$(P)$(DAU):014:DAC_TweakFwd") {
+    field( INPA, "$(P)$(DAU):014:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):014:DAC_TweakVal NPP NMS")
+    field( CALC, "A+B")
+    field( OUT,  "$(P)$(DAU):014:DAC_Set PP NMS")
+}
+record(calcout, "$(P)$(DAU):014:DAC_TweakBkwd") {
+    field( INPA, "$(P)$(DAU):014:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):014:DAC_TweakVal NPP NMS")
+    field( CALC, "A-B")
+    field( OUT,  "$(P)$(DAU):014:DAC_Set PP NMS")
+}
+record(stringout,"$(P)$(DAU):014:Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):014:DAC.DESC PP")
+}
+
+record(ai, "$(P)$(DAU):015:DAC")
+{
+    alias("$(P)$(DAU):015")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 VAL:015")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+record(ao, "$(P)$(DAU):015:DAC_Set")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@net1 VAL:015")
+    field(PREC, "4")
+    field(FLNK, "$(P)$(DAU):015:DAC")
+}
+record(stringin, "$(P)$(DAU):015:Unit")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 UNIT:015")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):015:ChStatus")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@net1 CH_STATUS:015")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+record(mbbi,"$(P)$(DAU):015:ChMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 CH_MODE:015")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Trans")
+    field(ONVL, "1")
+    field(ONST, "Comm")
+    field(TWVL, "2")
+    field(TWST, "Skip")
+    field(THVL, "3")
+    field(THST, "Unknown")
+}
+record(ao, "$(P)$(DAU):015:DAC_TweakVal") 
+{
+    field(PREC,"3")
+}
+record(calcout, "$(P)$(DAU):015:DAC_TweakFwd") {
+    field( INPA, "$(P)$(DAU):015:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):015:DAC_TweakVal NPP NMS")
+    field( CALC, "A+B")
+    field( OUT,  "$(P)$(DAU):015:DAC_Set PP NMS")
+}
+record(calcout, "$(P)$(DAU):015:DAC_TweakBkwd") {
+    field( INPA, "$(P)$(DAU):015:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):015:DAC_TweakVal NPP NMS")
+    field( CALC, "A-B")
+    field( OUT,  "$(P)$(DAU):015:DAC_Set PP NMS")
+}
+record(stringout,"$(P)$(DAU):015:Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):015:DAC.DESC PP")
+}
+
+record(ai, "$(P)$(DAU):016:DAC")
+{
+    alias("$(P)$(DAU):016")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 VAL:016")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+record(ao, "$(P)$(DAU):016:DAC_Set")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@net1 VAL:016")
+    field(PREC, "4")
+    field(FLNK, "$(P)$(DAU):016:DAC")
+}
+record(stringin, "$(P)$(DAU):016:Unit")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 UNIT:016")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):016:ChStatus")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@net1 CH_STATUS:016")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+record(mbbi,"$(P)$(DAU):016:ChMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 CH_MODE:016")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Trans")
+    field(ONVL, "1")
+    field(ONST, "Comm")
+    field(TWVL, "2")
+    field(TWST, "Skip")
+    field(THVL, "3")
+    field(THST, "Unknown")
+}
+record(ao, "$(P)$(DAU):016:DAC_TweakVal") 
+{
+    field(PREC,"3")
+}
+record(calcout, "$(P)$(DAU):016:DAC_TweakFwd") {
+    field( INPA, "$(P)$(DAU):016:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):016:DAC_TweakVal NPP NMS")
+    field( CALC, "A+B")
+    field( OUT,  "$(P)$(DAU):016:DAC_Set PP NMS")
+}
+record(calcout, "$(P)$(DAU):016:DAC_TweakBkwd") {
+    field( INPA, "$(P)$(DAU):016:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):016:DAC_TweakVal NPP NMS")
+    field( CALC, "A-B")
+    field( OUT,  "$(P)$(DAU):016:DAC_Set PP NMS")
+}
+record(stringout,"$(P)$(DAU):016:Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):016:DAC.DESC PP")
+}
+
+record(ai, "$(P)$(DAU):017:DAC")
+{
+    alias("$(P)$(DAU):017")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 VAL:017")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+record(ao, "$(P)$(DAU):017:DAC_Set")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@net1 VAL:017")
+    field(PREC, "4")
+    field(FLNK, "$(P)$(DAU):017:DAC")
+}
+record(stringin, "$(P)$(DAU):017:Unit")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 UNIT:017")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):017:ChStatus")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@net1 CH_STATUS:017")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+record(mbbi,"$(P)$(DAU):017:ChMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 CH_MODE:017")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Trans")
+    field(ONVL, "1")
+    field(ONST, "Comm")
+    field(TWVL, "2")
+    field(TWST, "Skip")
+    field(THVL, "3")
+    field(THST, "Unknown")
+}
+record(ao, "$(P)$(DAU):017:DAC_TweakVal") 
+{
+    field(PREC,"3")
+}
+record(calcout, "$(P)$(DAU):017:DAC_TweakFwd") {
+    field( INPA, "$(P)$(DAU):017:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):017:DAC_TweakVal NPP NMS")
+    field( CALC, "A+B")
+    field( OUT,  "$(P)$(DAU):017:DAC_Set PP NMS")
+}
+record(calcout, "$(P)$(DAU):017:DAC_TweakBkwd") {
+    field( INPA, "$(P)$(DAU):017:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):017:DAC_TweakVal NPP NMS")
+    field( CALC, "A-B")
+    field( OUT,  "$(P)$(DAU):017:DAC_Set PP NMS")
+}
+record(stringout,"$(P)$(DAU):017:Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):017:DAC.DESC PP")
+}
+
+record(ai, "$(P)$(DAU):018:DAC")
+{
+    alias("$(P)$(DAU):018")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 VAL:018")
+    field(SCAN, "I/O Intr")
+    field(PREC, "4")
+}
+record(ao, "$(P)$(DAU):018:DAC_Set")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@net1 VAL:018")
+    field(PREC, "4")
+    field(FLNK, "$(P)$(DAU):018:DAC")
+}
+record(stringin, "$(P)$(DAU):018:Unit")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 UNIT:018")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):018:ChStatus")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@net1 CH_STATUS:018")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+record(mbbi,"$(P)$(DAU):018:ChMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@net1 CH_MODE:018")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Trans")
+    field(ONVL, "1")
+    field(ONST, "Comm")
+    field(TWVL, "2")
+    field(TWST, "Skip")
+    field(THVL, "3")
+    field(THST, "Unknown")
+}
+record(ao, "$(P)$(DAU):018:DAC_TweakVal") 
+{
+    field(PREC,"3")
+}
+record(calcout, "$(P)$(DAU):018:DAC_TweakFwd") {
+    field( INPA, "$(P)$(DAU):018:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):018:DAC_TweakVal NPP NMS")
+    field( CALC, "A+B")
+    field( OUT,  "$(P)$(DAU):018:DAC_Set PP NMS")
+}
+record(calcout, "$(P)$(DAU):018:DAC_TweakBkwd") {
+    field( INPA, "$(P)$(DAU):018:DAC_Set NPP NMS")
+    field( INPB, "$(P)$(DAU):018:DAC_TweakVal NPP NMS")
+    field( CALC, "A-B")
+    field( OUT,  "$(P)$(DAU):018:DAC_Set PP NMS")
+}
+record(stringout,"$(P)$(DAU):018:Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):018:DAC.DESC PP")
+}
+

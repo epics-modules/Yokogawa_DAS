@@ -2,51 +2,53 @@ TOP=../..
 
 include $(TOP)/configure/CONFIG
 #----------------------------------------
-#  ADD MACRO DEFINITIONS AFTER THIS LINE
+#  ADD MACRO DEFINITIONS BELOW HERE
 
-#=============================
-# Build the IOC support library
-
+# Build an IOC support library
 LIBRARY_IOC += mw100
 
+# xxxRecord.h will be created from xxxRecord.dbd
+#DBDINC += xxxRecord
 
-DBD += drvAsynMW100.dbd
+# Install xxxSupport.dbd into <top>/dbd
 DBD += mw100Support.dbd
 
-mw100_SRCS += drvAsynMW100.cpp
+# Compile and add the code to the support library
+mw100_SRCS += devMW100_common.c
+mw100_SRCS += devMW100_ai.c
+mw100_SRCS += devMW100_ao.c
+mw100_SRCS += devMW100_bi.c
+mw100_SRCS += devMW100_bo.c
+mw100_SRCS += devMW100_mbbi.c
+mw100_SRCS += devMW100_mbbo.c
+mw100_SRCS += devMW100_stringin.c
+mw100_SRCS += drvMW100.c
 
-mw100_LIBS += asyn
 mw100_LIBS += $(EPICS_BASE_IOC_LIBS)
 
-#=============================
 # Build the IOC application
+PROD_IOC = mw100ex
+# mw100ex.dbd will be created and installed
+DBD += mw100ex.dbd
 
-PROD_IOC = mw100Ex
+# mw100ex.dbd will include these files:
+mw100ex_DBD += base.dbd
+mw100ex_DBD += mw100Support.dbd
 
-DBD += mw100Ex.dbd
+# mw100_registerRecordDeviceDriver.cpp derives from mw100ex.dbd
+mw100ex_SRCS += mw100ex_registerRecordDeviceDriver.cpp
 
-mw100Ex_DBD += base.dbd
+# Build the main IOC entry point where needed
+mw100ex_SRCS_DEFAULT += mw100exMain.cpp
+mw100ex_SRCS_vxWorks += -nil-
 
-mw100Ex_DBD += asyn.dbd
-mw100Ex_DBD += drvAsynIPPort.dbd
+# Link in the code from our support library
+mw100ex_LIBS += mw100
 
-mw100Ex_DBD += drvAsynMW100.dbd
-
-mw100Ex_LIBS += mw100
-mw100Ex_LIBS += asyn
-
-mw100Ex_SRCS += mw100Ex_registerRecordDeviceDriver.cpp
-
-# Build the main IOC entry point on workstation OSs.
-mw100Ex_SRCS_DEFAULT += mw100Main.cpp
-mw100Ex_SRCS_vxWorks += -nil-
-
-# Finally link to the EPICS Base libraries
-mw100Ex_LIBS += $(EPICS_BASE_IOC_LIBS)
-
-#=============================
+# Finally link IOC to the EPICS Base libraries
+mw100ex_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 include $(TOP)/configure/RULES
 #----------------------------------------
-#  ADD RULES AFTER THIS LINE
+#  ADD EXTRA GNUMAKE RULES BELOW HERE
 

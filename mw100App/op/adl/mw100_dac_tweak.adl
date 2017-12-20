@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/DOHNARMS/epics_modules/hardware/Yokogawa_MW100/mw100/mw100App/op/adl/mw100_dac_tweak.adl"
+	name="/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/direct_mw100/mw100App/op/adl/mw100_dac_tweak.adl"
 	version=030107
 }
 display {
@@ -108,7 +108,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L):DAC_Unit"
+		chan="$(P)$(DAU):$(L):Unit"
 		clr=14
 		bclr=50
 	}
@@ -124,7 +124,7 @@ text {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):$(L):DAC"
+		chan="$(P)$(DAU):$(L):DAC_Set"
 		clr=14
 		bclr=55
 	}

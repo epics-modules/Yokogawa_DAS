@@ -1,17 +1,17 @@
 
 file {
-	name="/home/oxygen25/DOHNARMS/controls/epics/Yokogawa_MW100/mw100/mw100App/op/adl/test.adl"
-	version=030107
+	name="module_desc.adl"
+	version=030111
 }
 display {
 	object {
-		x=1118
-		y=87
+		x=1413
+		y=576
 		width=400
-		height=150
+		height=160
 	}
 	clr=14
-	bclr=4
+	bclr=1
 	cmap=""
 	gridSpacing=5
 	gridOn=0
@@ -87,58 +87,87 @@ display {
 		1a7309,
 	}
 }
-"related display" {
+text {
 	object {
-		x=135
-		y=45
-		width=20
+		x=15
+		y=5
+		width=250
 		height=20
 	}
-	display[0] {
-		label="Main screen"
-		name="mw100_main.adl"
-		args="P=mw100:,DAU=dau1"
+	"basic attribute" {
+		clr=54
 	}
-	clr=0
-	bclr=64
+	textix="Module Descriptions"
 }
 text {
 	object {
-		x=90
-		y=45
-		width=40
-		height=20
+		x=15
+		y=30
+		width=360
+		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Main"
-}
-"related display" {
-	object {
-		x=135
-		y=90
-		width=20
-		height=20
-	}
-	display[1] {
-		label="asyn record"
-		name="asynOctet.adl"
-		args="P=mw100:,R=asyn_dau1"
-	}
-	clr=0
-	bclr=64
+	textix="MX110 - analog input : ADC and thermocouples"
 }
 text {
 	object {
-		x=90
-		y=90
-		width=40
-		height=20
+		x=15
+		y=50
+		width=360
+		height=16
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="Asyn Record"
-	align="horiz. right"
+	textix="MX112 - analog input : Strain gauges"
+}
+text {
+	object {
+		x=15
+		y=70
+		width=360
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MX114 - integer digital input : Pulse counter"
+}
+text {
+	object {
+		x=15
+		y=90
+		width=360
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MX115 - binary digital input : Logic"
+}
+text {
+	object {
+		x=15
+		y=110
+		width=360
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MX120 - analog output : DAC in mA and V"
+}
+text {
+	object {
+		x=15
+		y=130
+		width=360
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MX125 - binary digital output : Relays"
 }

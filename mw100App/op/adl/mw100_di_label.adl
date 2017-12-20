@@ -1,14 +1,14 @@
 
 file {
-	name="/home/oxygen/DOHNARMS/epics_modules/hardware/Yokogawa_MW100/mw100/mw100App/op/adl/mw100_di_label.adl"
-	version=030107
+	name="/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/direct_mw100/mw100App/op/adl/mw100_di_label.adl"
+	version=030111
 }
 display {
 	object {
-		x=849
-		y=171
-		width=435
-		height=330
+		x=722
+		y=449
+		width=380
+		height=335
 	}
 	clr=14
 	bclr=3
@@ -89,9 +89,9 @@ display {
 }
 text {
 	object {
-		x=160
+		x=100
 		y=5
-		width=100
+		width=150
 		height=20
 	}
 	"basic attribute" {
@@ -100,660 +100,11 @@ text {
 	textix="$(P)$(DAU) DIs"
 	align="horiz. centered"
 }
-text {
-	object {
-		x=165
-		y=50
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L1)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=165
-		y=75
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L2)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=165
-		y=100
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L3)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=165
-		y=125
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L4)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=165
-		y=150
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L5)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=165
-		y=175
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L6)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=165
-		y=200
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L7)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=165
-		y=225
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L8)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=165
-		y=250
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L9)"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=165
-		y=275
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(L10)"
-	align="horiz. centered"
-}
-"text update" {
-	object {
-		x=270
-		y=275
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L10):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=270
-		y=250
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L9):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=50
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L1):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=75
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L2):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=100
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L3):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=125
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L4):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=150
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L5):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=175
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L6):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=200
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L7):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=225
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L8):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=250
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L9):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=200
-		y=275
-		width=60
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L10):DI_Status"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=270
-		y=225
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L8):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=270
-		y=200
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L7):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=270
-		y=175
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L6):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=270
-		y=150
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L5):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=270
-		y=125
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L4):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=270
-		y=100
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L3):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=270
-		y=75
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L2):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=270
-		y=50
-		width=50
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L1):DI"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=50
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L1):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=75
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L2):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=100
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L3):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=125
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L4):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=150
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L5):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=175
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L6):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=200
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L7):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=225
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L8):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=250
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L9):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-"text update" {
-	object {
-		x=330
-		y=275
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):$(L10):DI_Alarm"
-		clr=14
-		bclr=51
-	}
-	align="horiz. centered"
-	limits {
-	}
-}
-text {
-	object {
-		x=350
-		y=30
-		width=50
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Alarm"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=270
-		y=30
-		width=50
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Value"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=205
-		y=30
-		width=50
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Status"
-	align="horiz. centered"
-}
 polyline {
 	object {
 		x=0
 		y=25
-		width=434
+		width=381
 		height=2
 	}
 	"basic attribute" {
@@ -762,14 +113,14 @@ polyline {
 	}
 	points {
 		(1,26)
-		(433,26)
+		(380,26)
 	}
 }
 polyline {
 	object {
 		x=0
-		y=300
-		width=434
+		y=304
+		width=381
 		height=2
 	}
 	"basic attribute" {
@@ -777,14 +128,14 @@ polyline {
 		width=2
 	}
 	points {
-		(1,301)
-		(433,301)
+		(1,305)
+		(380,305)
 	}
 }
 "related display" {
 	object {
-		x=390
-		y=305
+		x=333
+		y=310
 		width=40
 		height=20
 	}
@@ -800,7 +151,7 @@ polyline {
 text {
 	object {
 		x=5
-		y=305
+		y=310
 		width=120
 		height=20
 	}
@@ -816,7 +167,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=50
+		y=52
 		width=150
 		height=20
 	}
@@ -844,7 +195,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=75
+		y=77
 		width=150
 		height=20
 	}
@@ -859,7 +210,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=100
+		y=102
 		width=150
 		height=20
 	}
@@ -874,7 +225,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=125
+		y=127
 		width=150
 		height=20
 	}
@@ -889,7 +240,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=150
+		y=152
 		width=150
 		height=20
 	}
@@ -904,7 +255,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=175
+		y=177
 		width=150
 		height=20
 	}
@@ -919,7 +270,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=200
+		y=202
 		width=150
 		height=20
 	}
@@ -934,7 +285,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=225
+		y=227
 		width=150
 		height=20
 	}
@@ -949,7 +300,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=250
+		y=252
 		width=150
 		height=20
 	}
@@ -964,7 +315,7 @@ text {
 "text entry" {
 	object {
 		x=5
-		y=275
+		y=277
 		width=150
 		height=20
 	}
@@ -979,7 +330,7 @@ text {
 text {
 	object {
 		x=5
-		y=305
+		y=310
 		width=160
 		height=20
 	}
@@ -991,4 +342,986 @@ text {
 		chan="$(P)$(DAU):OpMode"
 	}
 	textix="Measurement Mode"
+}
+text {
+	object {
+		x=166
+		y=53
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L1)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=166
+		y=78
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L2)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=166
+		y=103
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L3)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=166
+		y=128
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L4)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=166
+		y=153
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L5)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=166
+		y=178
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L6)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=166
+		y=203
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L7)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=166
+		y=228
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L8)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=166
+		y=253
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L9)"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=166
+		y=278
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(L10)"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=271
+		y=278
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L10):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=271
+		y=253
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L9):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=53
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L1):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=78
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L2):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=103
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L3):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=128
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L4):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=153
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L5):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=178
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L6):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=203
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L7):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=228
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L8):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=253
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L9):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=201
+		y=278
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L10):ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=271
+		y=228
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L8):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=271
+		y=203
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L7):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=271
+		y=178
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L6):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=271
+		y=153
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L5):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=271
+		y=128
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L4):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=271
+		y=103
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L3):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=271
+		y=78
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L2):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=271
+		y=53
+		width=50
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(L1):DI"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=355
+		y=53
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L1)"
+	}
+	clr=0
+	bclr=64
+}
+oval {
+	object {
+		x=328
+		y=53
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L1):AlarmStatus"
+	}
+}
+"related display" {
+	object {
+		x=355
+		y=78
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L2)"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=355
+		y=103
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L3)"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=355
+		y=128
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L4)"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=355
+		y=153
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L5)"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=355
+		y=178
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L6)"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=355
+		y=203
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L7)"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=355
+		y=228
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L8)"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=355
+		y=253
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L9)"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=355
+		y=278
+		width=20
+		height=20
+	}
+	display[1] {
+		label="More"
+		name="mw100_di_single.adl"
+		args="P=$(P),DAU=$(DAU),CH=$(L10)"
+	}
+	clr=0
+	bclr=64
+}
+oval {
+	object {
+		x=328
+		y=78
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L2):AlarmStatus"
+	}
+}
+oval {
+	object {
+		x=328
+		y=103
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L3):AlarmStatus"
+	}
+}
+oval {
+	object {
+		x=328
+		y=128
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L4):AlarmStatus"
+	}
+}
+oval {
+	object {
+		x=328
+		y=153
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L5):AlarmStatus"
+	}
+}
+oval {
+	object {
+		x=328
+		y=178
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L6):AlarmStatus"
+	}
+}
+oval {
+	object {
+		x=328
+		y=203
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L7):AlarmStatus"
+	}
+}
+oval {
+	object {
+		x=328
+		y=228
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L8):AlarmStatus"
+	}
+}
+oval {
+	object {
+		x=328
+		y=253
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L9):AlarmStatus"
+	}
+}
+oval {
+	object {
+		x=328
+		y=278
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=30
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		chan="$(P)$(DAU):$(L10):AlarmStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=51
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L1):ValStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=76
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L2):ValStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=101
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L3):ValStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=126
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L4):ValStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=151
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L5):ValStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=176
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L6):ValStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=201
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L7):ValStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=226
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L8):ValStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=251
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L9):ValStatus"
+	}
+}
+rectangle {
+	object {
+		x=269
+		y=276
+		width=54
+		height=24
+	}
+	"basic attribute" {
+		clr=20
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		clr="alarm"
+		vis="if not zero"
+		chan="$(P)$(DAU):$(L10):ValStatus"
+	}
+}
+text {
+	object {
+		x=1041
+		y=102
+		width=253
+		height=68
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Mode"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=270
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Value"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=328
+		y=30
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="AL"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=205
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Status"
+	align="horiz. centered"
 }
