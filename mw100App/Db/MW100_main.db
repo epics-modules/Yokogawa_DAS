@@ -154,7 +154,7 @@ record(bi,"$(P)$(DAU):Computation")
 record(mbbo,"$(P)$(DAU):ComputationSet")
 {
     field(DTYP, "Yokogawa MW100")
-    field(OUT,  "@net1 COMPUTE_SET")
+    field(OUT,  "@net1 COMPUTE_CMD")
     field(ZRST, "Start")
     field(ZRVL, "0")
     field(ONST, "Stop") 
