@@ -1,0 +1,841 @@
+4 0 0
+beginScreenProperties
+major 4
+minor 0
+release 0
+x 860
+y 283
+w 300
+h 300
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-8.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 30
+ctlFgColor2 index 32
+ctlBgColor1 index 34
+ctlBgColor2 index 35
+topShadowColor index 37
+botShadowColor index 44
+snapToGrid
+gridSize 5
+endScreenProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 27
+y 5
+w 250
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "Yokogawa MW100 $(P)$(DAU)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 14
+y 128
+w 150
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+useDisplayBg
+value {
+ "Operating Mode"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 169
+y 128
+w 100
+h 16
+controlPv "$(P)$(DAU):OpMode"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 44
+y 179
+w 120
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+useDisplayBg
+value {
+ "Computation"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 174
+y 184
+w 100
+h 16
+controlPv "$(P)$(DAU):Computation"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 11
+y 40
+w 80
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+useDisplayBg
+value {
+ "Hardware"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 11
+y 94
+w 80
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+useDisplayBg
+value {
+ "Math"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 270
+w 281
+h 2
+lineColor index 44
+fillColor index 44
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 11
+1 290
+}
+yPoints  {
+0 271
+1 271
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 14
+y 275
+w 150
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 21
+useDisplayBg
+value {
+ "Error Message"
+}
+visPv "CALC\\\{(A)\}($(P)$(DAU):ErrorFlag)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x -50
+y 30
+w 399
+h 2
+lineColor index 44
+fillColor index 44
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 -49
+1 348
+}
+yPoints  {
+0 31
+1 31
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 112
+y 150
+w 175
+h 20
+
+beginGroup
+
+
+endGroup
+
+visPv "CALC\\\{(A)\}($(P)$(DAU):Computation)"
+visMin 0
+visMax 1
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 30
+y 205
+w 255
+h 20
+
+beginGroup
+
+
+endGroup
+
+visPv "CALC\\\{(A)\}($(P)$(DAU):OpMode)"
+visMin 0
+visMax 1
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 60
+y 240
+w 50
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+useDisplayBg
+value {
+ "Alarm"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 230
+w 281
+h 2
+lineColor index 44
+fillColor index 44
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 11
+1 290
+}
+yPoints  {
+0 231
+1 231
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 26
+y 241
+w 18
+h 18
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 0
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):AlarmFlag"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 99
+y 62
+w 60
+h 20
+fgColor index 0
+bgColor index 64
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "DAC"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 mw100_dac.edl
+}
+menuLabel {
+  0 DAC 011-020
+}
+symbols {
+  0 "P=$(P),DAU=$(DAU),L1=011,L2=012,L3=013,L4=014,L5=015,L6=016,L7=017,L8=018"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 99
+y 40
+w 60
+h 20
+fgColor index 0
+bgColor index 64
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "ADC"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 mw100_adc.edl
+}
+menuLabel {
+  0 ADC 001-010
+}
+symbols {
+  0 "P=$(P),DAU=$(DAU),L1=001,L2=002,L3=003,L4=004,L5=005,L6=006,L7=007,L8=008,L9=009,L10=010"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 161
+y 62
+w 60
+h 20
+fgColor index 0
+bgColor index 64
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "Relay"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 mw100_relay.edl
+}
+menuLabel {
+  0 Relay 021-030
+}
+symbols {
+  0 "P=$(P),DAU=$(DAU),L1=021,L2=022,L3=023,L4=024,L5=025,L6=026,L7=027,L8=028,L9=029,L10=030"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 161
+y 40
+w 60
+h 20
+fgColor index 0
+bgColor index 64
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "DI"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 mw100_di.edl
+}
+menuLabel {
+  0 DI 021-030
+}
+symbols {
+  0 "P=$(P),DAU=$(DAU),L1=021,L2=022,L3=023,L4=024,L5=025,L6=026,L7=027,L8=028,L9=029,L10=030"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 94
+w 60
+h 20
+fgColor index 0
+bgColor index 64
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "Calc"
+numPvs 12
+numDsps 6
+displayFileName {
+  0 mw100_math.edl
+  1 mw100_math.edl
+  2 mw100_math.edl
+  3 mw100_math.edl
+  4 mw100_math.edl
+  5 mw100_math.edl
+}
+menuLabel {
+  0 A001-A010
+  1 A011-A020
+  2 A021-A030
+  3 A031-A040
+  4 A041-A050
+  5 A051-A060
+}
+symbols {
+  0 "P=$(P),DAU=$(DAU),L1=A001,L2=A002,L3=A003,L4=A004,L5=A005,L6=A006,L7=A007,L8=A008,L9=A009,L10=A010"
+  1 "P=$(P),DAU=$(DAU),L1=A011,L2=A012,L3=A013,L4=A014,L5=A015,L6=A016,L7=A017,L8=A018,L9=A019,L10=A020"
+  2 "P=$(P),DAU=$(DAU),L1=A021,L2=A022,L3=A023,L4=A024,L5=A025,L6=A026,L7=A027,L8=A028,L9=A029,L10=A030"
+  3 "P=$(P),DAU=$(DAU),L1=A031,L2=A032,L3=A033,L4=A034,L5=A035,L6=A036,L7=A037,L8=A038,L9=A039,L10=A040"
+  4 "P=$(P),DAU=$(DAU),L1=A041,L2=A042,L3=A043,L4=A044,L5=A045,L6=A046,L7=A047,L8=A048,L9=A049,L10=A050"
+  5 "P=$(P),DAU=$(DAU),L1=A051,L2=A052,L3=A053,L4=A054,L5=A055,L6=A056,L7=A057,L8=A058,L9=A059,L10=A060"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 99
+y 94
+w 60
+h 20
+fgColor index 0
+bgColor index 64
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "Inputs"
+numPvs 12
+numDsps 6
+displayFileName {
+  0 mw100_comm_input.edl
+  1 mw100_comm_input.edl
+  2 mw100_comm_input.edl
+  3 mw100_comm_input.edl
+  4 mw100_comm_input.edl
+  5 mw100_comm_input.edl
+}
+menuLabel {
+  0 Comm Input C001-C010
+  1 Comm Input C011-C020
+  2 Comm Input C021-C030
+  3 Comm Input C031-C040
+  4 Comm Input C041-C050
+  5 Comm Input C051-C060
+}
+symbols {
+  0 "P=$(P),DAU=$(DAU),L1=C001,L2=C002,L3=C003,L4=C004,L5=C005,L6=C006,L7=C007,L8=C008,L9=C009,L10=C010"
+  1 "P=$(P),DAU=$(DAU),L1=C011,L2=C012,L3=C013,L4=C014,L5=C015,L6=C016,L7=C017,L8=C018,L9=C019,L10=C020"
+  2 "P=$(P),DAU=$(DAU),L1=C021,L2=C022,L3=C023,L4=C024,L5=C025,L6=C026,L7=C027,L8=C028,L9=C029,L10=C030"
+  3 "P=$(P),DAU=$(DAU),L1=C031,L2=C032,L3=C033,L4=C034,L5=C035,L6=C036,L7=C037,L8=C038,L9=C039,L10=C040"
+  4 "P=$(P),DAU=$(DAU),L1=C041,L2=C042,L3=C043,L4=C044,L5=C045,L6=C046,L7=C047,L8=C048,L9=C049,L10=C050"
+  5 "P=$(P),DAU=$(DAU),L1=C051,L2=C052,L3=C053,L4=C054,L5=C055,L6=C056,L7=C057,L8=C058,L9=C059,L10=C060"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 225
+y 275
+w 60
+h 20
+fgColor index 0
+bgColor index 64
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "System"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 mw100_system.edl
+}
+menuLabel {
+  0 System
+}
+symbols {
+  0 "P=$(P),DAU=$(DAU)"
+}
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 112
+y 150
+w 175
+h 20
+
+beginGroup
+
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 202
+y 150
+w 85
+h 20
+fgColor index 14
+onColor index 55
+offColor index 55
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(P)$(DAU):OpModeSet"
+pressValue "1"
+releaseValue 
+onLabel "Settings"
+offLabel "Settings"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 112
+y 150
+w 85
+h 20
+fgColor index 14
+onColor index 55
+offColor index 55
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(P)$(DAU):OpModeSet"
+pressValue "0"
+releaseValue 
+onLabel "Measurement"
+offLabel "Measurement"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+visPv "CALC\\\{(A)\}($(P)$(DAU):Computation)"
+visMin 0
+visMax 1
+endObjectProperties
+
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 229
+y 94
+w 60
+h 20
+fgColor index 0
+bgColor index 64
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "Const"
+numPvs 12
+numDsps 6
+displayFileName {
+  0 mw100_constant.edl
+  1 mw100_constant.edl
+  2 mw100_constant.edl
+  3 mw100_constant.edl
+  4 mw100_constant.edl
+  5 mw100_constant.edl
+}
+menuLabel {
+  0 Constants K01-K10
+  1 Constants K11-K20
+  2 Constants K21-K30
+  3 Constants K31-K40
+  4 Constants K41-K50
+  5 Constants K51-K60
+}
+symbols {
+  0 "P=$(P),DAU=$(DAU),L1=K01,L2=K02,L3=K03,L4=K04,L5=K05,L6=K06,L7=K07,L8=K08,L9=K09,L10=K10"
+  1 "P=$(P),DAU=$(DAU),L1=K11,L2=K12,L3=K13,L4=K14,L5=K15,L6=K16,L7=K17,L8=K18,L9=K19,L10=K20"
+  2 "P=$(P),DAU=$(DAU),L1=K21,L2=K22,L3=K23,L4=K24,L5=K25,L6=K26,L7=K27,L8=K28,L9=K29,L10=K30"
+  3 "P=$(P),DAU=$(DAU),L1=K31,L2=K32,L3=K33,L4=K34,L5=K35,L6=K36,L7=K37,L8=K38,L9=K39,L10=K40"
+  4 "P=$(P),DAU=$(DAU),L1=K41,L2=K42,L3=K43,L4=K44,L5=K45,L6=K46,L7=K47,L8=K48,L9=K49,L10=K50"
+  5 "P=$(P),DAU=$(DAU),L1=K51,L2=K52,L3=K53,L4=K54,L5=K55,L6=K56,L7=K57,L8=K58,L9=K59,L10=K60"
+}
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 30
+y 205
+w 255
+h 20
+
+beginGroup
+
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 30
+y 205
+w 60
+h 20
+fgColor index 14
+onColor index 55
+offColor index 55
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(P)$(DAU):ComputationSet"
+pressValue "1"
+releaseValue 
+onLabel "Stop"
+offLabel "Stop"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 95
+y 205
+w 60
+h 20
+fgColor index 14
+onColor index 55
+offColor index 55
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(P)$(DAU):ComputationSet"
+pressValue "0"
+releaseValue 
+onLabel "Start"
+offLabel "Start"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 160
+y 205
+w 60
+h 20
+fgColor index 14
+onColor index 55
+offColor index 55
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(P)$(DAU):ComputationSet"
+pressValue "2"
+releaseValue 
+onLabel "Reset"
+offLabel "Reset"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 225
+y 205
+w 60
+h 20
+fgColor index 14
+onColor index 55
+offColor index 55
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(P)$(DAU):ComputationSet"
+pressValue "3"
+releaseValue 
+onLabel "Clear"
+offLabel "Clear"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+endGroup
+
+visPv "CALC\\\{(A)\}($(P)$(DAU):OpMode)"
+visMin 0
+visMax 1
+endObjectProperties
+
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 135
+y 240
+w 100
+h 20
+fgColor index 14
+onColor index 32
+offColor index 32
+topShadowColor index 0
+botShadowColor index 14
+controlPv "$(P)$(DAU):AlarmAck.PROC"
+pressValue "1"
+releaseValue 
+onLabel "Acknowledge"
+offLabel "Acknowledge"
+3d
+useEnumNumeric
+font "helvetica-medium-r-10.0"
+endObjectProperties
+

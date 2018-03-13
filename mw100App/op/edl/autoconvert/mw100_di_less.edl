@@ -1,0 +1,1044 @@
+4 0 0
+beginScreenProperties
+major 4
+minor 0
+release 0
+x 1451
+y 406
+w 240
+h 190
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-8.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 3
+textColor index 14
+ctlFgColor1 index 30
+ctlFgColor2 index 32
+ctlBgColor1 index 34
+ctlBgColor2 index 35
+topShadowColor index 37
+botShadowColor index 44
+snapToGrid
+gridSize 5
+endScreenProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 5
+w 150
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(P)$(DAU) DIs"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 35
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L1)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 60
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L2)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 85
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L3)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 110
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L4)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 135
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L5)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 125
+y 35
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L6)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 125
+y 60
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L7)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 125
+y 85
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L8)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 125
+y 110
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L9)"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 125
+y 135
+w 30
+h 20
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor index 14
+useDisplayBg
+value {
+ "$(L10)"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 26
+w 239
+h 2
+lineColor index 44
+fillColor index 44
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 1
+1 238
+}
+yPoints  {
+0 27
+1 27
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 120
+y 25
+w 1
+h 134
+lineColor index 44
+fillColor index 44
+numPoints 2 {
+xPoints  {
+0 120
+1 120
+}
+yPoints  {
+0 25
+1 158
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 160
+w 239
+h 2
+lineColor index 44
+fillColor index 44
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 1
+1 238
+}
+yPoints  {
+0 161
+1 161
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 165
+w 120
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 21
+useDisplayBg
+value {
+ "Setting Mode"
+}
+visPv "CALC\\\{(A)\}($(P)$(DAU):OpMode)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 5
+y 165
+w 120
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 15
+useDisplayBg
+value {
+ "Measure Mode"
+}
+visPv "CALC\\\{(A)\}($(P)$(DAU):OpMode)"
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 35
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L1):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 97
+y 37
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L1):AlarmStatus"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 60
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L2):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 97
+y 62
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L2):AlarmStatus"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 85
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L3):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 97
+y 87
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L3):AlarmStatus"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 97
+y 112
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L4):AlarmStatus"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 110
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L4):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 40
+y 135
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L5):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 97
+y 137
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L5):AlarmStatus"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 160
+y 35
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L6):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 217
+y 37
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L6):AlarmStatus"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 160
+y 60
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L7):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 217
+y 62
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L7):AlarmStatus"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 160
+y 85
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L8):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 217
+y 87
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L8):AlarmStatus"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 160
+y 110
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L9):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 217
+y 112
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L9):AlarmStatus"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 160
+y 135
+w 50
+h 20
+controlPv "$(P)$(DAU):$(L10):DI"
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+smartRefresh
+fastUpdate
+fgColor index 14
+bgColor index 50
+autoHeight
+format decimal
+nullColor index 32
+useHexPrefix
+objType "controls"
+newPos
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 217
+y 137
+w 16
+h 16
+lineColor index 30
+fill
+fillColor index 30
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv "$(P)$(DAU):$(L10):AlarmStatus"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 34
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L1):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L1):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 59
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L2):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L2):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 84
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L3):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L3):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 109
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L4):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L4):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 39
+y 134
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L5):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L5):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 159
+y 34
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L6):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L6):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 159
+y 59
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L7):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L7):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 159
+y 84
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L8):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L8):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 159
+y 109
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L9):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L9):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 159
+y 134
+w 52
+h 22
+lineColor index 20
+fillColor index 20
+lineWidth 2
+fillAlarm
+lineAlarm
+alarmPv $(P)$(DAU):$(L10):ValStatus
+visPv "CALC\\\{(A)\}($(P)$(DAU):$(L10):ValStatus)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 195
+y 165
+w 40
+h 20
+fgColor index 0
+bgColor index 64
+topShadowColor index 2
+botShadowColor index 12
+font "helvetica-medium-r-10.0"
+buttonLabel "More"
+numPvs 2
+numDsps 1
+displayFileName {
+  0 mw100_di.edl
+}
+menuLabel {
+  0 
+}
+symbols {
+  0 "P=$(P),DAU=$(DAU),L1=$(L1),L2=$(L2),L3=$(L3),L4=$(L4),L5=$(L5),L6=$(L6),L7=$(L7),L8=$(L8),L9=$(L9),L10=$(L10)"
+}
+closeAction {
+  0 1
+}
+closeDisplay {
+  0 1
+}
+endObjectProperties
+
