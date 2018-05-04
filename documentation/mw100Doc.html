@@ -10,12 +10,15 @@ content="text/html; charset=iso-8859-1">
 
 <h1 align="center">mw100 module Documentation</h1>
 
-<P><a href="mw100ReleaseNotes.html">Release Notes</a>
+<p><big><a href="mw100ReleaseNotes.html">Release Notes</big></a>
+</p>
 
+<p>
 This module supports the Yokogawa MW100 Digital Acquisition Unit, and
 depends on the /M1 math option.  It was written for Linux IOCs, while
 others might work as well.
-
+</p>
+<p>
 This device uses a network interface to communicate, and has a modular
 design to allow the mixing of DAC, ADC, relay, TTL, and other modules.
 It is also an industrial device primarily used for monitoring, so its
@@ -28,28 +31,35 @@ no attempt made to utilize the full capability of the device from
 EPICS, although the device can be simultaneously controlled by vendor
 software or the built-in web server, as it supports multiple
 simultaneous and independent connections.
-
-I assume that the support works for all modules, but this has been
-tested only with the following: MX110-UNV-M10, MX115-D05-H10,
-MX120-VAO-M08, and MX125-MKC-M10.
+</p>
+<p>
+I have not added support for the pulse counting modules (114 series), as I
+have no access to one.  Other than those, I assume that the support
+works for all the other modules, but this has been tested only with
+the following: MX110-UNV-M10, MX115-D05-H10, MX120-VAO-M08, and
+MX125-MKC-M10.
+</p>
 
 <h2>Channel descriptions</h2>
 
+<p>
 The MW100 can handle up to 60 measurement channels, referred to as
 channels 001-060.  The math option adds 300 computation channels
 (A001-A300), 300 communication input channels (C001-C300), and 60
 constant channels (K01-K60).
-
+</p>
+<p>
 The module bus can have up to 6 modules on it.  The maximum number
 of I/O channels for the MW100 is 60 (referred to as channels 001-060),
 with a maximum of 10 channels per modules.  Each module has a
 dedicated slice of the 60 channels, with the first module owning
 001-010, the second owning 011-020, etc.  The first module is the one
 closest to the main module.
-
+</p>
 
 <h2>Setting up the unit</h2>
 
+<p>
 Due to the complexity of the MW100, the configuration of the unit
 currently needs to be done through its web interface.  This includes
 not only service configuration, but also channel configuration.  The
@@ -60,96 +70,434 @@ computations are stopped, while all data acquisition is done in the
 can be toggled from EPICS or through the native web server.  So to do
 configuration changes, make sure the unit is in Settings mode and do
 the changes through the web server.
-
+</p>
+<p>
 Upon getting the unit, get it on your network, as described in the
 manual.
-
+</p>
+<p>
 Plug your modules into the module bus, realizing that each module
-location to the left of the main module oper
-
+location to the left of the main module has an address starting at
+1,and increases as you go left.
+</p>
 
 
 <h2>Operation</h2>
 
+<p>
 Once the unit is configured and running on the network, the EPICS
-support in this module will work for reading data while in Measurement
-mode and calculations are enabled.
-
+support in this module will work for reading data while in measurement
+mode, and reading calculations when math is enabled.
+</p>
+<p>
 The default way the measurements are done is that there are two
 records that trigger reading all of the values on the device, one for
 input values (such as ADC and TTL) and another for output values (such
 as DAC and relay).  By default, both records use a time value in their
 SCAN fields to periodically poll values and put them into a cache, and
-the record for these values are set to <b>I/O Intr</b> which allow them to
-be updated by an interrupt call.  If a measurement record is decoupled
-from the master poll rates by setting their SCAN field to a time
-value, the data associated with a record will be retrieved with all
-the associated information put into the cache, and the new value will
-be returned; however, the associated status, unit, and alarm records
-for the measurement will return cached values only.  This means that
-to do read an independent channel is to read the measurement value,
-then forward link to all the associated records to grab the cached
-values from that read.  
-
-The operational status values also have a similar record for
-triggering periodic reads.  These values regard the mode the device is
-in, as well as if calculaions are enabled.
-
-There are calculations, communication inputs, and constants to be read
+the record for these values are set to <b>I/O Intr</b> which allow
+them to be updated by an interrupt call.  If a measurement record is
+decoupled from the master poll rates by setting their SCAN field to a
+time value, the measurement data associated with a record will be
+retrieved, with all the associated information (status and alarms) put
+into the cache, and the new value will be returned; however, the
+associated status and alarm records for the measurement will
+return cached values only.  This means that to do read an independent
+channel is to read the measurement value, then forward link to all the
+associated records to grab the cached values from that read.
+</p>
+<p>
+The device calculations, communication inputs, and constants are read
 by the pollers. The calculations (which need to be defined through the
 web interface) allow the transformation of measurements with the
 communication input values and predefined constants.  The first 60
 calculation channels allow for a long calculation (string length of
 120 characters), while the last 240 channels allow for short
 calculations (8 or 10 characters, depending on firmware version).
-
+</p>
+<p>
 When an error happpens, the error string is displayed, split into
 three 40-character string records.  The error can be cleared, which
 also clears it from the units LED display.
+</p>
 
 <h3>Modules</h3>
 
-The analog output modules are only directly controlled by EPICS if
-they are put into communication mode ("Comm. Input").  If a channel is
-put into the other mode ("Trans"), the value will still be read.
-
-The digital output modules (relays) are typically used in two modes.
-One is direct control from EPICS ("Comm. Input"), and the other is for
-it to be controlled by an alarm ("Alarm").  The two modes can not be
-used at the same time.
-
-The analog input modules have many configuration options, with one of
-the most useful is being configured as a thermocouple reader, giving a
-result through EPICS as a temperature value and units.
+<p>
+The analog output modules (120 series) are only directly controlled by
+EPICS if they are put into communication mode ("Comm. Input").  If a
+channel is put into the other mode ("Trans"), it is controlled by
+other MW100 channels, although the value can still be read by EPICS.
+</p>
+<p>
+The digital output modules (125 series) act as relays, and are
+typically used in one of two modes.  One is direct control from EPICS
+("Comm. Input"), and the other is for it to be controlled by a MW100
+alarm ("Alarm").
+</p>
+<p>
+The analog input modules (110 and 112 series) are of the typical
+voltage/current measuring or the strain gauge measuring types. The
+first type has many configuration options, such as configured as a
+thermocouple reader, giving a result through EPICS as a temperature
+value and units.
+</p>
+<p>
+The binary digital input modules (115 series) can be used to sense a
+circuit closure or a voltage level.
+</p>
+<p>
+The integer digital input modules are not implemented (the 114 series)
+at this time.
+</p>
 
 <h2>Records</h2>
 
+<p>
 There are currently 7 records supported for various purposes: ai, ao,
-bi, bo, mbbi, mbbo, and stringout.  When using them, <b>DTYP</b> needs
+bi, bo, mbbi, mbbo, and stringin.  When using them, <b>DTYP</b> needs
 to be set to "Yokogawa MW100".  For each instrument initialized with
 the driver, a handle is associated for use with record device support
-in the <b>INP</b> field.
+in the <b>INP</b> or the <b>OUT</b> field.  Record commands are also
+provided to determine the record function, and for record commands
+that can refer to multiple items or locations, addressing is used; a
+few commands also need sub-addressing.
+</p>
+<h3>Interrupts</h3>
 <p>
-For record commands that can refer to multiple items or locations,
-addressing is used.  Certain commands also need sub-addressing.
+The input records will let you use interrupt scan mode (I/O Intr), and
+there are several interrupts used.  The first four interrupts can be
+indirectly invoked after causing a read with their TRIG commands,
+although only the first three are necessary, as an information read is
+typically called when the status read notices a mode change into
+measurements mode.
+<ul>
+  <li><b>Input</b> - This interrupt is called after reading the input
+    channels: input modules and calculation addresses.
+  <li><b>Output</b> - This interrupt is called after reading the
+    output channels: output modules, communication addresses, and
+    constant addresses.
+  <li><b>Status</b> - This interrupt is called after reading the
+    operational statuses of the MW100.
+  <li><b>Information</b> - This interrupt is called after reading the
+    MW100 and channel information that can't be changed during
+    measurement mode.
+  <li><b>Error</b> - This interrupt is called after the error state of
+  the MW100 occurs.
+</ul>
+
+Input
+Output
+Status
+
+Information
+Error
+
+</p>
 <p>
-The general format of the <b>INP</b> field is one of the following:
+<h3>INP and OUT format</h3>
+The general format of the <b>INP</b> or <b>OUT</b> field is one of the
+following.
 <ul>
   <li>"@handle command"
   <li>"@handle command:address"
   <li>"@handle command:address.sub_address"
 </ul>
-
-Here's a summary of the commands:
+</p>
+<p>
+<h3>Addresses</h3> The type of address needed depends on the record,
+but here are all the options.  The format of the addresses comes
+directly from the MW100, and this is how they are used internally.
+<ul>
+  <li>Hardware addresses: <b>001-060</b><br>
+  Each module (of the six possible modules) can use at most ten hardware
+  addresses.  Module 1 uses addresses 001-010, etc.
+  <li>Calculation addresses: <b>A001-A300 </b>
+  <li>Communication addresses: <b>C001-C300 </b>
+  <li>Constant addresses: <b>K01-K60 </b>
+</ul>
+</p>
+<p>
+<h3>Commands</h3>
 <dl>
-  <dt><b>VAL</b></dt>
-  <dd>Requires address:
+  <dt><b>VAL</b> - Send or read a numeric value for a channel. Input
+  records are linked to either the input interrupt (input channels) or
+  the output interrupt (output channels).</dt>
+  <dd>
+    This command is associated with several record types.
     <ul>
-      <li>001-060
-      <li>A001-A0300
+      <li><b>bi record:</b> Uses hardware addresses for binary digital
+      input and output modules.
+      <li><b>bo record:</b> Uses hardware addresses for binary digital
+      output modules.
+      <li><b>ai record:</b> Uses hardware addresses for analog input and
+      output modules, as well as calculation, communication, and
+      contant addresses.
+      <li><b>ao record:</b> Uses hardware addresses for analog output
+      modules, as well as calculation, communication, and contant
+      addresses.
     </ul>
-</dd>
+  </dd>
+  <dt><b>VAL_STATUS</b> - Shows any special status for a value read
+    from a channel.  Records are linked to either the input interrupt
+    (input channels) or the output interrupt (output channels).
+  </dt>
+  <dd>
+    <b>mbbi record:</b> Uses any hardware or calculation
+    addresses.
+    <ul>
+      <li><b>0</b> - Normal
+      <li><b>1</b> - Overrange
+      <li><b>2</b> - Underrange
+      <li><b>3</b> - Skip/Off
+      <li><b>4</b> - Error
+      <li><b>5</b> - Value Uncertain
+    </ul>
+  </dd>
+  <dt><b>ALARMS</b> - Shows the alarms set for an input channel.
+    Records are linked to either the input interrupt (input channels)
+    or the output interrupt (output channels).
+  </dt>
+  <dd>
+    <b>mbbi record:</b> Uses any hardware or calculation
+    addresses.
+    <ul>
+      <li><b>0</b> - No Alarms
+      <li><b>1</b> - Alarm 1
+      <li><b>2</b> - Alarm 2
+      <li><b>3</b> - Alarms 1, 2
+      <li><b>4</b> - Alarm 3
+      <li><b>5</b> - Alarms 1, 3
+      <li><b>6</b> - Alarms 2, 3
+      <li><b>7</b> - Alarms 1, 2, 3
+      <li><b>8</b> - Alarm 4
+      <li><b>9</b> - Alarms 1, 4
+      <li><b>10</b> - Alarms 2, 4
+      <li><b>11</b> - Alarms 1, 2, 4
+      <li><b>12</b> - Alarms 3, 4
+      <li><b>13</b> - Alarms 1, 3, 4
+      <li><b>14</b> - Alarms 2, 3, 4
+      <li><b>15</b> - Alarms 1, 2, 3, 4
+    </ul>
+  </dd>
+  <dt><b>ALARM</b> - Shows the status for a particular alarm for an
+    input channel.  Records are linked to either the input interrupt
+    (input modules) or the output interrupt (output modules).
+  </dt>
+  <dd>
+    <b>mbbi record:</b> Uses any hardware or calculation addresses,
+    with sub-address of 1-4. The value definitions follow, although
+    the possible values for a record are actually determined by the
+    module and the channel mode.
+    <ul>
+      <li><b>0</b> - No Alarm
+      <li><b>1</b> - High Limit
+      <li><b>2</b> - Low Limit
+      <li><b>3</b> - Differential High Limit
+      <li><b>4</b> - Differential Low Limit
+      <li><b>5</b> - RoC High Limit
+      <li><b>6</b> - RoC Low Limit
+      <li><b>7</b> - Delay High Limit
+      <li><b>8</b> - Delay Low Limit
+    </ul>
+  </dd>
+  <dt><b>ALARM_FLAG</b> - Shows if an alarm for any channel is set.
+    Linked to input interrupt, as it is assumed to be set more often
+    than the output interrupt.
+  </dt>
+  <dd>
+    <b>bi record:</b> No address used.
+  </dd>
+  <dt><b>ALARM_ACK</b> - Tells MW100 to acknowledge alarms.  This record
+    just needs to be PROC'd to work.
+  </dt>
+  <dd>
+    <b>bo record:</b> No address used.
+  </dd>
+  <dt><b>CH_STATUS</b> - Shows the configuration for a channel.
+    Linked to information interrupt.
+  </dt>
+  <dd>
+    <b>mbbi record:</b> Uses any hardware or calculation
+    addresses.
+    <ul>
+      <li><b>0</b> - Skip
+      <li><b>1</b> - Normal
+      <li><b>2</b> - Differential
+    </ul>
+  </dd>
+  <dt><b>CH_MODE</b> - Shows the operational mode for a channel, which
+  is different each type of module (if it exists).  Linked to
+    information interrupt.
+  </dt>
+  <dd>
+    <b>mbbi record:</b> Uses hardware addresses for supported modules.
+    <dl>
+      <dt>Series <b>120</b> module (DAC)
+      </dt>
+      <dd>
+        <ul>
+          <li><b>0</b> - Skip
+          <li><b>1</b> - Trans
+          <li><b>2</b> - Communication
+        </ul>
+      </dd>
+    </dl>
+    <dl>
+      <dt>Series <b>125</b> module (relay)
+      </dt>
+      <dd>
+        <ul>
+          <li><b>0</b> - Skip
+          <li><b>1</b> - Alarm
+          <li><b>2</b> - Communication
+          <li><b>3</b> - Media
+          <li><b>4</b> - Failure
+          <li><b>5</b> - Error
+        </ul>
+      </dd>
+    </dl>
+
+  </dd>
+  <dt><b>UNIT</b> - Shows the unit for a channel.  Linked to
+    information interrupt.
+  </dt>
+  <dd>
+    <b>stringin record:</b> Uses any hardware or calculation
+    addresses.
+  </dd>
+  <dt><b>EXPR</b> - Shows the expression used for a calculation
+    channel.  Linked to information interrupt.
+  </dt>
+  <dd>
+    <b>stringin record:</b> Uses any calculation addresses.
+  </dd>
+
+  <dt><b>MODULE</b> - Shows the model string for a module.  Linked to
+    information interrupt.
+  </dt>
+  <dd>
+    <b>stringin record:</b> Uses address 1-6, corresponding to a module.
+  </dd>
+  <dt><b>IP_ADDR</b> - Shows the IP address for the MW100.  Linked to
+    information interrupt.
+  </dt>
+  <dd>
+    <b>stringin record:</b> No address used.
+  </dd>
+  <dt><b>SETTINGS_MODE</b> - Shows whether the MW100 is in settings
+    mode.  Linked to status interrupt.
+  </dt>
+  <dd>
+    <b>bi record:</b> No address used.
+    <ul>
+      <li><b>0</b> - False
+      <li><b>1</b> - True
+    </ul>
+  </dd>
+  <dt><b>MEASURE_MODE</b> - Shows whether the MW100 is in measurement
+    mode.  Linked to status interrupt.  This command is somewhat
+    redundant to SETTINGS_MODE as they seem to always be the opposite
+    of each other, but they come from different bits being set, so not
+    sure.
+  </dt>
+  <dd>
+    <b>bi record:</b> No address used.
+    <ul>
+      <li><b>0</b> - False
+      <li><b>1</b> - True
+    </ul>
+  </dd>
+  <dt><b>OPMODE</b> - Set the operational mode of the MW100.
+  </dt>
+  <dd>
+    <b>bo record:</b> No address used.
+    <ul>
+      <li><b>0</b> - Measurement
+      <li><b>1</b> - Settings
+    </ul>
+  </dd>
+  <dt><b>COMPUTE_MODE</b> - Shows whether the MW100 has computations
+  running.  Linked to status interrupt.  This can only be true when
+  MEASURE_MODE is true.
+  </dt>
+  <dd>
+    <b>bi record:</b> No address used.
+    <ul>
+      <li><b>0</b> - False
+      <li><b>1</b> - True
+    </ul>
+  </dd>
+  <dt><b>COMPUTE_CMD</b> - Send a command regarding the computational
+  mode of the MW100.
+  </dt>
+  <dd>
+    <b>mbbo record:</b> No address used.
+    <ul>
+      <li><b>0</b> - Start
+      <li><b>1</b> - Stop
+      <li><b>2</b> - Reset
+      <li><b>3</b> - Clear
+    </ul>
+  </dd>
+  <dt><b>INP_TRIG</b> - Trigger reading the input records for the
+    MW100, which will then trigger the input interrupt.  This record
+    just needs to be PROC'd to work; typically the SCAN field is set
+    to a time interval.
+  </dt>
+  <dd>
+    <b>bo record:</b> No address used.
+  </dd>
+  <dt><b>OUT_TRIG</b> - Trigger reading the output records for the
+    MW100, which will then trigger the input interrupt.  This record
+    just needs to be PROC'd to work; typically the SCAN field is set
+    to a time interval.
+  </dt>
+  <dd>
+    <b>bo record:</b> No address used.
+  </dd>
+  <dt><b>STAT_TRIG</b> - Trigger reading the MW100 status, which will
+    then trigger the status interrupt; if an operational mode change
+    to measurements is seen, it will cause a information read which
+    will then trigger the information interrupt. This record just
+    needs to be PROC'd to work; typically the SCAN field is set to a
+    time interval.
+  </dt>
+  <dd>
+    <b>bo record:</b> No address used.
+  </dd>
+  <dt><b>INFO_TRIG</b> - Trigger reading the information for channels
+    and the MW100 that can't be changed during measurement mode.  This
+    command doesn't really need to be used if the STAT_TRIG command is
+    called periodically. This record just needs to be PROC'd to work;
+    typically the SCAN field is set to a time interval.
+  </dt>
+  <dd>
+    <b>bo record:</b> No address used.
+  </dd>
+
+  <dt><b>ERROR_FLAG</b> - Shows if an error has happened.
+    Linked to error interrupt.
+  </dt>
+  <dd>
+    <b>bi record:</b> No address used.
+  </dd>
+  <dt><b>ERROR</b> - Retrieve one of the three error strings used to
+    return vendor-supplied error messages (broken to 40 character
+    lengths). Linked to error interrupt.
+  </dt>
+  <dd>
+    <b>stringin record:</b> Uses an address of 1-3.
+  </dd>
+  <dt><b>ERROR_CLEAR</b> - Clears the MW100 error.  This record
+    just needs to be PROC'd to work.
+  </dt>
+  <dd>
+    <b>bo record:</b> No address used.
+  </dd>
+
 </dl>
+</p>
 
 
 
@@ -172,7 +520,7 @@ There are
 
 
 <address> 
-    <a href="http://www.aps.anl.gov/About/People/Contact/?name=Dohn__Arms">
+    <a href="https://www.aps.anl.gov/About/Advanced-Photon-Source-Directory?name=Dohn__Arms">
     Dohn Arms</a><br>
     Advanced Photon Source
 </address>
