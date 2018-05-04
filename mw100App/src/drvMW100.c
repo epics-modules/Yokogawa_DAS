@@ -62,10 +62,10 @@ enum { CH_TYPE_NONE, CH_TYPE_INPUT_ANALOG, CH_TYPE_INPUT_BINARY,
 
 // mode
 enum { CH_STATUS_SKIP, CH_STATUS_NORMAL, CH_STATUS_DIFF, CH_STATUS_UNKNOWN };
-enum { CH_MODE_RELAY_ALARM, CH_MODE_RELAY_COM, CH_MODE_RELAY_MEDIA,
-       CH_MODE_RELAY_FAIL, CH_MODE_RELAY_ERROR, CH_MODE_RELAY_SKIP,
+enum { CH_MODE_RELAY_SKIP, CH_MODE_RELAY_ALARM, CH_MODE_RELAY_COM,
+       CH_MODE_RELAY_MEDIA, CH_MODE_RELAY_FAIL, CH_MODE_RELAY_ERROR, 
        CH_MODE_RELAY_UNKNOWN };
-enum { CH_MODE_DAC_TRANS, CH_MODE_DAC_COM, CH_MODE_DAC_SKIP, 
+enum { CH_MODE_DAC_SKIP, CH_MODE_DAC_TRANS, CH_MODE_DAC_COM, 
        CH_MODE_DAC_UNKNOWN };       
 
 struct channel_info
@@ -1213,8 +1213,8 @@ int load_input_values( struct devqueue *dq, int type, int channel )
   if( response_reader( dq) != RESPONSE_BINARY)
     return 1;
 
-  //  q = (unsigned char *) (dq->inbuffer + 4);
-  length = *((epicsUInt32 *) (dq->inbuffer + 4));
+  q = (unsigned char *) (dq->inbuffer + 4);
+  length = *((epicsUInt32 *) q);
   number_values = (length - 22)/8;
 
   q = (unsigned char *) (dq->inbuffer + 12);
@@ -1301,7 +1301,8 @@ int load_output_values( struct devqueue *dq, int type, int channel )
       if( response_reader( dq) != RESPONSE_BINARY)
         return 1;
 
-      length = *((epicsUInt32 *) (dq->inbuffer + 4));
+      q = (unsigned char *) (dq->inbuffer + 4);
+      length = *((epicsUInt32 *) q);
       number_values = (length - 22)/8;
 
       q = (unsigned char *) (dq->inbuffer + 12);
