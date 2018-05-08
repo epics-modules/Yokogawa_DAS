@@ -151,17 +151,48 @@ The integer digital input modules are not implemented (the 114 series)
 at this time.
 </p>
 
+<h3>Driver</h3>
+
+<p>
+  The EPICS driver for the MW100 needs to be loaded using the command
+  mw100Init.
+</p>
+<p>
+  <code>
+    mw100Init( <i>instrument handle</i>, <i>IP address</i>)
+  </code>
+</p>
+<p>
+  The <i>instrument handle</i> is a string, provided by the user, that
+  is used by records to refer to this particular MW100.  For each
+  MW100 loaded, a different handle needs to be used.
+</p>
+
+
 <h2>Records</h2>
 
 <p>
 There are currently 7 records supported for various purposes: ai, ao,
-bi, bo, mbbi, mbbo, and stringin.  When using them, <b>DTYP</b> needs
-to be set to "Yokogawa MW100".  For each instrument initialized with
-the driver, a handle is associated for use with record device support
-in the <b>INP</b> or the <b>OUT</b> field.  Record commands are also
+bi, bo, mbbi, mbbo, and stringin.     Record commands are also
 provided to determine the record function, and for record commands
 that can refer to multiple items or locations, addressing is used; a
 few commands also need sub-addressing.
+</p>
+<h3>DTYP format</h3>
+<p>
+  When using the supported records with the commands, <b>DTYP</b> needs
+  to be set to "Yokogawa MW100".
+</p>
+<h3>INP and OUT format</h3>
+<p>
+  For each MW100, the handle provided to the driver is used with record
+  device support.  The general format of the <b>INP</b> or <b>OUT</b>
+  field is one of the following.
+<ul>
+  <li>"@handle command"
+  <li>"@handle command:address"
+  <li>"@handle command:address.sub_address"
+</ul>
 </p>
 <h3>Interrupts</h3>
 <p>
@@ -172,9 +203,9 @@ although only the first three are necessary, as an information read is
 typically called when the status read notices a mode change into
 measurements mode.
 <ul>
-  <li><b>Input</b> - This interrupt is called after reading the input
-    channels: input modules and calculation addresses.
-  <li><b>Output</b> - This interrupt is called after reading the
+  <li><b>Input</b> - This interrupt is called after reading all the
+    input channels: input modules and calculation addresses.
+  <li><b>Output</b> - This interrupt is called after reading all the
     output channels: output modules, communication addresses, and
     constant addresses.
   <li><b>Status</b> - This interrupt is called after reading the
@@ -185,27 +216,10 @@ measurements mode.
   <li><b>Error</b> - This interrupt is called after the error state of
   the MW100 occurs.
 </ul>
-
-Input
-Output
-Status
-
-Information
-Error
-
 </p>
+<h3>Addresses</h3>
 <p>
-<h3>INP and OUT format</h3>
-The general format of the <b>INP</b> or <b>OUT</b> field is one of the
-following.
-<ul>
-  <li>"@handle command"
-  <li>"@handle command:address"
-  <li>"@handle command:address.sub_address"
-</ul>
-</p>
-<p>
-<h3>Addresses</h3> The type of address needed depends on the record,
+The type of address needed depends on the record,
 but here are all the options.  The format of the addresses comes
 directly from the MW100, and this is how they are used internally.
 <ul>
@@ -217,8 +231,8 @@ directly from the MW100, and this is how they are used internally.
   <li>Constant addresses: <b>K01-K60 </b>
 </ul>
 </p>
-<p>
 <h3>Commands</h3>
+<p>
 <dl>
   <dt><b>VAL</b> - Send or read a numeric value for a channel. Input
   records are linked to either the input interrupt (input channels) or
@@ -259,25 +273,20 @@ directly from the MW100, and this is how they are used internally.
     or the output interrupt (output channels).
   </dt>
   <dd>
-    <b>mbbi record:</b> Uses any hardware or calculation
-    addresses.
+    <b>mbbi record:</b> Uses any hardware or calculation addresses.
+    Each bit of the 4-bit value corresponds to the status of an alarm,
+    as multiple alarms can occur simultaneously; bit 0 is defined as
+    the least significant bit.
     <ul>
-      <li><b>0</b> - No Alarms
-      <li><b>1</b> - Alarm 1
-      <li><b>2</b> - Alarm 2
-      <li><b>3</b> - Alarms 1, 2
-      <li><b>4</b> - Alarm 3
-      <li><b>5</b> - Alarms 1, 3
-      <li><b>6</b> - Alarms 2, 3
-      <li><b>7</b> - Alarms 1, 2, 3
-      <li><b>8</b> - Alarm 4
-      <li><b>9</b> - Alarms 1, 4
-      <li><b>10</b> - Alarms 2, 4
-      <li><b>11</b> - Alarms 1, 2, 4
-      <li><b>12</b> - Alarms 3, 4
-      <li><b>13</b> - Alarms 1, 3, 4
-      <li><b>14</b> - Alarms 2, 3, 4
-      <li><b>15</b> - Alarms 1, 2, 3, 4
+      <li><b>bit 0</b> - Alarm 1
+      <li><b>bit 1</b> - Alarm 2
+      <li><b>bit 2</b> - Alarm 3
+      <li><b>bit 3</b> - Alarm 4
+    </ul>
+    The bit value is defined as the following.
+    <ul>
+      <li><b>value 0</b> - Alarm off
+      <li><b>value 1</b> - Alarm on
     </ul>
   </dd>
   <dt><b>ALARM</b> - Shows the status for a particular alarm for an
