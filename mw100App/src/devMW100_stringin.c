@@ -1,5 +1,4 @@
 /* devMW100_stringin.c */
-/* Example device support module */
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -105,15 +104,19 @@ static long init_record(struct stringinRecord *pmwstringin)
       dpvt->sub_type = 0;
       dpvt->channel = 0;
     }
-  else if( !strcmp("MODULE", cmd))
+  else if( !strcmp("MODULE_CODE", cmd) || !strcmp("MODULE_STRING", cmd))
     { 
       dpvt->rec_type = REC_MODULE;
-      dpvt->sub_type = 0;
+
+      if( !strcmp("MODULE_CODE", cmd) )
+        dpvt->sub_type = MODULE_CODE;
+      else
+        dpvt->sub_type = MODULE_STRING;
 
       if( arg == NULL)
         return 1;
       i = atoi(arg);
-      if( (i <= 0) || ( i > 6) )
+      if( (i < 0) || ( i > 5) )
         return 1;
       dpvt->channel = i;
     }
@@ -190,6 +193,10 @@ static long init_record(struct stringinRecord *pmwstringin)
       mw100_test_signal( dpvt->dq, dpvt->channel) )
     return 1;
 
+  if( (dpvt->rec_type == REC_MODULE) && (dpvt->sub_type != MODULE_STRING) &&
+      mw100_test_module( dpvt->dq, dpvt->channel) )
+    return 1;
+
   // if it made it this far, it's okay
   dpvt->invalid_flag = 0;
   
@@ -234,7 +241,8 @@ static long read_stringin(struct stringinRecord *pmwstringin)
       mw100_system_info( dpvt->dq, 0, (char *) &pmwstringin->val);
       break;
     case REC_MODULE:
-      mw100_module_info( dpvt->dq, dpvt->channel, (char *) &pmwstringin->val);
+      mw100_module_info( dpvt->dq, dpvt->sub_type, dpvt->channel, NULL,
+                         (char *) &pmwstringin->val);
       break;
     case REC_UNIT:
       mw100_channel_get_egu( dpvt->dq, dpvt->sub_type, dpvt->channel, 

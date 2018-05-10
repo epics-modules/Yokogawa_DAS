@@ -223,17 +223,66 @@ The type of address needed depends on the record,
 but here are all the options.  The format of the addresses comes
 directly from the MW100, and this is how they are used internally.
 <ul>
-  <li>Hardware addresses: <b>001-060</b><br>
-  Each module (of the six possible modules) can use at most ten hardware
-  addresses.  Module 1 uses addresses 001-010, etc.
-  <li>Calculation addresses: <b>A001-A300 </b>
-  <li>Communication addresses: <b>C001-C300 </b>
-  <li>Constant addresses: <b>K01-K60 </b>
+  <li>Module addresses: <b>0-5</b>
+  <li>Hardware channel addresses: <b>001-060</b><br> Each module (of
+    the six possible modules) can use at most ten hardware addresses.
+    If module 0 has ten channels, it uses addresses 001-010, etc.
+  <li>Calculation channel addresses: <b>A001-A300 </b>
+  <li>Communication channel addresses: <b>C001-C300 </b>
+  <li>Constant channel addresses: <b>K01-K60 </b>
 </ul>
 </p>
 <h3>Commands</h3>
 <p>
 <dl>
+  <dt><b>MODULE_STRING</b> - Shows the module identification string
+    for a location, or "empty" if one doesn't exist.  Linked to
+    information interrupt.
+  </dt>
+  <dd>
+    <b>stringin record:</b> Uses module address.
+  </dd>
+  <dt><b>MODULE_PRESENCE</b> - Shows whether a module is at a
+    location. Linked to information interrupt.
+  </dt>
+  <dd>
+    <b>bi record:</b> Uses module address.
+    <ul>
+      <li><b>0</b> - Not present
+      <li><b>1</b> - Present
+    </ul>
+  </dd>
+  <dt><b>MODULE_MODEL</b> - Shows the module model for a location,
+    with values being 110, 112, 114, 115, 120, or 125.  Linked to
+    information interrupt.
+  </dt>
+  <dd>
+    <b>longin record:</b> Uses module address.
+  </dd>
+  <dt><b>MODULE_CODE</b> - Shows the 3 character module code for a
+    location.  Linked to information interrupt.
+  </dt>
+  <dd>
+    <b>stringin record:</b> Uses module address.
+  </dd>
+  <dt><b>MODULE_SPEED</b> - Shows the module speed for a location.
+    Linked to information interrupt.
+  </dt>
+  <dd>
+    <b>mbbi record:</b> Uses module address.
+    <ul>
+      <li><b>0</b> - Low
+      <li><b>1</b> - Medium
+      <li><b>2</b> - High
+    </ul>
+  </dd>
+  <dt><b>MODULE_NUMBER</b> - Shows the number of module channels for a
+    location.  Linked to information interrupt.
+  </dt>
+  <dd>
+    <b>longin record:</b> Uses module address.
+  </dd>
+
   <dt><b>VAL</b> - Send or read a numeric value for a channel. Input
   records are linked to either the input interrupt (input channels) or
   the output interrupt (output channels).</dt>
@@ -263,7 +312,7 @@ directly from the MW100, and this is how they are used internally.
       <li><b>0</b> - Normal
       <li><b>1</b> - Overrange
       <li><b>2</b> - Underrange
-      <li><b>3</b> - Skip/Off
+      <li><b>3</b> - Measurement Skip/Computation Off
       <li><b>4</b> - Error
       <li><b>5</b> - Value Uncertain
     </ul>
@@ -304,8 +353,8 @@ directly from the MW100, and this is how they are used internally.
       <li><b>2</b> - Low Limit
       <li><b>3</b> - Differential High Limit
       <li><b>4</b> - Differential Low Limit
-      <li><b>5</b> - RoC High Limit
-      <li><b>6</b> - RoC Low Limit
+      <li><b>5</b> - Rate-of-Change High Limit
+      <li><b>6</b> - Rate-of-Change Low Limit
       <li><b>7</b> - Delay High Limit
       <li><b>8</b> - Delay Low Limit
     </ul>
@@ -332,7 +381,7 @@ directly from the MW100, and this is how they are used internally.
     <ul>
       <li><b>0</b> - Skip
       <li><b>1</b> - Normal
-      <li><b>2</b> - Differential
+      <li><b>2</b> - Differential Input
     </ul>
   </dd>
   <dt><b>CH_MODE</b> - Shows the operational mode for a channel, which
@@ -347,7 +396,7 @@ directly from the MW100, and this is how they are used internally.
       <dd>
         <ul>
           <li><b>0</b> - Skip
-          <li><b>1</b> - Trans
+          <li><b>1</b> - Transmission
           <li><b>2</b> - Communication
         </ul>
       </dd>
@@ -382,12 +431,7 @@ directly from the MW100, and this is how they are used internally.
     <b>stringin record:</b> Uses any calculation addresses.
   </dd>
 
-  <dt><b>MODULE</b> - Shows the model string for a module.  Linked to
-    information interrupt.
-  </dt>
-  <dd>
-    <b>stringin record:</b> Uses address 1-6, corresponding to a module.
-  </dd>
+
   <dt><b>IP_ADDR</b> - Shows the IP address for the MW100.  Linked to
     information interrupt.
   </dt>

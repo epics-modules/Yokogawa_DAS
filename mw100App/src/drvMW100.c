@@ -30,6 +30,9 @@ enum { ADDR_SIGNAL, ADDR_MATH, ADDR_COMM, ADDR_CONST };
 enum { TRIG_INFO, TRIG_INPUT, TRIG_OUTPUT, TRIG_STATUS };
 enum { MODE_SETTINGS, MODE_MEASUREMENT, MODE_COMPUTE, MODE_OPERATING,
        MODE_COMPUTE_CMD };
+enum { MODULE_PRESENCE, MODULE_STRING, MODULE_MODEL, MODULE_CODE, MODULE_SPEED,
+       MODULE_NUMBER };
+
 
 struct module
 {
@@ -38,20 +41,20 @@ struct module
   char status_message[14];
   char error_message[14];
 
+  char module_string[14];
+
   // broken-out information
-  //  int which; // redundant with array, 1-6
   int use_flag;
-  int model; // 110, 112, 114, 115, 120, 125, 0 means empty
   // 110 = analog input: ADC
   // 112 = analog input: strain gauge
   // 114 = integer digital input: pulse counting
   // 115 = binary digital input: level measurement
   // 120 = analog output: DAC
   // 125 = binary digital output: relay
-
+  int model; // 110, 112, 114, 115, 120, 125, 0 means empty
   //  int error; // 1=RomError:, 2=CalError:, 3=SlotError:
-  char module_code[4]; 
-  char speed; // L, M, H
+  char code[4]; 
+  int speed; // 0=Low, 1=Medium, 2=High
   int number; // currently: 4, 6, 8, 10, 30
 };
 
@@ -498,9 +501,7 @@ LOCAL long mw100_report(int level)
               if( !dq->modules[i].use_flag)
                 printf("        #%d: empty\n", i+1);
               else
-                printf("        #%d: MX%03d-%s-%c%02d\n", i+1,
-                       dq->modules[i].model, dq->modules[i].module_code,
-                       dq->modules[i].speed, dq->modules[i].number);
+                printf("        #%d: %s\n", i+1, dq->modules[i].module_string);
             }
                      
         }
@@ -736,7 +737,7 @@ int load_modules( struct devqueue *dq)
         *(c++) = *(ptr++);
       *c = '\0';
       ptr += 3;
-      
+
       c = dq->modules[which].status_message;
       for( i = 0; i < 13; i++)
         *(c++) = *(ptr++);
@@ -765,19 +766,33 @@ int load_modules( struct devqueue *dq)
         continue;
 
       dq->modules[i].use_flag = 1;
-
+      strcpy( dq->modules[i].module_string, dq->modules[i].set_message );
+      
       // the dash will halt the conversion
-      ptr = dq->modules[i].set_message + 2;
+      ptr = dq->modules[i].module_string + 2;
       dq->modules[i].model = atoi(ptr);
       ptr += 4;
 
-      c = dq->modules[i].module_code;
+      c = dq->modules[i].code;
       for( j = 0; j < 3; j++)
         *(c++) = *(ptr++);
       *c = '\0';
       ptr++;
 
-      dq->modules[i].speed = *ptr;
+      switch( *ptr)
+        {
+        case 'L':
+          dq->modules[i].speed = 0;
+          break;
+        case 'M':
+          dq->modules[i].speed = 1;
+          break;
+        case 'H':
+          dq->modules[i].speed = 2;
+          break;
+        default:
+          dq->modules[i].speed = -1;
+        }
       ptr++;
       
       dq->modules[i].number = atoi(ptr);
@@ -1714,6 +1729,14 @@ int mw100Init( char *device, char *address)
 /////////////////////////////////
 // device functions
 
+int mw100_test_module( struct devqueue *dq, int module)
+{
+  if( !dq->modules[module].use_flag)
+    return 1;
+  
+  return 0;
+}
+
 int mw100_test_signal( struct devqueue *dq, int channel)
 {
   if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
@@ -1820,17 +1843,41 @@ IOSCANPVT mw100_input_io_handler( struct devqueue *dq)
 }
 
 
-
-int mw100_module_info( struct devqueue *dq, int module, char *info)
+// val or str is used depending on type, other is NULL
+int mw100_module_info( struct devqueue *dq, int type, int module, 
+                       int *val, char *str)
 {
-  module--;
-
+  if( type == MODULE_PRESENCE)
+    {
+      *val = dq->modules[module].use_flag;
+      return 0;
+    }
+  if( type == MODULE_STRING)
+    {
+      if( !dq->modules[module].use_flag)
+        sprintf( str, "empty");
+      else
+        strcpy( str, dq->modules[module].module_string);
+      return 0;
+    }
   if( !dq->modules[module].use_flag)
-    sprintf( info, "empty");
-  else
-    sprintf( info, "MX%03d-%s-%c%02d", dq->modules[module].model, 
-             dq->modules[module].module_code, dq->modules[module].speed, 
-             dq->modules[module].number);
+    return 0;
+    
+  switch( type)
+    {
+    case MODULE_MODEL:
+      *val = dq->modules[module].model;
+      break;
+    case MODULE_CODE:
+      strcpy( str, dq->modules[module].code);
+      break;
+    case MODULE_SPEED:
+      *val = dq->modules[module].speed;
+      break;
+    case MODULE_NUMBER:
+      *val = dq->modules[module].number;
+      break;
+    }
 
   return 0;
 }
@@ -1857,7 +1904,8 @@ int mw100_analog_set(struct devqueue *dq, dbCommon *precord, int type,
     {
     case ADDR_SIGNAL:
       if( dq->ch_type[channel-1] == CH_TYPE_OUTPUT_ANALOG)
-        qmesg( dq, precord, CMD_SET_SIGNAL_OUTPUT, channel, datum_float(value));
+        qmesg( dq, precord, CMD_SET_SIGNAL_OUTPUT, channel,
+               datum_float(value));
       break;
     case ADDR_COMM:
       qmesg( dq, precord, CMD_SET_COMM, channel, datum_float(value));

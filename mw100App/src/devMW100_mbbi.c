@@ -1,5 +1,4 @@
 /* devMW100_mbbi.c */
-/* Example device support module */
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -67,7 +66,8 @@ struct mwmbbiPvt
   int sub_channel;
 };
 
-enum { REC_CH_STATUS, REC_CH_MODE, REC_VAL_STATUS, REC_ALARM, REC_ALARMS };
+enum { REC_CH_STATUS, REC_CH_MODE, REC_VAL_STATUS, REC_ALARM, REC_ALARMS,
+       REC_MODULE};
 
 
 static long init(int pass)
@@ -102,59 +102,79 @@ static long init_record(struct mbbiRecord *pmwmbbi)
   if( dpvt->dq == NULL)
     return 1;
 
-  if( !strcmp("CH_STATUS", cmd) )
+  if( !strcmp("MODULE_SPEED", cmd) )
     {
-      dpvt->rec_type = REC_CH_STATUS;
-    }
-  else if( !strcmp("CH_MODE", cmd) )
-    {
-      dpvt->rec_type = REC_CH_MODE;
-    }
-  else if( !strcmp("VAL_STATUS", cmd) )
-    {
-      dpvt->rec_type = REC_VAL_STATUS;
-    }
-  else if( !strcmp("ALARM", cmd) )
-    {
-      dpvt->rec_type = REC_ALARM;
-    }
-  else if( !strcmp("ALARMS", cmd) )
-    {
-      dpvt->rec_type = REC_ALARMS;
+      dpvt->rec_type = REC_MODULE;
+      dpvt->sub_type = MODULE_SPEED;
+
+      if( arg == NULL)
+        return 1;
+      i = atoi(arg);
+      if( (i < 0) || ( i > 5) )
+        return 1;
+      dpvt->channel = i;
     }
   else
-    return 1;
-
-  if(arg == NULL)
-    return 1;
-  switch(arg[0])
     {
-    case '0':
-    case '1':
-    case '2':
-    case '3':
-    case '4':
-    case '5':
-    case '6':
-    case '7':
-    case '8':
-    case '9':
-      dpvt->sub_type = ADDR_SIGNAL;
-      i = strtol( arg, &p, 10);
-      if( (i <= 0) || (i > 60) )
+      if( !strcmp("CH_STATUS", cmd) )
+        {
+          dpvt->rec_type = REC_CH_STATUS;
+        }
+      else if( !strcmp("CH_MODE", cmd) )
+        {
+          dpvt->rec_type = REC_CH_MODE;
+        }
+      else if( !strcmp("VAL_STATUS", cmd) )
+        {
+          dpvt->rec_type = REC_VAL_STATUS;
+        }
+      else if( !strcmp("ALARM", cmd) )
+        {
+          dpvt->rec_type = REC_ALARM;
+        }
+      else if( !strcmp("ALARMS", cmd) )
+        {
+          dpvt->rec_type = REC_ALARMS;
+        }
+      else
         return 1;
-      dpvt->channel = i;
-      break;
-    case 'A':
-      dpvt->sub_type = ADDR_MATH;
-      i = strtol( arg+1, &p, 10);
-      if( (i <= 0) || (i > 300) )
+
+      if(arg == NULL)
         return 1;
-      dpvt->channel = i;
-      break;
-    default:
-      return 1;
+      switch(arg[0])
+        {
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+          dpvt->sub_type = ADDR_SIGNAL;
+          i = strtol( arg, &p, 10);
+          if( (i <= 0) || (i > 60) )
+            return 1;
+          dpvt->channel = i;
+          break;
+        case 'A':
+          dpvt->sub_type = ADDR_MATH;
+          i = strtol( arg+1, &p, 10);
+          if( (i <= 0) || (i > 300) )
+            return 1;
+          dpvt->channel = i;
+          break;
+        default:
+          return 1;
+        }
     }
+  
+
+  if( (dpvt->rec_type == REC_MODULE) &&
+      mw100_test_module( dpvt->dq, dpvt->channel) )
+    return 1;
 
   if( (dpvt->sub_type == ADDR_SIGNAL) && 
       mw100_test_signal( dpvt->dq, dpvt->channel) )
@@ -202,6 +222,7 @@ static long get_ioint_info( int cmd, struct mbbiRecord *pmwmbbi,
           *ppvt = mw100_channel_io_handler(dpvt->dq, dpvt->sub_type, 
                                            dpvt->channel);
           break;
+        case REC_MODULE:
         case REC_CH_STATUS:
         case REC_CH_MODE:
           *ppvt = mw100_info_io_handler(dpvt->dq);
@@ -227,6 +248,10 @@ static long read_mbbi(struct mbbiRecord *pmwmbbi)
 
   switch( dpvt->rec_type)
     {
+    case REC_MODULE:
+      mw100_module_info( dpvt->dq, dpvt->sub_type, dpvt->channel, &value,
+                         NULL);
+      break;
     case REC_CH_STATUS:
       mw100_get_channel_status( dpvt->dq, dpvt->sub_type, dpvt->channel, 
                                 &value);

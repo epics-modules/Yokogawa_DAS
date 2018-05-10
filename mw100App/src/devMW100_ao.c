@@ -1,5 +1,4 @@
 /* devMW100_ao.c */
-/* Example device support module */
 
 #include <stddef.h>
 #include <stdlib.h>

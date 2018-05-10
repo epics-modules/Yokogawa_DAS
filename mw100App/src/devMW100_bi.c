@@ -1,5 +1,4 @@
 /* devMW100_bi.c */
-/* Example device support module */
 
 #include <stddef.h>
 #include <stdlib.h>
@@ -66,7 +65,7 @@ struct mwbiPvt
   int channel;
 };
 
-enum { REC_VAL, REC_MODE, REC_ERROR, REC_ALARM};
+enum { REC_VAL, REC_MODULE, REC_MODE, REC_ERROR, REC_ALARM};
 
 
 static long init(int pass)
@@ -141,6 +140,18 @@ static long init_record(struct biRecord *pmwbi)
           return 1;
         }
     }
+  else if( !strcmp("MODULE_PRESENCE", cmd) )
+    {
+      dpvt->rec_type = REC_MODULE;
+      dpvt->sub_type = MODULE_PRESENCE;
+
+      if( arg == NULL)
+        return 1;
+      i = atoi(arg);
+      if( (i < 0) || ( i > 5) )
+        return 1;
+      dpvt->channel = i;
+    }
   else if( !strcmp("SETTINGS_MODE", cmd) )
     {
       dpvt->rec_type = REC_MODE;
@@ -169,7 +180,8 @@ static long init_record(struct biRecord *pmwbi)
   else
     return 1;
 
-  if( dpvt->rec_type == REC_MODE)
+  if( (dpvt->rec_type == REC_MODE) || (dpvt->rec_type == REC_ERROR) ||
+      (dpvt->rec_type == REC_ALARM) )
     {
       if(arg != NULL)
         return 1;
@@ -208,6 +220,9 @@ static long get_ioint_info( int cmd, struct biRecord *pmwbi,
         case REC_VAL:
           *ppvt = mw100_channel_io_handler(dpvt->dq, dpvt->sub_type, 
                                            dpvt->channel);
+          break;
+        case REC_MODULE:
+          *ppvt = mw100_info_io_handler(dpvt->dq);
           break;
         case REC_ERROR:
           *ppvt = mw100_error_io_handler(dpvt->dq);
@@ -261,6 +276,10 @@ static long read_bi(struct biRecord *pmwbi)
 
   switch( dpvt->rec_type)
     {
+    case REC_MODULE:
+      mw100_module_info( dpvt->dq, dpvt->sub_type, dpvt->channel, &value,
+                         NULL);
+      break;
     case REC_MODE:
       mw100_get_mode( dpvt->dq, dpvt->sub_type, &value);
       break;

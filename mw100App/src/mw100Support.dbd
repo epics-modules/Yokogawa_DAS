@@ -8,5 +8,6 @@ device(bi,INST_IO,devMW100_bi,"Yokogawa MW100")
 device(bo,INST_IO,devMW100_bo,"Yokogawa MW100")
 device(mbbi,INST_IO,devMW100_mbbi,"Yokogawa MW100")
 device(mbbo,INST_IO,devMW100_mbbo,"Yokogawa MW100")
+device(longin,INST_IO,devMW100_longin,"Yokogawa MW100")
 device(stringin,INST_IO,devMW100_stringin,"Yokogawa MW100")
 

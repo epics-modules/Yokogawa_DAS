@@ -417,7 +417,7 @@ polyline {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):Module1"
+		chan="$(P)$(DAU):Module0"
 		clr=14
 		bclr=50
 	}
@@ -447,7 +447,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):Module2"
+		chan="$(P)$(DAU):Module1"
 		clr=14
 		bclr=50
 	}
@@ -466,13 +466,56 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="2"
+	textix="1"
 	align="horiz. right"
 }
 "text update" {
 	object {
 		x=35
 		y=150
+		width=150
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):Module2"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+text {
+	object {
+		x=10
+		y=150
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=100
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="0"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=235
+		y=100
 		width=150
 		height=20
 	}
@@ -486,36 +529,10 @@ text {
 	limits {
 	}
 }
-text {
-	object {
-		x=10
-		y=150
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="3"
-	align="horiz. right"
-}
-text {
-	object {
-		x=10
-		y=100
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="1"
-	align="horiz. right"
-}
 "text update" {
 	object {
 		x=235
-		y=100
+		y=125
 		width=150
 		height=20
 	}
@@ -529,10 +546,23 @@ text {
 	limits {
 	}
 }
+text {
+	object {
+		x=210
+		y=125
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="4"
+	align="horiz. right"
+}
 "text update" {
 	object {
 		x=235
-		y=125
+		y=150
 		width=150
 		height=20
 	}
@@ -549,7 +579,7 @@ text {
 text {
 	object {
 		x=210
-		y=125
+		y=150
 		width=20
 		height=20
 	}
@@ -557,36 +587,6 @@ text {
 		clr=14
 	}
 	textix="5"
-	align="horiz. right"
-}
-"text update" {
-	object {
-		x=235
-		y=150
-		width=150
-		height=20
-	}
-	monitor {
-		chan="$(P)$(DAU):Module6"
-		clr=14
-		bclr=50
-	}
-	align="horiz. centered"
-	format="string"
-	limits {
-	}
-}
-text {
-	object {
-		x=210
-		y=150
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="6"
 	align="horiz. right"
 }
 text {
@@ -599,7 +599,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="4"
+	textix="3"
 	align="horiz. right"
 }
 polyline {

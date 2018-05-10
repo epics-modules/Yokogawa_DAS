@@ -9,10 +9,14 @@ enum { TRIG_INFO, TRIG_INPUT, TRIG_OUTPUT, TRIG_STATUS };
 enum { MODE_SETTINGS, MODE_MEASUREMENT, MODE_COMPUTE, MODE_OPERATING,
        MODE_COMPUTE_CMD };
 
+enum { MODULE_PRESENCE, MODULE_STRING, MODULE_MODEL, MODULE_CODE, MODULE_SPEED,
+       MODULE_NUMBER };
+
 typedef struct devqueue devqueue;
 
 
 devqueue *mw100_connect( char *device);
+int mw100_test_module( struct devqueue *dq, int module);
 int mw100_test_signal( devqueue *dq, int channel);
 int mw100_test_analog_signal( struct devqueue *dq, int channel);
 int mw100_test_binary_signal( struct devqueue *dq, int channel);
@@ -26,7 +30,8 @@ IOSCANPVT mw100_error_io_handler( devqueue *dq);
 IOSCANPVT mw100_input_io_handler( devqueue *dq);
 
 int mw100_system_info( struct devqueue *dq, int which, char *info);
-int mw100_module_info( struct devqueue *dq, int module, char *info);
+int mw100_module_info( struct devqueue *dq, int type, int module,
+                       int *val, char *str);
 
 int mw100_get_mode( devqueue *dq, int type, int *value);
 int mw100_mode_set( devqueue *dq, dbCommon *precord, int type, int pval);

@@ -1,5 +1,4 @@
 /* devMW100_ai.c */
-/* Example device support module */
 
 #include <stddef.h>
 #include <stdlib.h>

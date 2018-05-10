@@ -21,6 +21,7 @@ mw100_SRCS += devMW100_bi.c
 mw100_SRCS += devMW100_bo.c
 mw100_SRCS += devMW100_mbbi.c
 mw100_SRCS += devMW100_mbbo.c
+mw100_SRCS += devMW100_longin.c
 mw100_SRCS += devMW100_stringin.c
 mw100_SRCS += drvMW100.c
 

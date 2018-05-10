@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=257
-		y=641
+		x=1193
+		y=598
 		width=360
-		height=240
+		height=270
 	}
 	clr=14
 	bclr=3
@@ -191,7 +191,7 @@ polyline {
 polyline {
 	object {
 		x=5
-		y=210
+		y=240
 		width=349
 		height=2
 	}
@@ -200,14 +200,14 @@ polyline {
 		width=2
 	}
 	points {
-		(6,211)
-		(353,211)
+		(6,241)
+		(353,241)
 	}
 }
 text {
 	object {
 		x=15
-		y=215
+		y=245
 		width=120
 		height=20
 	}
@@ -239,7 +239,7 @@ text {
 text {
 	object {
 		x=15
-		y=215
+		y=245
 		width=160
 		height=20
 	}
@@ -297,7 +297,7 @@ text {
 "text update" {
 	object {
 		x=20
-		y=155
+		y=185
 		width=150
 		height=20
 	}
@@ -314,7 +314,7 @@ text {
 text {
 	object {
 		x=5
-		y=155
+		y=185
 		width=10
 		height=20
 	}
@@ -327,7 +327,7 @@ text {
 "text update" {
 	object {
 		x=205
-		y=155
+		y=185
 		width=150
 		height=20
 	}
@@ -344,7 +344,7 @@ text {
 "text update" {
 	object {
 		x=20
-		y=180
+		y=210
 		width=150
 		height=20
 	}
@@ -361,7 +361,7 @@ text {
 "text update" {
 	object {
 		x=205
-		y=180
+		y=210
 		width=150
 		height=20
 	}
@@ -378,7 +378,7 @@ text {
 text {
 	object {
 		x=15
-		y=130
+		y=160
 		width=140
 		height=20
 	}
@@ -391,7 +391,7 @@ text {
 "text update" {
 	object {
 		x=160
-		y=130
+		y=160
 		width=150
 		height=20
 	}
@@ -408,7 +408,7 @@ text {
 polyline {
 	object {
 		x=0
-		y=120
+		y=150
 		width=349
 		height=2
 	}
@@ -417,14 +417,14 @@ polyline {
 		width=2
 	}
 	points {
-		(1,121)
-		(348,121)
+		(1,151)
+		(348,151)
 	}
 }
 text {
 	object {
 		x=190
-		y=155
+		y=185
 		width=10
 		height=20
 	}
@@ -437,7 +437,7 @@ text {
 text {
 	object {
 		x=5
-		y=180
+		y=210
 		width=10
 		height=20
 	}
@@ -450,7 +450,7 @@ text {
 text {
 	object {
 		x=190
-		y=180
+		y=210
 		width=10
 		height=20
 	}
@@ -459,4 +459,33 @@ text {
 	}
 	textix="4"
 	align="horiz. right"
+}
+text {
+	object {
+		x=35
+		y=125
+		width=120
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Expression"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=160
+		y=125
+		width=180
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):$(CH):Expr"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
 }
