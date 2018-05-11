@@ -1,7 +1,7 @@
 #!/bin/bash
 
-EPICS_APP=/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100
-EPICS_APP_ADL_DIR=${EPICS_APP}/direct_mw100/mw100App/op/adl
+EPICS_APP=/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/direct_mw100
+EPICS_APP_ADL_DIR=${EPICS_APP}/mw100App/op/adl
 
 #######################################
 # Prepare MEDM path
@@ -34,4 +34,4 @@ fi
 #export EPICS_CA_MAX_ARRAY_BYTES=64008
 
 cd ${EPICS_APP_ADL_DIR}
-medm test.adl &
+medm ${EPICS_APP}/test.adl &

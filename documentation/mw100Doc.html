@@ -15,8 +15,9 @@ content="text/html; charset=iso-8859-1">
 
 <p>
 This module supports the Yokogawa MW100 Digital Acquisition Unit, and
-depends on the /M1 math option.  It was written for Linux IOCs, while
-others might work as well.
+depends on the /M1 math option.  It was written for Linux IOCs, where
+dynamic memory allocation is not a problem, while others might work as
+well.
 </p>
 <p>
 This device uses a network interface to communicate, and has a modular
@@ -33,11 +34,9 @@ software or the built-in web server, as it supports multiple
 simultaneous and independent connections.
 </p>
 <p>
-I have not added support for the pulse counting modules (114 series), as I
-have no access to one.  Other than those, I assume that the support
-works for all the other modules, but this has been tested only with
-the following: MX110-UNV-M10, MX115-D05-H10, MX120-VAO-M08, and
-MX125-MKC-M10.
+I assume that the support works for all modules, but this has been
+tested only with the following: MX110-UNV-M10, MX115-D05-H10,
+MX120-VAO-M08, and MX125-MKC-M10.
 </p>
 
 <h2>Channel descriptions</h2>
@@ -124,31 +123,31 @@ also clears it from the units LED display.
 <h3>Modules</h3>
 
 <p>
-The analog output modules (120 series) are only directly controlled by
-EPICS if they are put into communication mode ("Comm. Input").  If a
-channel is put into the other mode ("Trans"), it is controlled by
-other MW100 channels, although the value can still be read by EPICS.
+  The analog input modules (110 and 112 series) are of the typical
+  voltage/current measuring or the strain gauge measuring types. The
+  first type has many configuration options, such as configured as a
+  thermocouple reader, giving a result through EPICS as a temperature
+  value and units.
 </p>
 <p>
-The digital output modules (125 series) act as relays, and are
-typically used in one of two modes.  One is direct control from EPICS
-("Comm. Input"), and the other is for it to be controlled by a MW100
-alarm ("Alarm").
+  I have had no access to integer digital input modules (114 series), but
+  hopefully the support works for them.
 </p>
 <p>
-The analog input modules (110 and 112 series) are of the typical
-voltage/current measuring or the strain gauge measuring types. The
-first type has many configuration options, such as configured as a
-thermocouple reader, giving a result through EPICS as a temperature
-value and units.
+  The binary digital input modules (115 series) can be used to sense a
+  circuit closure or a voltage level.
 </p>
 <p>
-The binary digital input modules (115 series) can be used to sense a
-circuit closure or a voltage level.
+  The analog output modules (120 series) are only directly controlled by
+  EPICS if they are put into communication mode ("Comm. Input").  If a
+  channel is put into the other mode ("Trans"), it is controlled by
+  other MW100 channels, although the value can still be read by EPICS.
 </p>
 <p>
-The integer digital input modules are not implemented (the 114 series)
-at this time.
+  The digital output modules (125 series) act as relays, and are
+  typically used in one of two modes.  One is direct control from EPICS
+  ("Comm. Input"), and the other is for it to be controlled by a MW100
+  alarm ("Alarm").
 </p>
 
 <h3>Driver</h3>
@@ -252,20 +251,20 @@ directly from the MW100, and this is how they are used internally.
       <li><b>1</b> - Present
     </ul>
   </dd>
-  <dt><b>MODULE_MODEL</b> - Shows the module model for a location,
+  <dt><b>MODULE_MODEL</b> - Shows the module model number,
     with values being 110, 112, 114, 115, 120, or 125.  Linked to
     information interrupt.
   </dt>
   <dd>
     <b>longin record:</b> Uses module address.
   </dd>
-  <dt><b>MODULE_CODE</b> - Shows the 3 character module code for a
-    location.  Linked to information interrupt.
+  <dt><b>MODULE_CODE</b> - Shows the 3 character module code.  Linked
+  to information interrupt.
   </dt>
   <dd>
     <b>stringin record:</b> Uses module address.
   </dd>
-  <dt><b>MODULE_SPEED</b> - Shows the module speed for a location.
+  <dt><b>MODULE_SPEED</b> - Shows the module speed.
     Linked to information interrupt.
   </dt>
   <dd>
@@ -276,8 +275,8 @@ directly from the MW100, and this is how they are used internally.
       <li><b>2</b> - High
     </ul>
   </dd>
-  <dt><b>MODULE_NUMBER</b> - Shows the number of module channels for a
-    location.  Linked to information interrupt.
+  <dt><b>MODULE_NUMBER</b> - Shows the number of module channels.
+  Linked to information interrupt.
   </dt>
   <dd>
     <b>longin record:</b> Uses module address.

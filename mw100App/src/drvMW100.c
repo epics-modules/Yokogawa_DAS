@@ -798,13 +798,10 @@ int load_modules( struct devqueue *dq)
       dq->modules[i].number = atoi(ptr);
     }
 
+  for( j = 0; j < 60; j++)
+    dq->ch_type[j] = CH_TYPE_NONE;
   for( i = 0; i < 6; i++)
-    if( !dq->modules[i].use_flag)
-      {
-        for( j = 0; j < 10; j++)
-          dq->ch_type[10*i + j] = CH_TYPE_NONE;
-      }
-    else
+    if( dq->modules[i].use_flag)
       {
         switch( dq->modules[i].model )
           {
@@ -827,11 +824,9 @@ int load_modules( struct devqueue *dq)
           default:
             type = CH_TYPE_UNKNOWN;
           }
-        
+
         for( j = 0; j < dq->modules[i].number; j++)
           dq->ch_type[10*i + j] = type;
-        for( ; j < 10; j++)
-          dq->ch_type[10*i + j] = CH_TYPE_NONE;
       }
   
   return 0;
@@ -1764,6 +1759,14 @@ int mw100_test_binary_signal( struct devqueue *dq, int channel)
   return 0;
 }
 
+int mw100_test_integer_signal( struct devqueue *dq, int channel)
+{
+  if(dq->ch_type[channel-1] != CH_TYPE_INPUT_INTEGER)
+    return 1;
+  
+  return 0;
+}
+
 int mw100_test_output_analog_signal( struct devqueue *dq, int channel)
 {
   if( dq->ch_type[channel-1] != CH_TYPE_OUTPUT_ANALOG)
@@ -2045,6 +2048,16 @@ int mw100_analog_get( struct devqueue *dq, int type, int channel,
       break;
     }    
 
+
+  return 0;
+}
+
+int mw100_integer_get( struct devqueue *dq, int channel, int *value)
+{
+  if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
+      (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
+    return 0;
+  *value = dq->ch_data[channel-1].value;
 
   return 0;
 }

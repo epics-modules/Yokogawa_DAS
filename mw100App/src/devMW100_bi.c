@@ -147,6 +147,12 @@ static long init_record(struct biRecord *pmwbi)
 
       if( arg == NULL)
         return 1;
+      
+      // as atoi returns 0 on error, and 0 is a valid address,
+      // this makes sure there is a valid number stub
+      // but I don't want to disallow 004, even though that would be weird
+      if( (*arg < '0') || (*arg > '5') )
+        return 1;
       i = atoi(arg);
       if( (i < 0) || ( i > 5) )
         return 1;

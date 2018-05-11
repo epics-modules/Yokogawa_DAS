@@ -20,6 +20,7 @@ int mw100_test_module( struct devqueue *dq, int module);
 int mw100_test_signal( devqueue *dq, int channel);
 int mw100_test_analog_signal( struct devqueue *dq, int channel);
 int mw100_test_binary_signal( struct devqueue *dq, int channel);
+int mw100_test_integer_signal( struct devqueue *dq, int channel);
 int mw100_test_output_analog_signal( devqueue *dq, int channel);
 int mw100_test_output_binary_signal( devqueue *dq, int channel);
 
@@ -42,6 +43,7 @@ int mw100_channel_start(devqueue *dq, dbCommon *precord, int type,
 int mw100_analog_get( devqueue *dq, int type, int channel, double *value);
 int mw100_analog_set( devqueue *dq, dbCommon *precord, int type, 
                        int channel, double value);
+int mw100_integer_get( devqueue *dq, int channel, int *value);
 int mw100_binary_get( devqueue *dq, int channel, int *value);
 int mw100_binary_set( devqueue *dq, dbCommon *precord, int channel, int value);
 
