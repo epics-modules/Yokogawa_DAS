@@ -4,8 +4,11 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS BELOW HERE
 
-# Build an IOC support library
+# Build an IOC support library and application
+ifneq ($(OS_CLASS), WIN32)
 LIBRARY_IOC += mw100
+PROD_IOC = mw100ex
+endif
 
 # xxxRecord.h will be created from xxxRecord.dbd
 #DBDINC += xxxRecord
@@ -27,8 +30,6 @@ mw100_SRCS += drvMW100.c
 
 mw100_LIBS += $(EPICS_BASE_IOC_LIBS)
 
-# Build the IOC application
-PROD_IOC = mw100ex
 # mw100ex.dbd will be created and installed
 DBD += mw100ex.dbd
 
