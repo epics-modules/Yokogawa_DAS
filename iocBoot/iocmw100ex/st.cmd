@@ -9,19 +9,19 @@ dbLoadDatabase "dbd/mw100ex.dbd"
 mw100ex_registerRecordDeviceDriver pdbbase
 
 
-# bcdadau1
-mw100Init( "net1", "164.54.54.138")
-# fsdau1
-#mw100Init( "net2", "164.54.107.78") 
-
-
-dbLoadRecords "mw100App/Db/MW100_main.db", "P=mwtest:,DAU=dau1,PORT=net1"
-dbLoadRecords "mw100App/Db/MW100_ADC_slot1.db", "P=mwtest:,DAU=dau1,PORT=net1"
-dbLoadRecords "mw100App/Db/MW100_DAC_slot2.db", "P=mwtest:,DAU=dau1,PORT=net1"
-####dbLoadRecords "mw100App/Db/MW100_DI_slot3.db", "P=mwtest:,DAU=dau1,PORT=net1"
-dbLoadRecords "mw100App/Db/MW100_relay_slot3.db", "P=mwtest:,DAU=dau1,PORT=net1"
-
-
 cd "${TOP}/iocBoot/${IOC}"
+
+# bcdadau1
+mw100Init( "hdl", "164.54.54.138")
+# fsdau1
+#mw100Init( "hdl", "164.54.107.78") 
+
+# With synApps, this variable is set in master RELEASE file
+epicsEnvSet("YOKOGAWA_DAS", "${TOP}")
+
+# Generate the following subsitutions file using
+# ../../bin/linux-x86_64/mw100_probe (IP address) mwtest: dau hdl
+dbLoadTemplate "auto_mw100.substitutions"
+
 iocInit
 

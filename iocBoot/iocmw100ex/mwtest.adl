@@ -97,7 +97,7 @@ display {
 	display[0] {
 		label="Main screen"
 		name="mw100_main.adl"
-		args="P=mwtest:,DAU=dau1"
+		args="P=mwtest:,DAU=dau"
 	}
 	clr=0
 	bclr=64

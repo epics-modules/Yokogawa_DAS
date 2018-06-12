@@ -993,7 +993,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L1):ChMode"
+		chan="$(P)$(DAU):$(L1):RelayMode"
 		clr=14
 		bclr=51
 	}
@@ -1009,7 +1009,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L2):ChMode"
+		chan="$(P)$(DAU):$(L2):RelayMode"
 		clr=14
 		bclr=51
 	}
@@ -1025,7 +1025,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L3):ChMode"
+		chan="$(P)$(DAU):$(L3):RelayMode"
 		clr=14
 		bclr=51
 	}
@@ -1041,7 +1041,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L4):ChMode"
+		chan="$(P)$(DAU):$(L4):RelayMode"
 		clr=14
 		bclr=51
 	}
@@ -1057,7 +1057,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L5):ChMode"
+		chan="$(P)$(DAU):$(L5):RelayMode"
 		clr=14
 		bclr=51
 	}
@@ -1073,7 +1073,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L6):ChMode"
+		chan="$(P)$(DAU):$(L6):RelayMode"
 		clr=14
 		bclr=51
 	}
@@ -1089,7 +1089,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L7):ChMode"
+		chan="$(P)$(DAU):$(L7):RelayMode"
 		clr=14
 		bclr=51
 	}
@@ -1105,7 +1105,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L8):ChMode"
+		chan="$(P)$(DAU):$(L8):RelayMode"
 		clr=14
 		bclr=51
 	}
@@ -1121,7 +1121,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L9):ChMode"
+		chan="$(P)$(DAU):$(L9):RelayMode"
 		clr=14
 		bclr=51
 	}
@@ -1137,7 +1137,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L10):ChMode"
+		chan="$(P)$(DAU):$(L10):RelayMode"
 		clr=14
 		bclr=51
 	}

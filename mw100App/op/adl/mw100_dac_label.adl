@@ -1093,7 +1093,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L1):ChMode"
+		chan="$(P)$(DAU):$(L1):DAC_Mode"
 		clr=14
 		bclr=51
 	}
@@ -1109,7 +1109,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L2):ChMode"
+		chan="$(P)$(DAU):$(L2):DAC_Mode"
 		clr=14
 		bclr=51
 	}
@@ -1125,7 +1125,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L3):ChMode"
+		chan="$(P)$(DAU):$(L3):DAC_Mode"
 		clr=14
 		bclr=51
 	}
@@ -1141,7 +1141,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L4):ChMode"
+		chan="$(P)$(DAU):$(L4):DAC_Mode"
 		clr=14
 		bclr=51
 	}
@@ -1157,7 +1157,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L5):ChMode"
+		chan="$(P)$(DAU):$(L5):DAC_Mode"
 		clr=14
 		bclr=51
 	}
@@ -1173,7 +1173,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L6):ChMode"
+		chan="$(P)$(DAU):$(L6):DAC_Mode"
 		clr=14
 		bclr=51
 	}
@@ -1189,7 +1189,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L7):ChMode"
+		chan="$(P)$(DAU):$(L7):DAC_Mode"
 		clr=14
 		bclr=51
 	}
@@ -1205,7 +1205,7 @@ text {
 		height=20
 	}
 	monitor {
-		chan="$(P)$(DAU):$(L8):ChMode"
+		chan="$(P)$(DAU):$(L8):DAC_Mode"
 		clr=14
 		bclr=51
 	}

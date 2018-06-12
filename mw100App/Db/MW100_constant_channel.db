@@ -1,0 +1,19 @@
+record(ai,"$(P)$(DAU):$(ADDRESS)")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) VAL:$(ADDRESS)")
+    field(SCAN, "I/O Intr")
+    field(PREC, "3")
+    field(PINI, "YES")
+}
+record(ao,"$(P)$(DAU):$(ADDRESS):Set")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(PREC, "3")
+    field(OUT,  "@$(HANDLE) VAL:$(ADDRESS)")
+}
+record(stringout,"$(P)$(DAU):$(ADDRESS):Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):$(ADDRESS).DESC PP")
+}

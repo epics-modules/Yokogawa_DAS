@@ -1,0 +1,424 @@
+record(stringin, "$(P)$(DAU):IPAddress")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) IP_ADDR")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module0")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_STRING:0")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module0:Presence")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:0")
+    field(ZNAM, "Not present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module0:Model")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_MODEL:0")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin,"$(P)$(DAU):Module0:Code")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_CODE:0")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):Module0:Speed")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_SPEED:0")
+    field(SCAN, "Passive")
+    field(ZRVL, "0")
+    field(ZRST, "Low")
+    field(ONVL, "1")
+    field(ONST, "Medium")
+    field(TWVL, "2")
+    field(TWST, "High")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module0:Number")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_NUMBER:0")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module1")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_STRING:1")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module1:Presence")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:1")
+    field(ZNAM, "Not present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module1:Model")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_MODEL:1")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin,"$(P)$(DAU):Module1:Code")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_CODE:1")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):Module1:Speed")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_SPEED:1")
+    field(SCAN, "Passive")
+    field(ZRVL, "0")
+    field(ZRST, "Low")
+    field(ONVL, "1")
+    field(ONST, "Medium")
+    field(TWVL, "2")
+    field(TWST, "High")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module1:Number")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_NUMBER:1")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module2")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_STRING:2")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module2:Presence")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:2")
+    field(ZNAM, "Not present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module2:Model")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_MODEL:2")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin,"$(P)$(DAU):Module2:Code")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_CODE:2")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):Module2:Speed")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_SPEED:2")
+    field(SCAN, "Passive")
+    field(ZRVL, "0")
+    field(ZRST, "Low")
+    field(ONVL, "1")
+    field(ONST, "Medium")
+    field(TWVL, "2")
+    field(TWST, "High")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module2:Number")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_NUMBER:2")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module3")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_STRING:3")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module3:Presence")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:3")
+    field(ZNAM, "Not present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module3:Model")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_MODEL:3")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin,"$(P)$(DAU):Module3:Code")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_CODE:3")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):Module3:Speed")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_SPEED:3")
+    field(SCAN, "Passive")
+    field(ZRVL, "0")
+    field(ZRST, "Low")
+    field(ONVL, "1")
+    field(ONST, "Medium")
+    field(TWVL, "2")
+    field(TWST, "High")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module3:Number")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_NUMBER:3")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module4")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_STRING:4")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module4:Presence")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:4")
+    field(ZNAM, "Not present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module4:Model")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_MODEL:4")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin,"$(P)$(DAU):Module4:Code")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_CODE:4")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):Module4:Speed")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_SPEED:4")
+    field(SCAN, "Passive")
+    field(ZRVL, "0")
+    field(ZRST, "Low")
+    field(ONVL, "1")
+    field(ONST, "Medium")
+    field(TWVL, "2")
+    field(TWST, "High")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module4:Number")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_NUMBER:4")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module5")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_STRING:5")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module5:Presence")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:5")
+    field(ZNAM, "Not present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module5:Model")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_MODEL:5")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin,"$(P)$(DAU):Module5:Code")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_CODE:5")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(mbbi,"$(P)$(DAU):Module5:Speed")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_SPEED:5")
+    field(SCAN, "Passive")
+    field(ZRVL, "0")
+    field(ZRST, "Low")
+    field(ONVL, "1")
+    field(ONST, "Medium")
+    field(TWVL, "2")
+    field(TWST, "High")
+    field(PINI, "YES")
+}
+record(longin,"$(P)$(DAU):Module5:Number")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) MODULE_NUMBER:5")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+
+record(bi,"$(P)$(DAU):ErrorFlag")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) ERROR_FLAG")
+    field(ZNAM, "No Error")
+    field(ONAM, "Error")
+    field(ZSV,  "NO_ALARM")
+    field(OSV,  "MAJOR")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):ErrorMessage1")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) ERROR:1")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):ErrorMessage2")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) ERROR:2")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):ErrorMessage3")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) ERROR:3")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(bo,"$(P)$(DAU):ErrorClear")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@$(HANDLE) ERROR_CLEAR")
+}
+record(bi,"$(P)$(DAU):AlarmFlag")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) ALARM_FLAG")
+    field(ZNAM, "No Alarm")
+    field(ONAM, "Alarm")
+    field(ZSV, "NO_ALARM")
+    field(OSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(bo,"$(P)$(DAU):AlarmAck")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@$(HANDLE) ALARM_ACK")
+}
+
+record(bo, "$(P)$(DAU):InputPoll")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@$(HANDLE) INP_TRIG")
+    field(SCAN, "1 second")
+}
+
+record(bo, "$(P)$(DAU):OutputPoll")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@$(HANDLE) OUT_TRIG")
+    field(SCAN, "1 second")
+}
+
+record(bo, "$(P)$(DAU):StatusPoll")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT, "@$(HANDLE) STAT_TRIG")
+    field(SCAN, "1 second")
+}
+
+record(bi,"$(P)$(DAU):OpMode")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@$(HANDLE) SETTINGS_MODE")
+    field(ZNAM, "Measurement")
+    field(ONAM, "Settings")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(bo,"$(P)$(DAU):OpModeSet")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT,  "@$(HANDLE) OPMODE")
+    field(ZNAM, "Measurement")
+    field(ONAM, "Settings")
+#    field(PINI, "YES")
+}
+
+
+record(bi,"$(P)$(DAU):Computation")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(INP,  "@$(HANDLE) COMPUTE_MODE")
+    field(ZNAM, "Stopped")
+    field(ONAM, "Running")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbo,"$(P)$(DAU):ComputationSet")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT,  "@$(HANDLE) COMPUTE_CMD")
+    field(ZRST, "Start")
+    field(ZRVL, "0")
+    field(ONST, "Stop") 
+    field(ONVL, "1") 
+    field(TWST, "Reset")
+    field(TWVL, "2")
+    field(THST, "Clear")
+    field(THVL, "3")
+}

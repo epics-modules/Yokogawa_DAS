@@ -2057,7 +2057,7 @@ int mw100_integer_get( struct devqueue *dq, int channel, int *value)
   if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
       (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
     return 0;
-  *value = dq->ch_data[channel-1].value;
+  *value = (int) dq->ch_data[channel-1].value;
 
   return 0;
 }

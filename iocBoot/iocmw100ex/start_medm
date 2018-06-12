@@ -1,6 +1,6 @@
 #!/bin/bash
 
-EPICS_APP=/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_MW100/direct_mw100
+EPICS_APP=/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_DAS/direct_mw100
 EPICS_APP_ADL_DIR=${EPICS_APP}/mw100App/op/adl
 
 #######################################
@@ -34,4 +34,4 @@ fi
 #export EPICS_CA_MAX_ARRAY_BYTES=64008
 
 cd ${EPICS_APP_ADL_DIR}
-medm ${EPICS_APP}/test.adl &
+medm -x ${EPICS_APP}/iocBoot/iocmw100ex/mwtest.adl &

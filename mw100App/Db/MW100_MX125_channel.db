@@ -1,0 +1,54 @@
+record(bi, "$(P)$(DAU):$(ADDRESS):Relay")
+{
+    alias("$(P)$(DAU):$(ADDRESS)")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) VAL:$(ADDRESS)")
+    field(ZNAM, "Opened")
+    field(ONAM, "Closed")
+    field(SCAN, "I/O Intr")
+}
+record(mbbi,"$(P)$(DAU):$(ADDRESS):ChStatus")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) CH_STATUS:$(ADDRESS)")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Normal")
+    field(TWVL, "2")
+    field(TWST, "Diff")
+}
+record(mbbi,"$(P)$(DAU):$(ADDRESS):RelayMode")
+{
+    field(PINI, "YES")
+    field(DTYP, "Yokogawa MW100")
+    field(INP, "@$(HANDLE) CH_MODE:$(ADDRESS)")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ZRST, "Skip")
+    field(ONVL, "1")
+    field(ONST, "Alarm")
+    field(TWVL, "2")
+    field(TWST, "Comm")
+    field(THVL, "3")
+    field(THST, "Media")
+    field(FRVL, "4")
+    field(FRST, "Failure")
+    field(FVVL, "5")
+    field(FVST, "Error")
+}
+record(bo, "$(P)$(DAU):$(ADDRESS):RelaySet")
+{
+    field(DTYP, "Yokogawa MW100")
+    field(OUT,  "@$(HANDLE) VAL:$(ADDRESS)")
+    field(ZNAM, "Open")
+    field(ONAM, "Close")
+}
+record(stringout,"$(P)$(DAU):$(ADDRESS):Label")
+{
+    field(PINI, "YES")
+    field( OUT, "$(P)$(DAU):$(ADDRESS):Relay.DESC PP")
+}
+

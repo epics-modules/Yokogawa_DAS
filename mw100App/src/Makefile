@@ -7,6 +7,7 @@ include $(TOP)/configure/CONFIG
 # Build an IOC support library and application
 ifneq ($(OS_CLASS), WIN32)
 LIBRARY_IOC += mw100
+PROD_HOST += mw100_probe
 PROD_IOC = mw100ex
 endif
 
@@ -29,6 +30,12 @@ mw100_SRCS += devMW100_stringin.c
 mw100_SRCS += drvMW100.c
 
 mw100_LIBS += $(EPICS_BASE_IOC_LIBS)
+
+
+mw100_probe_SRCS += mw100_probe.c
+#mw100_probe_CFLAGS += -DDBPATH="\"\""
+#mw100_probe_LIBS += 
+
 
 # mw100ex.dbd will be created and installed
 DBD += mw100ex.dbd
