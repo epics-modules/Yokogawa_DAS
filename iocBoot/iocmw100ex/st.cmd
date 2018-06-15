@@ -21,7 +21,7 @@ epicsEnvSet("YOKOGAWA_DAS", "${TOP}")
 
 # Generate the following subsitutions file using
 # ../../bin/linux-x86_64/mw100_probe (IP address) mwtest: dau hdl
-dbLoadTemplate "auto_mw100.substitutions"
+dbLoadTemplate("auto_mw100.substitutions")
 
 iocInit
 
