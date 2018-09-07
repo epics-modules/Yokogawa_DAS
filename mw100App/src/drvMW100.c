@@ -525,7 +525,7 @@ enum { CMD_LOAD_MODULES, CMD_READ_ALL_INFOS, CMD_READ_STATUS,
        CMD_SET_COMM, CMD_SET_CONST};
 
 
-int qmesg( struct devqueue *dq, dbCommon *precord, int cmd, int channel,
+static int qmesg( struct devqueue *dq, dbCommon *precord, int cmd, int channel,
            union datum dt);
 
 
@@ -546,12 +546,12 @@ enum ResponseType { RESPONSE_OK, RESPONSE_ERROR, RESPONSE_CHAIN_ERRORS,
                     RESPONSE_ASCII, RESPONSE_BINARY, RESPONSE_INVALID };
 
 
-static int error_reader( struct devqueue *dq )
+static int ok_error_reader( struct devqueue *dq )
 {
   int len, addlen;
   int flag;
 
-  // add timeout for returning 1
+  // TODO: add timeout for returning 1
   
   flag = 1;
   len = 2;
@@ -578,7 +578,7 @@ static int ascii_reader( struct devqueue *dq )
   int len, addlen;
   int flag;
 
-  // add timeout for returning 1
+  // TODO: add timeout for returning 1
   
   flag = 1;
   len = 2;
@@ -651,7 +651,7 @@ static int response_reader( struct devqueue *dq )
   switch( dq->inbuffer[1])
     {
     case '0':
-      if( error_reader( dq) )
+      if( ok_error_reader( dq) )
         return RESPONSE_INVALID;
 
       if( !strcmp( dq->inbuffer, "E0\r\n") )
@@ -662,7 +662,7 @@ static int response_reader( struct devqueue *dq )
 
     case '1':
       dq->error_flag = 1;
-      if( error_reader( dq) )
+      if( ok_error_reader( dq) )
         return RESPONSE_INVALID;
 
       if( sscanf( dq->inbuffer, "E1 %d %*s\r\n", &error_code) == 1)
@@ -685,7 +685,7 @@ static int response_reader( struct devqueue *dq )
     case '2': // possibly handle correctly in future
       dq->error_flag = 1;
       
-      if( error_reader( dq) )
+      if( ok_error_reader( dq) )
         return RESPONSE_INVALID;
 
       return RESPONSE_CHAIN_ERRORS;
@@ -711,7 +711,7 @@ static int response_reader( struct devqueue *dq )
 }
 
 
-int load_modules( struct devqueue *dq)
+static int load_modules( struct devqueue *dq)
 {
   char *ptr;
 
@@ -832,7 +832,7 @@ int load_modules( struct devqueue *dq)
   return 0;
 }
 
-int load_status( struct devqueue *dq)
+static int load_status( struct devqueue *dq)
 {
   int i;
   char *p;
@@ -876,7 +876,7 @@ int load_status( struct devqueue *dq)
   return 0;
 }
 
-int load_infos( struct devqueue *dq  )
+static int load_infos( struct devqueue *dq  )
 {
   int ch_status;
   char unit[7];
@@ -1183,7 +1183,7 @@ static int input_value_flag( unsigned int value)
 }
 
 // type 0 means get all, 1 means data 001-060, 2 means calc A001-A300
-int load_input_values( struct devqueue *dq, int type, int channel )
+static int load_input_values( struct devqueue *dq, int type, int channel )
 {
   //  int readlen;
 
@@ -1283,7 +1283,7 @@ int load_input_values( struct devqueue *dq, int type, int channel )
 }
 
 // CMD_READ_SIGNAL is for DAC channel
-int load_output_values( struct devqueue *dq, int type, int channel )
+static int load_output_values( struct devqueue *dq, int type, int channel )
 {
   int length;
   int number_values;
@@ -1394,7 +1394,8 @@ int load_output_values( struct devqueue *dq, int type, int channel )
 
 
 
-int set_output_value( struct devqueue *dq, int type, int channel, double value)
+static int set_output_value( struct devqueue *dq, int type, int channel,
+                             double value)
 {
   int sval;
 
@@ -1425,7 +1426,7 @@ int set_output_value( struct devqueue *dq, int type, int channel, double value)
   return 0;
 }
 
-int set_binary_value( struct devqueue *dq, int channel, int value)
+static int set_binary_value( struct devqueue *dq, int channel, int value)
 {
   if( value < 0)
     value = 0;
@@ -1441,7 +1442,7 @@ int set_binary_value( struct devqueue *dq, int channel, int value)
 }
 
 
-int set_mode( struct devqueue *dq, int type, int value)
+static int set_mode( struct devqueue *dq, int type, int value)
 {
   if( type == CMD_SET_OPMODE)
     {
@@ -1469,7 +1470,7 @@ int set_mode( struct devqueue *dq, int type, int value)
   return 0;
 }
 
-int clear_error(struct devqueue *dq)
+static int clear_error(struct devqueue *dq)
 {
   simple_writer( dq, "CE0\r\n");
   if( response_reader( dq) != RESPONSE_OK)
@@ -1483,7 +1484,7 @@ int clear_error(struct devqueue *dq)
   return 0;
 }
 
-int acknowledge_alarms(struct devqueue *dq)
+static int acknowledge_alarms(struct devqueue *dq)
 {
   simple_writer( dq, "AK0\r\n");
   if( response_reader( dq) != RESPONSE_OK)
@@ -1496,7 +1497,7 @@ int acknowledge_alarms(struct devqueue *dq)
 }
 
 
-int command_process( struct devqueue *dq, int cmd_id, int channel, 
+static int command_process( struct devqueue *dq, int cmd_id, int channel, 
                      union datum dt)
 {
   switch(cmd_id)
@@ -1579,7 +1580,7 @@ static void *queue_func(void *arg)
   return NULL;
 }
 
-int qmesg( struct devqueue *dq, dbCommon *precord, int cmd, int channel,
+static int qmesg( struct devqueue *dq, dbCommon *precord, int cmd, int channel,
            union datum dt)
 {
   struct req_pkt *pkt, *plp;
@@ -1636,7 +1637,7 @@ static int socket_connect(struct devqueue *dq)
 }
 
 
-int mw100Init( char *device, char *address)
+static int init_mw100( char *device, char *address)
 {
   struct queue_link *qlp;
   struct devqueue *dq;
@@ -2242,7 +2243,7 @@ static const iocshArg* args[]= {&arg0,&arg1};
 static const iocshFuncDef mw100InitDef = {"mw100Init",2,args};
 static void mw100InitFunc(const iocshArgBuf* args)
 {
-  mw100Init( args[0].sval, args[1].sval);
+  init_mw100( args[0].sval, args[1].sval);
 }
 
 /* Registration method */
