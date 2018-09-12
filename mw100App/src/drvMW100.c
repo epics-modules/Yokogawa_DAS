@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <errlog.h>
 #include <ctype.h>
+#include <pthread.h>
 
 #include <recSup.h>
 
@@ -16,12 +17,10 @@
 #include <epicsThread.h>
 //#include <epicsInterrupt.h>
 
-#include <pthread.h>
 
 #include <unistd.h>
 
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include "drvYokogawaDas_common.h"
 
 ////////////////////////////////////
 
@@ -140,48 +139,6 @@ struct
 epicsExportAddress(drvet,drvMW100);
 
 
-
-union datum
-  {
-    int int_d;
-    double flt_d;
-    char *str_d;
-  };
-
-struct req_pkt
-{
-  struct dbCommon *precord;
-  int cmd_id;
-  int channel;
-  union datum value;
-    
-  struct req_pkt *next;
-};
-
-union datum datum_empty( void)
-{
-  union datum dt;
-  dt.int_d = 0;
-  return dt;
-}
-union datum datum_int( int val)
-{
-  union datum dt;
-  dt.int_d = val;
-  return dt;
-}
-union datum datum_float( double val)
-{
-  union datum dt;
-  dt.flt_d = val;
-  return dt;
-}
-/* union datum datum_string( char *val) */
-/* { */
-/*   union datum dt; */
-/*   dt.str_d = strdup(val); */
-/*   return dt; */
-/* } */
 
 
 
@@ -396,18 +353,14 @@ static struct error_value errors[] =
 static int errors_num = sizeof( errors)/sizeof(struct error_value);
 
 
-struct devqueue
+struct device
 {
   char *name;
-  int sockfd;
-  struct sockaddr_in r_addr;
+  
+  struct yDas_comm comm; // holds network reading and writing stuff
 
-#define INBUFLEN (16384) 
-  char inbuffer[INBUFLEN];
-#define OUTBUFLEN (128) 
-  char outbuffer[OUTBUFLEN];
-  int read_length;
-
+  struct yDas_queue queue; // holds the queued commmunication requests
+  
   int error_flag; // nonzero if error
   struct error_value *error; // NULL if unknown error and flag is set
 
@@ -416,11 +369,7 @@ struct devqueue
   IOSCANPVT info_ioscanpvt;   // info for channels: prec, egu, ...
   IOSCANPVT status_ioscanpvt; // device status
   IOSCANPVT error_ioscanpvt;  // error messages
-
-  pthread_mutex_t list_lock;
-  pthread_cond_t list_cond;
-  struct req_pkt *list;
-
+  
   //////////////////////////
 
   unsigned char status[8];
@@ -447,14 +396,14 @@ struct devqueue
   struct short_expr_info short_calc_expr[240]; // A061-A300  10 or 8 max
 };
 
-struct queue_link
+struct device_link
 {
-  struct devqueue *dq;
-  struct queue_link *next;
+  struct device *dvc;
+  struct device_link *next;
 };
 
 // just define head of linked list
-struct queue_link *queue_list = NULL; 
+struct device_link *device_list = NULL; 
 
 
 
@@ -471,8 +420,8 @@ LOCAL long mw100_report(int level)
 /* Level=2 Display a lot of information. It is even permissible to  */
 /*     prompt for what is wanted. */
 
-  struct queue_link *qlp;
-  struct devqueue *dq;
+  struct device_link *dvc_link;
+  struct device *dvc;
   
   int cnt;
   
@@ -482,15 +431,15 @@ LOCAL long mw100_report(int level)
   char buffer[20];
 
   cnt = 0;
-  qlp = queue_list;
-  while( qlp != NULL)
+  dvc_link = device_list;
+  while( dvc_link != NULL)
     {
       cnt++;
-      dq = qlp->dq;
+      dvc = dvc_link->dvc;
 
-      inet_ntop(AF_INET, &(dq->r_addr.sin_addr), buffer, buflen);
+      inet_ntop(AF_INET, &(dvc->comm.r_addr.sin_addr), buffer, buflen);
       
-      printf("    Yokogawa MW100 #%d: %s @ %s\n", cnt, dq->name, buffer);
+      printf("    Yokogawa MW100 #%d: %s @ %s\n", cnt, dvc->name, buffer);
 
       if( level)
         {
@@ -498,15 +447,15 @@ LOCAL long mw100_report(int level)
 
           for( i = 0; i < 6; i++)
             {
-              if( !dq->modules[i].use_flag)
+              if( !dvc->modules[i].use_flag)
                 printf("        #%d: empty\n", i+1);
               else
-                printf("        #%d: %s\n", i+1, dq->modules[i].module_string);
+                printf("        #%d: %s\n", i+1, dvc->modules[i].module_string);
             }
                      
         }
 
-      qlp = qlp->next;
+      dvc_link = dvc_link->next;
     }
 
   return 0;
@@ -525,193 +474,48 @@ enum { CMD_LOAD_MODULES, CMD_READ_ALL_INFOS, CMD_READ_STATUS,
        CMD_SET_COMM, CMD_SET_CONST};
 
 
-static int qmesg( struct devqueue *dq, dbCommon *precord, int cmd, int channel,
-           union datum dt);
 
 
-static int simple_writer( struct devqueue *dq, char *string)
+// need to do error handling locally, different between models
+static int response_reader( struct device *dvc )
 {
-  epicsThreadSleep(.02);
-  return write( dq->sockfd, string, strlen(string) );
-}
-
-static int writer( struct devqueue *dq)
-{
-  epicsThreadSleep(.02);
-  return write( dq->sockfd, dq->outbuffer, strlen(dq->outbuffer) );
-}
-
-
-enum ResponseType { RESPONSE_OK, RESPONSE_ERROR, RESPONSE_CHAIN_ERRORS,
-                    RESPONSE_ASCII, RESPONSE_BINARY, RESPONSE_INVALID };
-
-
-static int ok_error_reader( struct devqueue *dq )
-{
-  int len, addlen;
-  int flag;
-
-  // TODO: add timeout for returning 1
-  
-  flag = 1;
-  len = 2;
-  while( (addlen = read( dq->sockfd, dq->inbuffer + len, 
-                         INBUFLEN - len - 1)) > 0)
-    {
-      len += addlen;
-      if( (len > 1) && 
-          (dq->inbuffer[len-2] == '\r') && (dq->inbuffer[len-1] == '\n') )
-        {
-          flag = 0;
-          break;
-        }
-    }
-  dq->inbuffer[len] = '\0';
-
-  dq->read_length = len;
-
-  return flag;
-}
-
-static int ascii_reader( struct devqueue *dq )
-{
-  int len, addlen;
-  int flag;
-
-  // TODO: add timeout for returning 1
-  
-  flag = 1;
-  len = 2;
-  while( (addlen = read( dq->sockfd, dq->inbuffer + len, 
-                         INBUFLEN - len - 1)) > 0)
-    {
-      len += addlen;
-
-      //      printf("%s", dq->inbuffer); fflush(stdout);
-
-      if( (len > 4) && 
-          (dq->inbuffer[len-4] == 'E') && (dq->inbuffer[len-3] == 'N') &&
-          (dq->inbuffer[len-2] == '\r') && (dq->inbuffer[len-1] == '\n') )
-        {
-          flag = 0;
-          break;
-        }
-    }
-  dq->inbuffer[len] = '\0';
-
-  dq->read_length = len;
-
-  return flag;
-}
-
-static int binary_reader( struct devqueue *dq)
-{  
-  int len, addlen;
-  uint32_t *datalen;
-
-  len = 2;
-  while( (addlen = read( dq->sockfd, dq->inbuffer + len, 8 - len)) > 0)
-    len += addlen;
-  if( len != 8)
-    return 1;
-  datalen = (uint32_t *)(dq->inbuffer + 4);
-  while( (addlen = read( dq->sockfd, dq->inbuffer + len, 
-                         8 + *datalen - len)) > 0)
-    len += addlen;
-  if( len != (8 + *datalen) )
-    return 1;
-
-  dq->read_length = len;
-
-  return 0;
-}
-
-
-static int response_reader( struct devqueue *dq )
-{
+  int response;
   int error_code;
 
-  dq->error_flag = 0;
-  dq->error = NULL;
+  dvc->error_flag = 0;
+  dvc->error = NULL;
 
-  if( read( dq->sockfd, dq->inbuffer, 1) <= 0)
-    return 1;
-  if( dq->inbuffer[0] != 'E')
+  response = yDas_response_reader( &(dvc->comm) );
+  if( response == RESPONSE_ERROR)
     {
-      //  read all in network buffer and throw away!
+      dvc->error_flag = 1;
 
-      // THIS MIGHT TIMEOUT!!!
-      read( dq->sockfd, dq->inbuffer, INBUFLEN);
-      return RESPONSE_INVALID;
-    }
-
-  if( read( dq->sockfd, dq->inbuffer + 1, 1) <= 0)
-    return 1;
-  //  printf("%s", dq->inbuffer); fflush(stdout);
-  switch( dq->inbuffer[1])
-    {
-    case '0':
-      if( ok_error_reader( dq) )
-        return RESPONSE_INVALID;
-
-      if( !strcmp( dq->inbuffer, "E0\r\n") )
-        return RESPONSE_OK;
-      else
-        return RESPONSE_INVALID;
-      break;
-
-    case '1':
-      dq->error_flag = 1;
-      if( ok_error_reader( dq) )
-        return RESPONSE_INVALID;
-
-      if( sscanf( dq->inbuffer, "E1 %d %*s\r\n", &error_code) == 1)
+      if( sscanf( dvc->comm.inbuffer, "E1 %d %*s\r\n", &error_code) == 1)
         {
           int i;
 
           for( i = 0; i < errors_num; i++)
             {
               if( errors[i].id == error_code)
-                dq->error = &(errors[i]);
+                dvc->error = &(errors[i]);
             }
 
-          scanIoRequest(dq->error_ioscanpvt);
+          scanIoRequest(dvc->error_ioscanpvt);
           return RESPONSE_ERROR;
         }
       else
         return RESPONSE_INVALID;
-      break;
-
-    case '2': // possibly handle correctly in future
-      dq->error_flag = 1;
-      
-      if( ok_error_reader( dq) )
-        return RESPONSE_INVALID;
-
-      return RESPONSE_CHAIN_ERRORS;
-      break;
-
-    case 'A':
-      if( ascii_reader(dq) )
-        return RESPONSE_INVALID;
-      else
-        return RESPONSE_ASCII;
-      break;
-
-    case 'B':
-      if( binary_reader(dq) )
-        return RESPONSE_INVALID;
-      else
-        return RESPONSE_BINARY;
-      break;
     }
 
-  // default;
-  return RESPONSE_INVALID;
+  // multiple errors not really handles right now
+  if( response == RESPONSE_CHAIN_ERRORS)
+      dvc->error_flag = 1;
+    
+  return response;
 }
 
 
-static int load_modules( struct devqueue *dq)
+static int load_modules( struct device *dvc)
 {
   char *ptr;
 
@@ -721,30 +525,30 @@ static int load_modules( struct devqueue *dq)
   char *c;
   int i,j;
 
-  simple_writer( dq, "CF0\r\n" );
-  if( response_reader( dq) != RESPONSE_ASCII)
+  yDas_simple_writer( &(dvc->comm), "CF0\r\n" );
+  if( response_reader( dvc) != RESPONSE_ASCII)
     return 1;
 
-  ptr = dq->inbuffer;
+  ptr = dvc->comm.inbuffer;
   ptr += 4;
   while( *ptr != 'E')
     {
       which = *ptr - '0';
       ptr += 4;
 
-      c = dq->modules[which].set_message;
+      c = dvc->modules[which].set_message;
       for( i = 0; i < 13; i++)
         *(c++) = *(ptr++);
       *c = '\0';
       ptr += 3;
 
-      c = dq->modules[which].status_message;
+      c = dvc->modules[which].status_message;
       for( i = 0; i < 13; i++)
         *(c++) = *(ptr++);
       *c = '\0';
       ptr += 1;
 
-      c = dq->modules[which].error_message;
+      c = dvc->modules[which].error_message;
       while( *ptr != '\r')
         *(c++) = *(ptr++);
       *c = '\0';
@@ -753,27 +557,27 @@ static int load_modules( struct devqueue *dq)
 
   for( i = 0; i < 6; i++)
     {
-      dq->modules[i].use_flag = 0;
+      dvc->modules[i].use_flag = 0;
 
       // the strings have to match
-      if( strcmp( dq->modules[i].set_message, 
-                  dq->modules[i].status_message ) )
+      if( strcmp( dvc->modules[i].set_message, 
+                  dvc->modules[i].status_message ) )
         continue;
       // need no errors
-      if( dq->modules[i].error_message[0] != '\0')
+      if( dvc->modules[i].error_message[0] != '\0')
         continue;
-      if( !strcmp( dq->modules[i].set_message, "-------------") )
+      if( !strcmp( dvc->modules[i].set_message, "-------------") )
         continue;
 
-      dq->modules[i].use_flag = 1;
-      strcpy( dq->modules[i].module_string, dq->modules[i].set_message );
+      dvc->modules[i].use_flag = 1;
+      strcpy( dvc->modules[i].module_string, dvc->modules[i].set_message );
       
       // the dash will halt the conversion
-      ptr = dq->modules[i].module_string + 2;
-      dq->modules[i].model = atoi(ptr);
+      ptr = dvc->modules[i].module_string + 2;
+      dvc->modules[i].model = atoi(ptr);
       ptr += 4;
 
-      c = dq->modules[i].code;
+      c = dvc->modules[i].code;
       for( j = 0; j < 3; j++)
         *(c++) = *(ptr++);
       *c = '\0';
@@ -782,28 +586,28 @@ static int load_modules( struct devqueue *dq)
       switch( *ptr)
         {
         case 'L':
-          dq->modules[i].speed = 0;
+          dvc->modules[i].speed = 0;
           break;
         case 'M':
-          dq->modules[i].speed = 1;
+          dvc->modules[i].speed = 1;
           break;
         case 'H':
-          dq->modules[i].speed = 2;
+          dvc->modules[i].speed = 2;
           break;
         default:
-          dq->modules[i].speed = -1;
+          dvc->modules[i].speed = -1;
         }
       ptr++;
       
-      dq->modules[i].number = atoi(ptr);
+      dvc->modules[i].number = atoi(ptr);
     }
 
   for( j = 0; j < 60; j++)
-    dq->ch_type[j] = CH_TYPE_NONE;
+    dvc->ch_type[j] = CH_TYPE_NONE;
   for( i = 0; i < 6; i++)
-    if( dq->modules[i].use_flag)
+    if( dvc->modules[i].use_flag)
       {
-        switch( dq->modules[i].model )
+        switch( dvc->modules[i].model )
           {
           case 110:
           case 112:
@@ -825,58 +629,59 @@ static int load_modules( struct devqueue *dq)
             type = CH_TYPE_UNKNOWN;
           }
 
-        for( j = 0; j < dq->modules[i].number; j++)
-          dq->ch_type[10*i + j] = type;
+        for( j = 0; j < dvc->modules[i].number; j++)
+          dvc->ch_type[10*i + j] = type;
       }
   
   return 0;
 }
 
-static int load_status( struct devqueue *dq)
+static int load_status( struct device *dvc)
 {
   int i;
   char *p;
 
-  simple_writer( dq, "IS0\r\n" );
-  if( response_reader( dq) != RESPONSE_ASCII)
+  yDas_simple_writer( &(dvc->comm), "IS0\r\n" );
+  if( response_reader( dvc) != RESPONSE_ASCII)
     return 1;
 
-  p = dq->inbuffer + 4;
+  p = dvc->comm.inbuffer + 4;
   for( i = 0; i < 8; i++)
     {
-      dq->status[i] = 100*(*p-'0') + 10*(*(p+1)-'0') + (*(p+2)-'0');
+      dvc->status[i] = 100*(*p-'0') + 10*(*(p+1)-'0') + (*(p+2)-'0');
       p += 4;
     }
 
   /* only status[4] is used right now */
 
-  if( dq->status[4] & 1)
-    dq->settings_mode = 1;
+  if( dvc->status[4] & 1)
+    dvc->settings_mode = 1;
   else
     {
-      if( dq->settings_mode == 1)
+      if( dvc->settings_mode == 1)
         {
-          qmesg( dq, NULL, CMD_READ_ALL_INFOS, 0, datum_empty());
+          yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, NULL, CMD_READ_ALL_INFOS,
+                       0, datum_empty());
         }
-      dq->settings_mode = 0;
+      dvc->settings_mode = 0;
     }
 
-  if( dq->status[4] & 2)
-    dq->measurement_mode = 1;
+  if( dvc->status[4] & 2)
+    dvc->measurement_mode = 1;
   else
-    dq->measurement_mode = 0;
+    dvc->measurement_mode = 0;
 
-  if( dq->status[4] & 4 )
-    dq->compute_mode = 1;
+  if( dvc->status[4] & 4 )
+    dvc->compute_mode = 1;
   else
-    dq->compute_mode = 0;
+    dvc->compute_mode = 0;
 
-  scanIoRequest(dq->status_ioscanpvt);
+  scanIoRequest(dvc->status_ioscanpvt);
 
   return 0;
 }
 
-static int load_infos( struct devqueue *dq  )
+static int load_infos( struct device *dvc  )
 {
   int ch_status;
   char unit[7];
@@ -894,15 +699,15 @@ static int load_infos( struct devqueue *dq  )
   // grab the settings on the available channels for ADC, DAC, not RELAY
   // as well as the math channels
 
-  simple_writer( dq, "FE1,001,A300\r\n");
-  if( response_reader( dq) != RESPONSE_ASCII)
+  yDas_simple_writer( &(dvc->comm), "FE1,001,A300\r\n");
+  if( response_reader( dvc) != RESPONSE_ASCII)
     return 1;
 
   //  printf("%s\n", inbuffer);
 
   // printf(inbuffer);
 
-  ptr = dq->inbuffer;
+  ptr = dvc->comm.inbuffer;
   ptr += 4;
   while( *ptr != 'E')
     {
@@ -927,14 +732,14 @@ static int load_infos( struct devqueue *dq  )
       if( channel[0] == 'A')
         {
           address = atoi( &channel[1]) - 1;
-          ci = &(dq->calc_info[address]);
-          cd = &(dq->calc_data[address]);
+          ci = &(dvc->calc_info[address]);
+          cd = &(dvc->calc_data[address]);
         }
       else
         {
           address = atoi( &channel[0]) - 1;
-          ci = &(dq->ch_info[address]);
-          cd = &(dq->ch_data[address]);
+          ci = &(dvc->ch_info[address]);
+          cd = &(dvc->ch_data[address]);
         }
 
       ci->ch_status = ch_status;
@@ -974,13 +779,13 @@ static int load_infos( struct devqueue *dq  )
 
 
 
-  simple_writer( dq, "FO0,001,060\r\n");
-  if( response_reader( dq) != RESPONSE_ASCII)
+  yDas_simple_writer( &(dvc->comm), "FO0,001,060\r\n");
+  if( response_reader( dvc) != RESPONSE_ASCII)
     return 1;
 
   ch_status = CH_STATUS_UNKNOWN; // put it in some state;
 
-  ptr = dq->inbuffer;
+  ptr = dvc->comm.inbuffer;
   ptr += 4;
   while( *ptr != 'E')
     {
@@ -997,7 +802,7 @@ static int load_infos( struct devqueue *dq  )
       address = atoi( ptr) - 1;
       ptr = strchr( ptr, '\n') + 1;
 
-      dq->ch_info[address].ch_status = ch_status;
+      dvc->ch_info[address].ch_status = ch_status;
     }
 
 
@@ -1005,11 +810,11 @@ static int load_infos( struct devqueue *dq  )
 
   // grab the DAC mode information
 
-  simple_writer( dq, "AO?\r\n");
-  if( response_reader( dq) != RESPONSE_ASCII)
+  yDas_simple_writer( &(dvc->comm), "AO?\r\n");
+  if( response_reader( dvc) != RESPONSE_ASCII)
     return 1;
 
-  ptr = dq->inbuffer;
+  ptr = dvc->comm.inbuffer;
   ptr += 4;
   while( *ptr != 'E')
     {
@@ -1017,7 +822,7 @@ static int load_infos( struct devqueue *dq  )
       *(ptr+3) = '\0';
       address = atoi( ptr) - 1;
 
-      ci = &(dq->ch_info[address]);
+      ci = &(dvc->ch_info[address]);
 
       ptr += 4;
       if( *ptr != 'A')
@@ -1046,11 +851,11 @@ static int load_infos( struct devqueue *dq  )
 
 
   // grab the relay mode information
-  simple_writer( dq, "XD?\r\n");
-  if( response_reader( dq) != RESPONSE_ASCII)
+  yDas_simple_writer( &(dvc->comm), "XD?\r\n");
+  if( response_reader( dvc) != RESPONSE_ASCII)
     return 1;
 
-  ptr = dq->inbuffer;
+  ptr = dvc->comm.inbuffer;
   ptr += 4;
   while( *ptr != 'E')
     {
@@ -1059,7 +864,7 @@ static int load_infos( struct devqueue *dq  )
       address = atoi( ptr) - 1;
       ptr += 4;
 
-      ci = &(dq->ch_info[address]);
+      ci = &(dvc->ch_info[address]);
       if( ci->ch_status == CH_STATUS_SKIP)
         {
           ci->ch_mode = CH_MODE_RELAY_SKIP;
@@ -1096,11 +901,11 @@ static int load_infos( struct devqueue *dq  )
 
   // grab the calculation expressions
 
-  simple_writer( dq, "SO?\r\n");
-  if( response_reader( dq) != RESPONSE_ASCII)
+  yDas_simple_writer( &(dvc->comm), "SO?\r\n");
+  if( response_reader( dvc) != RESPONSE_ASCII)
     return 1;
 
-  ptr = dq->inbuffer;
+  ptr = dvc->comm.inbuffer;
   ptr += 4;
   while( *ptr != 'E')
     {
@@ -1112,13 +917,13 @@ static int load_infos( struct devqueue *dq  )
         {
           if( address < 60)
             {
-              dq->calc_expr[address].on_flag = 0;
-              dq->calc_expr[address].expr[0] = '\0';
+              dvc->calc_expr[address].on_flag = 0;
+              dvc->calc_expr[address].expr[0] = '\0';
             }
           else
             {
-              dq->short_calc_expr[address-60].on_flag = 0;
-              dq->short_calc_expr[address-60].expr[0] = '\0';
+              dvc->short_calc_expr[address-60].on_flag = 0;
+              dvc->short_calc_expr[address-60].expr[0] = '\0';
             }
         }
       else
@@ -1132,13 +937,13 @@ static int load_infos( struct devqueue *dq  )
           // printf("%d %s\n", address, p);
           if( address < 60)
             {
-              dq->calc_expr[address].on_flag = 1;
-              strcpy(dq->calc_expr[address].expr, ptr);
+              dvc->calc_expr[address].on_flag = 1;
+              strcpy(dvc->calc_expr[address].expr, ptr);
             }
           else
             {
-              dq->short_calc_expr[address-60].on_flag = 1;
-              strcpy(dq->short_calc_expr[address-60].expr, ptr);
+              dvc->short_calc_expr[address-60].on_flag = 1;
+              strcpy(dvc->short_calc_expr[address-60].expr, ptr);
             }
           ptr = p+1;
         }
@@ -1147,7 +952,7 @@ static int load_infos( struct devqueue *dq  )
 
 
 
-  scanIoRequest(dq->info_ioscanpvt );
+  scanIoRequest(dvc->info_ioscanpvt );
  
   return 0;
 }
@@ -1183,7 +988,7 @@ static int input_value_flag( unsigned int value)
 }
 
 // type 0 means get all, 1 means data 001-060, 2 means calc A001-A300
-static int load_input_values( struct devqueue *dq, int type, int channel )
+static int load_input_values( struct device *dvc, int type, int channel )
 {
   //  int readlen;
 
@@ -1209,31 +1014,31 @@ static int load_input_values( struct devqueue *dq, int type, int channel )
   switch( type)
     {
     case CMD_READ_ALL_INPUTS:
-      simple_writer( dq, "FD1,001,A300\r\n");
+      yDas_simple_writer( &(dvc->comm), "FD1,001,A300\r\n");
       break;
     case CMD_READ_SIGNAL_INPUT:
-      sprintf( dq->outbuffer, "FD1,%03d,%03d\r\n", channel, channel);
-      writer( dq);
+      sprintf( dvc->comm.outbuffer, "FD1,%03d,%03d\r\n", channel, channel);
+      yDas_writer( &(dvc->comm));
       break;
     case CMD_READ_MATH:
-      sprintf( dq->outbuffer, "FD1,A%03d,A%03d\r\n", channel, channel);
-      writer( dq);
+      sprintf( dvc->comm.outbuffer, "FD1,A%03d,A%03d\r\n", channel, channel);
+      yDas_writer( &(dvc->comm));
       break;
     }
-  if( response_reader( dq) != RESPONSE_BINARY)
+  if( response_reader( dvc) != RESPONSE_BINARY)
     return 1;
 
-  q = (unsigned char *) (dq->inbuffer + 4);
+  q = (unsigned char *) (dvc->comm.inbuffer + 4);
   length = *((epicsUInt32 *) q);
   number_values = (length - 22)/8;
 
-  q = (unsigned char *) (dq->inbuffer + 12);
+  q = (unsigned char *) (dvc->comm.inbuffer + 12);
   for( i = 0; i < 6; i++)
-    dq->input_poll_time[i] = *(q++);
+    dvc->input_poll_time[i] = *(q++);
 
   alarm_flag = 0;
   
-  q = (unsigned char *) (dq->inbuffer + 28);
+  q = (unsigned char *) (dvc->comm.inbuffer + 28);
   for( i = 0; i < number_values; i++)
     {
       address = *((epicsUInt16 *) q);
@@ -1246,9 +1051,9 @@ static int load_input_values( struct devqueue *dq, int type, int channel )
       q += 4;
 
       if( address > 100)
-        cd = &dq->calc_data[address - 101];
+        cd = &dvc->calc_data[address - 101];
       else
-        cd = &dq->ch_data[address - 1];
+        cd = &dvc->ch_data[address - 1];
 
       cd->data_status = input_value_flag( value);
       if( cd->data_status)
@@ -1271,19 +1076,19 @@ static int load_input_values( struct devqueue *dq, int type, int channel )
     }
 
   io_flag = 0;
-  if( alarm_flag != dq->alarm_flag)
+  if( alarm_flag != dvc->alarm_flag)
     io_flag = 1;
-  dq->alarm_flag = alarm_flag;
+  dvc->alarm_flag = alarm_flag;
 
   // if alarm_flag got set and it wasn't before, do i/o request
   if( (type == CMD_READ_ALL_INPUTS) || io_flag )
-    scanIoRequest(dq->input_ioscanpvt );
+    scanIoRequest(dvc->input_ioscanpvt );
 
   return 0;
 }
 
 // CMD_READ_SIGNAL is for DAC channel
-static int load_output_values( struct devqueue *dq, int type, int channel )
+static int load_output_values( struct device *dvc, int type, int channel )
 {
   int length;
   int number_values;
@@ -1301,25 +1106,25 @@ static int load_output_values( struct devqueue *dq, int type, int channel )
   if( (type == CMD_READ_ALL_OUTPUTS) || (type == CMD_READ_SIGNAL_OUTPUT) )
     {
       if( type == CMD_READ_ALL_OUTPUTS)
-        simple_writer( dq, "FO1,001,060\r\n");
+        yDas_simple_writer( &(dvc->comm), "FO1,001,060\r\n");
       else
         {
-          sprintf( dq->outbuffer, "FO1,%03d,%03d\r\n", channel, channel);
-          writer( dq);
+          sprintf( dvc->comm.outbuffer, "FO1,%03d,%03d\r\n", channel, channel);
+          yDas_writer( &(dvc->comm));
         }
 
-      if( response_reader( dq) != RESPONSE_BINARY)
+      if( response_reader( dvc) != RESPONSE_BINARY)
         return 1;
 
-      q = (unsigned char *) (dq->inbuffer + 4);
+      q = (unsigned char *) (dvc->comm.inbuffer + 4);
       length = *((epicsUInt32 *) q);
       number_values = (length - 22)/8;
 
-      q = (unsigned char *) (dq->inbuffer + 12);
+      q = (unsigned char *) (dvc->comm.inbuffer + 12);
       for( i = 0; i < 6; i++)
-        dq->output_poll_time[i] = *(q++);
+        dvc->output_poll_time[i] = *(q++);
 
-      q = (unsigned char *) (dq->inbuffer + 28);
+      q = (unsigned char *) (dvc->comm.inbuffer + 28);
       for( i = 0; i < number_values; i++)
         {
           address = *((epicsUInt16 *) q);
@@ -1327,7 +1132,7 @@ static int load_output_values( struct devqueue *dq, int type, int channel )
           value = *((epicsUInt32 *) q);
           q += 4;
           
-          cd = &dq->ch_data[address - 1];
+          cd = &dvc->ch_data[address - 1];
 
           cd->data_status = VL_NORMAL;
           cd->value = value;
@@ -1337,16 +1142,16 @@ static int load_output_values( struct devqueue *dq, int type, int channel )
   if( (type == CMD_READ_ALL_OUTPUTS) || (type == CMD_READ_COMM) )
     {
       if( type == CMD_READ_ALL_OUTPUTS)
-        simple_writer( dq, "CM?\r\n");
+        yDas_simple_writer( &(dvc->comm), "CM?\r\n");
       else
         {
-          sprintf( dq->outbuffer, "CMC%03d?\r\n", channel);
-          writer( dq);
+          sprintf( dvc->comm.outbuffer, "CMC%03d?\r\n", channel);
+          yDas_writer( &(dvc->comm));
         }
-      if( response_reader( dq) != RESPONSE_ASCII)
+      if( response_reader( dvc) != RESPONSE_ASCII)
         return 1;
 
-      p = dq->inbuffer;
+      p = dvc->comm.inbuffer;
       p += 4;
       while( *p != 'E')
         {
@@ -1354,7 +1159,7 @@ static int load_output_values( struct devqueue *dq, int type, int channel )
           *(p + 3) = '\0';
           address = atoi(p) - 1;
           p += 4;
-          dq->comm_input[address] = atof(p);
+          dvc->comm_input[address] = atof(p);
 
           p = strchr( p, '\n') + 1;
         }
@@ -1363,16 +1168,16 @@ static int load_output_values( struct devqueue *dq, int type, int channel )
   if( (type == CMD_READ_ALL_OUTPUTS) || (type == CMD_READ_CONST) )
     {
       if( type == CMD_READ_ALL_OUTPUTS)
-        simple_writer( dq, "SK?\r\n" );
+        yDas_simple_writer( &(dvc->comm), "SK?\r\n" );
       else
         {
-          sprintf( dq->outbuffer, "SKK%02d?\r\n", channel);
-          writer( dq);
+          sprintf( dvc->comm.outbuffer, "SKK%02d?\r\n", channel);
+          yDas_writer( &(dvc->comm));
         }
-      if( response_reader( dq) != RESPONSE_ASCII)
+      if( response_reader( dvc) != RESPONSE_ASCII)
         return 1;
 
-      p = dq->inbuffer;
+      p = dvc->comm.inbuffer;
       p += 4;
       while( *p != 'E')
         {
@@ -1380,21 +1185,21 @@ static int load_output_values( struct devqueue *dq, int type, int channel )
           *(p + 2) = '\0';
           address = atoi(p) - 1;
           p += 3;
-          dq->constant[address] = atof(p);
+          dvc->constant[address] = atof(p);
           
           p = strchr( p, '\n') + 1;
         }
     }
 
   if( type == CMD_READ_ALL_OUTPUTS)
-    scanIoRequest(dq->output_ioscanpvt );
+    scanIoRequest(dvc->output_ioscanpvt );
 
   return 0;
 }
 
 
 
-static int set_output_value( struct devqueue *dq, int type, int channel,
+static int set_output_value( struct device *dvc, int type, int channel,
                              double value)
 {
   int sval;
@@ -1406,61 +1211,61 @@ static int set_output_value( struct devqueue *dq, int type, int channel,
         value = -10.0;
       if( value > 10.0)
         value = 10.0;
-      sval = unscaled_value(value, dq->ch_info[channel - 1].scale);
+      sval = unscaled_value(value, dvc->ch_info[channel - 1].scale);
 
-      sprintf( dq->outbuffer, "SP%03d,%d\r\n", channel, sval);
+      sprintf( dvc->comm.outbuffer, "SP%03d,%d\r\n", channel, sval);
       break;
     case CMD_SET_COMM:
-      sprintf( dq->outbuffer, "CMC%03d,%G\r\n", channel, value );
+      sprintf( dvc->comm.outbuffer, "CMC%03d,%G\r\n", channel, value );
       break;
     case CMD_SET_CONST:
-      sprintf( dq->outbuffer, "SKK%02d,%G\r\n", channel, value );
+      sprintf( dvc->comm.outbuffer, "SKK%02d,%G\r\n", channel, value );
       break;
     }
 
-  writer( dq);
-  if( response_reader( dq) != RESPONSE_OK)
+  yDas_writer( &(dvc->comm));
+  if( response_reader( dvc) != RESPONSE_OK)
     return 1;
 
 
   return 0;
 }
 
-static int set_binary_value( struct devqueue *dq, int channel, int value)
+static int set_binary_value( struct device *dvc, int channel, int value)
 {
   if( value < 0)
     value = 0;
   if( value > 1)
     value = 1;
 
-  sprintf( dq->outbuffer, "VD%03d,%s\r\n", channel, value ? "ON" : "OFF" );
-  writer( dq);
-  if( response_reader( dq) != RESPONSE_OK)
+  sprintf( dvc->comm.outbuffer, "VD%03d,%s\r\n", channel, value ? "ON" : "OFF");
+  yDas_writer( &(dvc->comm));
+  if( response_reader( dvc) != RESPONSE_OK)
     return 1;
 
   return 0;
 }
 
 
-static int set_mode( struct devqueue *dq, int type, int value)
+static int set_mode( struct device *dvc, int type, int value)
 {
   if( type == CMD_SET_OPMODE)
     {
       if( (value != 0) && (value != 1) )
         return 1;
 
-      sprintf( dq->outbuffer, "DS%c\r\n", value ? '1' : '0');
-      writer( dq);
-      if( response_reader( dq) != RESPONSE_OK)
+      sprintf( dvc->comm.outbuffer, "DS%c\r\n", value ? '1' : '0');
+      yDas_writer( &(dvc->comm));
+      if( response_reader( dvc) != RESPONSE_OK)
         return 1;
     }
   else if( type == CMD_SET_COMPUTE)
     {
       if( (value < 0) || (value > 3) )
         return 1;
-      sprintf( dq->outbuffer, "EX%c\r\n", '0' + ((char) value));
-      writer( dq);
-      if( response_reader( dq) != RESPONSE_OK)
+      sprintf( dvc->comm.outbuffer, "EX%c\r\n", '0' + ((char) value));
+      yDas_writer( &(dvc->comm));
+      if( response_reader( dvc) != RESPONSE_OK)
         return 1;
     }
 
@@ -1470,180 +1275,87 @@ static int set_mode( struct devqueue *dq, int type, int value)
   return 0;
 }
 
-static int clear_error(struct devqueue *dq)
+static int clear_error(struct device *dvc)
 {
-  simple_writer( dq, "CE0\r\n");
-  if( response_reader( dq) != RESPONSE_OK)
+  yDas_simple_writer( &(dvc->comm), "CE0\r\n");
+  if( response_reader( dvc) != RESPONSE_OK)
     return 1;
 
-  dq->error_flag = 0;
-  dq->error = NULL;
+  dvc->error_flag = 0;
+  dvc->error = NULL;
 
-  scanIoRequest(dq->error_ioscanpvt );
+  scanIoRequest(dvc->error_ioscanpvt );
 
   return 0;
 }
 
-static int acknowledge_alarms(struct devqueue *dq)
+static int acknowledge_alarms(struct device *dvc)
 {
-  simple_writer( dq, "AK0\r\n");
-  if( response_reader( dq) != RESPONSE_OK)
+  yDas_simple_writer( &(dvc->comm), "AK0\r\n");
+  if( response_reader( dvc) != RESPONSE_OK)
     return 1;
 
   // just do this in case scan is slow
-  load_input_values(dq, CMD_READ_ALL_INPUTS, 0);
+  load_input_values(dvc, CMD_READ_ALL_INPUTS, 0);
 
   return 0;
 }
 
 
-static int command_process( struct devqueue *dq, int cmd_id, int channel, 
-                     union datum dt)
+static int command_process( void *device, int cmd_id, int channel, 
+                            union datum dt)
 {
+  struct device *dvc = device;
+  
   switch(cmd_id)
     {
     case CMD_LOAD_MODULES:
-      load_modules(dq);
+      load_modules(dvc);
       break;
     case CMD_READ_ALL_INPUTS: // all channels
     case CMD_READ_SIGNAL_INPUT:
     case CMD_READ_MATH:
-      load_input_values( dq, cmd_id, channel);
+      load_input_values( dvc, cmd_id, channel);
       break;
     case CMD_READ_ALL_OUTPUTS: // all channels
     case CMD_READ_SIGNAL_OUTPUT:
     case CMD_READ_COMM:
     case CMD_READ_CONST:
-      load_output_values( dq, cmd_id, channel);
+      load_output_values( dvc, cmd_id, channel);
       break;
     case CMD_READ_ALL_INFOS:
-      load_infos(dq);
+      load_infos(dvc);
       break;
     case CMD_READ_STATUS:
-      load_status(dq);
+      load_status(dvc);
       break;
     case CMD_SET_SIGNAL_OUTPUT:
     case CMD_SET_COMM:
     case CMD_SET_CONST:
-      set_output_value( dq, cmd_id, channel, dt.flt_d);
+      set_output_value( dvc, cmd_id, channel, dt.flt_d);
       break;
     case CMD_SET_BINARY_OUTPUT:
-      set_binary_value( dq, channel, dt.int_d);
+      set_binary_value( dvc, channel, dt.int_d);
       break;
     case CMD_SET_OPMODE:
     case CMD_SET_COMPUTE:
-      set_mode(dq, cmd_id, dt.int_d);
+      set_mode(dvc, cmd_id, dt.int_d);
       break;
     case CMD_CLEAR_ERROR:
-      clear_error( dq);
+      clear_error( dvc);
       break;
     case CMD_ACKNOWLEDGE_ALARMS:
-      acknowledge_alarms( dq);
+      acknowledge_alarms( dvc);
       break;
     }
   return 0;
 }
-
-static void *queue_func(void *arg)
-{
-  struct devqueue *dq;
-  struct req_pkt *pkt;
-  struct rset *prset;
-
-  dq = arg;
-  while(1)
-    {
-      pthread_mutex_lock( &(dq->list_lock));
-      if( dq->list == NULL)
-        pthread_cond_wait(&(dq->list_cond), &(dq->list_lock));
-
-      pkt = dq->list;
-      dq->list = pkt->next;
-      pthread_mutex_unlock( &(dq->list_lock));
-
-      //      if( !error)
-      command_process( dq, pkt->cmd_id, pkt->channel, pkt->value);
-
-      if( pkt->precord != NULL)
-        {
-          prset = (struct rset *) (pkt->precord->rset);
-          dbScanLock(pkt->precord);
-          (*prset->process)(pkt->precord);
-          dbScanUnlock(pkt->precord);
-        }
-
-      free( pkt);
-      
-      //      printf("%s", pkt->recv);
-    }
-
-  return NULL;
-}
-
-static int qmesg( struct devqueue *dq, dbCommon *precord, int cmd, int channel,
-           union datum dt)
-{
-  struct req_pkt *pkt, *plp;
-
-
-  pkt = malloc( sizeof( struct req_pkt) );
-
-  pkt->cmd_id = cmd;
-  pkt->channel = channel;
-  pkt->precord = precord;
-  pkt->value = dt;
-  pkt->next = NULL;
-
-  pthread_mutex_lock( &(dq->list_lock));
-  if( dq->list == NULL)
-    dq->list = pkt;
-  else
-    {
-      plp = dq->list;
-      while( plp->next != NULL)
-        plp = plp->next;
-      plp->next = pkt;
-    }
-  pthread_cond_signal( &(dq->list_cond));
-  pthread_mutex_unlock( &(dq->list_lock));
-
-  return 0;
-}
-
-static int socket_connect(struct devqueue *dq)
-{
-  int result;
-
-  result = connect(dq->sockfd, (struct sockaddr *)&(dq->r_addr), 
-                   sizeof(dq->r_addr) );
-  // change this!
-  if( result == -1)
-    return 1;
-
-  // initial E0
-  if( response_reader( dq) != RESPONSE_OK)
-    return 1;
-
-  // set binary mode
-#if EPICS_BYTE_ORDER == EPICS_ENDIAN_LITTLE
-  simple_writer( dq, "BO1\r\n"); 
-#else
-  simple_writer( dq, "BO0\r\n"); 
-#endif
-  if( response_reader( dq) != RESPONSE_OK)
-    return 1;
-
-  return 0;
-}
-
 
 static int init_mw100( char *device, char *address)
 {
-  struct queue_link *qlp;
-  struct devqueue *dq;
+  struct device_link *dvc_link;
+  struct device *dvc;
 
-  pthread_t thread;
-  pthread_attr_t attr;
 
   char *p;
   
@@ -1662,59 +1374,70 @@ static int init_mw100( char *device, char *address)
       p++;
     }
   
-  qlp = queue_list;
-  while( qlp != NULL)
+  dvc_link = device_list;
+  while( dvc_link != NULL)
     {
-      if( !strcmp(qlp->dq->name, device))
+      if( !strcmp(dvc_link->dvc->name, device))
         {
           // device already exists
           return 1;
         }
-      qlp = qlp->next;
+      dvc_link = dvc_link->next;
     }
 
-  qlp = calloc( 1, sizeof( struct queue_link) );
-  if( qlp == NULL)
+  dvc_link = calloc( 1, sizeof( struct device_link) );
+  if( dvc_link == NULL)
     return 1;
-  qlp->next = queue_list;
-  queue_list = qlp;
+  dvc_link->next = device_list;
+  device_list = dvc_link;
 
-  dq = calloc( 1, sizeof(struct devqueue) );
-  if( dq == NULL)
+  dvc = calloc( 1, sizeof(struct device) );
+  if( dvc == NULL)
     return 1;
-  qlp->dq = dq;
-  pthread_mutex_init( &(dq->list_lock), NULL);
-  pthread_cond_init( &(dq->list_cond), NULL);
-  dq->list = NULL;
+  dvc_link->dvc = dvc;
+  pthread_mutex_init( &(dvc->queue.lock), NULL);
+  pthread_cond_init( &(dvc->queue.cond), NULL);
+  dvc->queue.list = NULL;
 
-  dq->name = strdup( device);
-  scanIoInit( &(dq->input_ioscanpvt));
-  scanIoInit( &(dq->output_ioscanpvt));
-  scanIoInit( &(dq->info_ioscanpvt));
-  scanIoInit( &(dq->status_ioscanpvt));
-  scanIoInit( &(dq->error_ioscanpvt));
-  dq->sockfd = socket(AF_INET, SOCK_STREAM, 0);
-  bzero( &(dq->r_addr), sizeof(dq->r_addr) );
-  dq->r_addr.sin_family = AF_INET;
-  dq->r_addr.sin_port = htons(34318);
-  if( !inet_aton( address, &(dq->r_addr.sin_addr)) )
+  dvc->name = strdup( device);
+  scanIoInit( &(dvc->input_ioscanpvt));
+  scanIoInit( &(dvc->output_ioscanpvt));
+  scanIoInit( &(dvc->info_ioscanpvt));
+  scanIoInit( &(dvc->status_ioscanpvt));
+  scanIoInit( &(dvc->error_ioscanpvt));
+  dvc->comm.sockfd = socket(AF_INET, SOCK_STREAM, 0);
+  bzero( &(dvc->comm.r_addr), sizeof(dvc->comm.r_addr) );
+  dvc->comm.r_addr.sin_family = AF_INET;
+  dvc->comm.r_addr.sin_port = htons(34318);
+  if( !inet_aton( address, &(dvc->comm.r_addr.sin_addr)) )
     {
-      free(dq);
+      free(dvc);
       return 1;
     }
 
-  if( socket_connect( dq) )
-    return 1;
-  // the order below has meaning, load_modules must go first
-  if( load_modules(dq) || load_status(dq) || load_infos(dq) || 
-      load_input_values(dq, CMD_READ_ALL_INPUTS, 0) ||
-      load_output_values(dq, CMD_READ_ALL_OUTPUTS, 0) )
+  if( yDas_socket_connect( &(dvc->comm)) )
     return 1;
 
-  pthread_attr_init(&attr);
-  pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
-  pthread_create(&thread, &attr, queue_func, (void *) dq);
-  pthread_attr_destroy( &attr);
+  // initial E0 after socket connect
+  if( response_reader( dvc) != RESPONSE_OK)
+    return 1;
+
+  // set binary mode
+#if EPICS_BYTE_ORDER == EPICS_ENDIAN_LITTLE
+  yDas_simple_writer( &(dvc->comm), "BO1\r\n"); 
+#else
+  yDas_simple_writer( &(dvc->comm), "BO0\r\n"); 
+#endif
+  if( response_reader( dvc) != RESPONSE_OK)
+    return 1;
+
+  // the order below has meaning, load_modules must go first
+  if( load_modules(dvc) || load_status(dvc) || load_infos(dvc) || 
+      load_input_values(dvc, CMD_READ_ALL_INPUTS, 0) ||
+      load_output_values(dvc, CMD_READ_ALL_OUTPUTS, 0) )
+    return 1;
+
+  yDas_start_queue( &(dvc->queue), command_process );
 
   return 0;
 }
@@ -1725,161 +1448,161 @@ static int init_mw100( char *device, char *address)
 /////////////////////////////////
 // device functions
 
-int mw100_test_module( struct devqueue *dq, int module)
+int mw100_test_module( struct device *dvc, int module)
 {
-  if( !dq->modules[module].use_flag)
+  if( !dvc->modules[module].use_flag)
     return 1;
   
   return 0;
 }
 
-int mw100_test_signal( struct devqueue *dq, int channel)
+int mw100_test_signal( struct device *dvc, int channel)
 {
-  if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
-      (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
+  if( (dvc->ch_type[channel-1] == CH_TYPE_NONE) ||
+      (dvc->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
     return 1;
   
   return 0;
 }
 
-int mw100_test_analog_signal( struct devqueue *dq, int channel)
+int mw100_test_analog_signal( struct device *dvc, int channel)
 {
-  if( (dq->ch_type[channel-1] != CH_TYPE_OUTPUT_ANALOG) &&
-      (dq->ch_type[channel-1] != CH_TYPE_INPUT_ANALOG) )
+  if( (dvc->ch_type[channel-1] != CH_TYPE_OUTPUT_ANALOG) &&
+      (dvc->ch_type[channel-1] != CH_TYPE_INPUT_ANALOG) )
     return 1;
   
   return 0;
 }
 
-int mw100_test_binary_signal( struct devqueue *dq, int channel)
+int mw100_test_binary_signal( struct device *dvc, int channel)
 {
-  if( (dq->ch_type[channel-1] != CH_TYPE_OUTPUT_BINARY) &&
-      (dq->ch_type[channel-1] != CH_TYPE_INPUT_BINARY) )
+  if( (dvc->ch_type[channel-1] != CH_TYPE_OUTPUT_BINARY) &&
+      (dvc->ch_type[channel-1] != CH_TYPE_INPUT_BINARY) )
     return 1;
   
   return 0;
 }
 
-int mw100_test_integer_signal( struct devqueue *dq, int channel)
+int mw100_test_integer_signal( struct device *dvc, int channel)
 {
-  if(dq->ch_type[channel-1] != CH_TYPE_INPUT_INTEGER)
+  if(dvc->ch_type[channel-1] != CH_TYPE_INPUT_INTEGER)
     return 1;
   
   return 0;
 }
 
-int mw100_test_output_analog_signal( struct devqueue *dq, int channel)
+int mw100_test_output_analog_signal( struct device *dvc, int channel)
 {
-  if( dq->ch_type[channel-1] != CH_TYPE_OUTPUT_ANALOG)
+  if( dvc->ch_type[channel-1] != CH_TYPE_OUTPUT_ANALOG)
     return 1;
   
   return 0;
 }
 
-int mw100_test_output_binary_signal( struct devqueue *dq, int channel)
+int mw100_test_output_binary_signal( struct device *dvc, int channel)
 {
-  if( dq->ch_type[channel-1] != CH_TYPE_OUTPUT_BINARY)
+  if( dvc->ch_type[channel-1] != CH_TYPE_OUTPUT_BINARY)
     return 1;
   
   return 0;
 }
 
-struct devqueue *mw100_connect( char *device)
+struct device *mw100_connect( char *device_name)
 {
-  struct queue_link *qlp;
+  struct device_link *dvc_link;
 
-  qlp = queue_list;
-  while( qlp != NULL)
+  dvc_link = device_list;
+  while( dvc_link != NULL)
     {
-      if( !strcmp(qlp->dq->name, device))
-        return qlp->dq;
-      qlp = qlp->next;
+      if( !strcmp(dvc_link->dvc->name, device_name))
+        return dvc_link->dvc;
+      dvc_link = dvc_link->next;
     }
 
   return NULL;
 }
 
-IOSCANPVT mw100_channel_io_handler( struct devqueue *dq, int type, int channel)
+IOSCANPVT mw100_channel_io_handler( struct device *dvc, int type, int channel)
 {
   switch(type)
     {
     case ADDR_SIGNAL:
-      switch( dq->ch_type[channel-1])
+      switch( dvc->ch_type[channel-1])
         {
         case CH_TYPE_INPUT_ANALOG:
         case CH_TYPE_INPUT_INTEGER:
         case CH_TYPE_INPUT_BINARY:
-          return dq->input_ioscanpvt;
+          return dvc->input_ioscanpvt;
           break;
         case CH_TYPE_OUTPUT_BINARY:
         case CH_TYPE_OUTPUT_ANALOG:
-          return dq->output_ioscanpvt;
+          return dvc->output_ioscanpvt;
           break;
         }
       break;
     case ADDR_MATH:
-      return dq->input_ioscanpvt;
+      return dvc->input_ioscanpvt;
       break;
     case ADDR_COMM:
     case ADDR_CONST:
-      return dq->output_ioscanpvt;
+      return dvc->output_ioscanpvt;
       break;
     }
 
   return NULL;
 }
-IOSCANPVT mw100_info_io_handler( struct devqueue *dq)
+IOSCANPVT mw100_info_io_handler( struct device *dvc)
 {
-  return dq->info_ioscanpvt;
+  return dvc->info_ioscanpvt;
 }
-IOSCANPVT mw100_status_io_handler( struct devqueue *dq)
+IOSCANPVT mw100_status_io_handler( struct device *dvc)
 {
-  return dq->status_ioscanpvt;
+  return dvc->status_ioscanpvt;
 }
-IOSCANPVT mw100_error_io_handler( struct devqueue *dq)
+IOSCANPVT mw100_error_io_handler( struct device *dvc)
 {
-  return dq->error_ioscanpvt;
+  return dvc->error_ioscanpvt;
 }
 // just for alarm flag
-IOSCANPVT mw100_input_io_handler( struct devqueue *dq)
+IOSCANPVT mw100_input_io_handler( struct device *dvc)
 {
-  return dq->input_ioscanpvt;
+  return dvc->input_ioscanpvt;
 }
 
 
 // val or str is used depending on type, other is NULL
-int mw100_module_info( struct devqueue *dq, int type, int module, 
+int mw100_module_info( struct device *dvc, int type, int module, 
                        int *val, char *str)
 {
   if( type == MODULE_PRESENCE)
     {
-      *val = dq->modules[module].use_flag;
+      *val = dvc->modules[module].use_flag;
       return 0;
     }
   if( type == MODULE_STRING)
     {
-      if( !dq->modules[module].use_flag)
+      if( !dvc->modules[module].use_flag)
         sprintf( str, "empty");
       else
-        strcpy( str, dq->modules[module].module_string);
+        strcpy( str, dvc->modules[module].module_string);
       return 0;
     }
-  if( !dq->modules[module].use_flag)
+  if( !dvc->modules[module].use_flag)
     return 0;
     
   switch( type)
     {
     case MODULE_MODEL:
-      *val = dq->modules[module].model;
+      *val = dvc->modules[module].model;
       break;
     case MODULE_CODE:
-      strcpy( str, dq->modules[module].code);
+      strcpy( str, dvc->modules[module].code);
       break;
     case MODULE_SPEED:
-      *val = dq->modules[module].speed;
+      *val = dvc->modules[module].speed;
       break;
     case MODULE_NUMBER:
-      *val = dq->modules[module].number;
+      *val = dvc->modules[module].number;
       break;
     }
 
@@ -1887,12 +1610,12 @@ int mw100_module_info( struct devqueue *dq, int type, int module,
 }
 
 
-int mw100_system_info( struct devqueue *dq, int which, char *info)
+int mw100_system_info( struct device *dvc, int which, char *info)
 {
   switch( which)
     {
     case 0:
-      inet_ntop(AF_INET, &(dq->r_addr.sin_addr), info, 39);
+      inet_ntop(AF_INET, &(dvc->comm.r_addr.sin_addr), info, 39);
       break;
     default:
       return 1;
@@ -1901,69 +1624,78 @@ int mw100_system_info( struct devqueue *dq, int which, char *info)
 }
 
 
-int mw100_analog_set(struct devqueue *dq, dbCommon *precord, int type, 
+int mw100_analog_set(struct device *dvc, dbCommon *precord, int type, 
                       int channel, double value)
 {
   switch(type)
     {
     case ADDR_SIGNAL:
-      if( dq->ch_type[channel-1] == CH_TYPE_OUTPUT_ANALOG)
-        qmesg( dq, precord, CMD_SET_SIGNAL_OUTPUT, channel,
-               datum_float(value));
+      if( dvc->ch_type[channel-1] == CH_TYPE_OUTPUT_ANALOG)
+        yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord,
+                     CMD_SET_SIGNAL_OUTPUT, channel, datum_float(value));
       break;
     case ADDR_COMM:
-      qmesg( dq, precord, CMD_SET_COMM, channel, datum_float(value));
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_SET_COMM,
+                   channel, datum_float(value));
       break;
     case ADDR_CONST:
-      qmesg( dq, precord, CMD_SET_CONST, channel, datum_float(value));
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_SET_CONST,
+                   channel, datum_float(value));
       break;
     }    
 
   return 0;
 }
 
-int mw100_binary_set(struct devqueue *dq, dbCommon *precord, int channel, 
+int mw100_binary_set(struct device *dvc, dbCommon *precord, int channel, 
                      int value)
 {
-  if( dq->ch_type[channel-1] == CH_TYPE_OUTPUT_BINARY)
-    qmesg( dq, precord, CMD_SET_BINARY_OUTPUT, channel, datum_int(value));
+  if( dvc->ch_type[channel-1] == CH_TYPE_OUTPUT_BINARY)
+    yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_SET_BINARY_OUTPUT,
+                 channel, datum_int(value));
 
   return 0;
 }
 
-int mw100_trigger( struct devqueue *dq, dbCommon *precord, int type)
+int mw100_trigger( struct device *dvc, dbCommon *precord, int type)
 {
   /* printf("TRIG "); fflush(stdout); */
 
   switch(type)
     {
     case TRIG_INFO:
-      qmesg( dq, precord, CMD_READ_ALL_INFOS, 0, datum_empty());
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_READ_ALL_INFOS,
+                   0, datum_empty());
       break;
     case TRIG_INPUT:
-      qmesg( dq, precord, CMD_READ_ALL_INPUTS, 0, datum_empty());
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_READ_ALL_INPUTS,
+                   0, datum_empty());
       break;
     case TRIG_OUTPUT:
-      qmesg( dq, precord, CMD_READ_ALL_OUTPUTS, 0, datum_empty());
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_READ_ALL_OUTPUTS,
+                   0, datum_empty());
       break;
     case TRIG_STATUS:
-      qmesg( dq, precord, CMD_READ_STATUS, 0, datum_empty());
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_READ_STATUS,
+                   0, datum_empty());
       break;
     }
   return 0;
 }
 
 
-int mw100_mode_set( struct devqueue *dq, dbCommon *precord, int type,
+int mw100_mode_set( struct device *dvc, dbCommon *precord, int type,
                     int value)
 {
   switch(type)
     {
     case MODE_OPERATING:
-      qmesg( dq, precord, CMD_SET_OPMODE, 0, datum_int(value) );
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_SET_OPMODE,
+                   0, datum_int(value) );
       break;
     case MODE_COMPUTE_CMD:
-      qmesg( dq, precord, CMD_SET_COMPUTE, 0, datum_int(value) );
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_SET_COMPUTE, 0,
+                   datum_int(value) );
       break;
     }
 
@@ -1971,39 +1703,43 @@ int mw100_mode_set( struct devqueue *dq, dbCommon *precord, int type,
 }
 
 
-int mw100_clear_error( struct devqueue *dq, dbCommon *precord)
+int mw100_clear_error( struct device *dvc, dbCommon *precord)
 {
-  qmesg( dq, precord, CMD_CLEAR_ERROR, 0, datum_empty() );
+  yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_CLEAR_ERROR, 0,
+               datum_empty() );
 
   return 0;
 }
 
 
-int mw100_acknowledge_alarms( struct devqueue *dq, dbCommon *precord)
+int mw100_acknowledge_alarms( struct device *dvc, dbCommon *precord)
 {
-  qmesg( dq, precord, CMD_ACKNOWLEDGE_ALARMS, 0, datum_empty() );
+  yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_ACKNOWLEDGE_ALARMS,
+               0, datum_empty() );
 
   return 0;
 }
 
 
 
-int mw100_channel_start(struct devqueue *dq, dbCommon *precord, int type, 
+int mw100_channel_start(struct device *dvc, dbCommon *precord, int type, 
                             int channel)
 {
   switch(type)
     {
     case ADDR_SIGNAL:
-      switch(dq->ch_type[channel-1])
+      switch(dvc->ch_type[channel-1])
         {
         case CH_TYPE_INPUT_ANALOG:
         case CH_TYPE_INPUT_INTEGER:
         case CH_TYPE_INPUT_BINARY:
-          qmesg( dq, precord, CMD_READ_SIGNAL_INPUT, channel, datum_empty());
+          yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord,
+                       CMD_READ_SIGNAL_INPUT, channel, datum_empty());
           break;
         case CH_TYPE_OUTPUT_BINARY:
         case CH_TYPE_OUTPUT_ANALOG:
-          qmesg( dq, precord, CMD_READ_SIGNAL_OUTPUT, channel, datum_empty());
+          yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord,
+                       CMD_READ_SIGNAL_OUTPUT, channel, datum_empty());
           break;
         case CH_TYPE_UNKNOWN:
         case CH_TYPE_NONE:
@@ -2011,41 +1747,44 @@ int mw100_channel_start(struct devqueue *dq, dbCommon *precord, int type,
         }
       break;
     case ADDR_MATH:
-      qmesg( dq, precord, CMD_READ_MATH, channel, datum_empty());
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_READ_MATH,
+                   channel, datum_empty());
       break;
     case ADDR_COMM:
-      qmesg( dq, precord, CMD_READ_COMM, channel, datum_empty());
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_READ_COMM,
+                   channel, datum_empty());
       break;
     case ADDR_CONST:
-      qmesg( dq, precord, CMD_READ_CONST, channel, datum_empty());
+      yDas_enqueue_cmd( &(dvc->queue), (void *) dvc, precord, CMD_READ_CONST,
+                   channel, datum_empty());
       break;
     }    
 
   return 0;
 }
 
-int mw100_analog_get( struct devqueue *dq, int type, int channel, 
+int mw100_analog_get( struct device *dvc, int type, int channel, 
                        double *value)
 {
 
   switch(type)
     {
     case ADDR_SIGNAL:
-      if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
-          (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
+      if( (dvc->ch_type[channel-1] == CH_TYPE_NONE) ||
+          (dvc->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
         return 0;
-      *value = scaled_value( dq->ch_data[channel-1].value,
-                             dq->ch_info[channel-1].scale);
+      *value = scaled_value( dvc->ch_data[channel-1].value,
+                             dvc->ch_info[channel-1].scale);
       break;
     case ADDR_MATH:
-      *value = scaled_value( dq->calc_data[channel-1].value,
-                             dq->calc_info[channel-1].scale);
+      *value = scaled_value( dvc->calc_data[channel-1].value,
+                             dvc->calc_info[channel-1].scale);
       break;
     case ADDR_COMM:
-      *value = (double) dq->comm_input[channel-1];
+      *value = (double) dvc->comm_input[channel-1];
       break;
     case ADDR_CONST:
-      *value = (double) dq->constant[channel-1];
+      *value = (double) dvc->constant[channel-1];
       break;
     }    
 
@@ -2053,144 +1792,144 @@ int mw100_analog_get( struct devqueue *dq, int type, int channel,
   return 0;
 }
 
-int mw100_integer_get( struct devqueue *dq, int channel, int *value)
+int mw100_integer_get( struct device *dvc, int channel, int *value)
 {
-  if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
-      (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
+  if( (dvc->ch_type[channel-1] == CH_TYPE_NONE) ||
+      (dvc->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
     return 0;
-  *value = (int) dq->ch_data[channel-1].value;
+  *value = (int) dvc->ch_data[channel-1].value;
 
   return 0;
 }
 
-int mw100_binary_get( struct devqueue *dq, int channel, int *value)
+int mw100_binary_get( struct device *dvc, int channel, int *value)
 {
-  if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
-      (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
+  if( (dvc->ch_type[channel-1] == CH_TYPE_NONE) ||
+      (dvc->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
     return 0;
-  *value = (int) dq->ch_data[channel-1].value;
+  *value = (int) dvc->ch_data[channel-1].value;
 
   return 0;
 }
 
 
-int mw100_channel_get_egu( struct devqueue *dq, int type, int channel, 
+int mw100_channel_get_egu( struct device *dvc, int type, int channel, 
                            char *egu)
 {
   switch(type)
     {
     case ADDR_SIGNAL:
-      if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
-          (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
+      if( (dvc->ch_type[channel-1] == CH_TYPE_NONE) ||
+          (dvc->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
         return 0;
-      strcpy( egu, dq->ch_info[channel-1].unit);
+      strcpy( egu, dvc->ch_info[channel-1].unit);
       break;
     case ADDR_MATH:
-      strcpy( egu, dq->calc_info[channel-1].unit);
+      strcpy( egu, dvc->calc_info[channel-1].unit);
       break;
     }    
 
   return 0;
 }
 
-int mw100_channel_get_expr( struct devqueue *dq, int channel, char *expr)
+int mw100_channel_get_expr( struct device *dvc, int channel, char *expr)
 {
   if( channel <= 60)
-    strcpy( expr, dq->calc_expr[channel-1].expr );
+    strcpy( expr, dvc->calc_expr[channel-1].expr );
   else
-    strcpy( expr, dq->short_calc_expr[channel-61].expr );
+    strcpy( expr, dvc->short_calc_expr[channel-61].expr );
 
   return 0;
 }
 
-int mw100_get_channel_status( struct devqueue *dq, int type, int channel, 
+int mw100_get_channel_status( struct device *dvc, int type, int channel, 
                               int *value)
 {
   switch(type)
     {
     case ADDR_SIGNAL:
-      if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
-          (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
+      if( (dvc->ch_type[channel-1] == CH_TYPE_NONE) ||
+          (dvc->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
         return 0;
-      *value = dq->ch_info[channel-1].ch_status;
+      *value = dvc->ch_info[channel-1].ch_status;
       break;
     case ADDR_MATH:
-      *value = dq->calc_info[channel-1].ch_status;
+      *value = dvc->calc_info[channel-1].ch_status;
       break;
     }    
 
   return 0;
 }
 
-int mw100_get_channel_mode( struct devqueue *dq, int channel, int *value)
+int mw100_get_channel_mode( struct device *dvc, int channel, int *value)
 {
-  if( (dq->ch_type[channel-1] != CH_TYPE_OUTPUT_BINARY) && 
-      (dq->ch_type[channel-1] != CH_TYPE_OUTPUT_ANALOG) )
+  if( (dvc->ch_type[channel-1] != CH_TYPE_OUTPUT_BINARY) && 
+      (dvc->ch_type[channel-1] != CH_TYPE_OUTPUT_ANALOG) )
     return 0;
-  *value = dq->ch_info[channel-1].ch_mode;
+  *value = dvc->ch_info[channel-1].ch_mode;
 
   return 0;
 }
 
-int mw100_get_data_status( struct devqueue *dq, int type, int channel, 
+int mw100_get_data_status( struct device *dvc, int type, int channel, 
                            int *value)
 {
   switch(type)
     {
     case ADDR_SIGNAL:
-      if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
-          (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
+      if( (dvc->ch_type[channel-1] == CH_TYPE_NONE) ||
+          (dvc->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
         return 0;
-      *value = dq->ch_data[channel-1].data_status;
+      *value = dvc->ch_data[channel-1].data_status;
       break;
     case ADDR_MATH:
-      *value = dq->calc_data[channel-1].data_status;
+      *value = dvc->calc_data[channel-1].data_status;
       break;
     }    
 
   return 0;
 }
 
-int mw100_get_alarm_flag( struct devqueue *dq, int *value)
+int mw100_get_alarm_flag( struct device *dvc, int *value)
 {
-  *value = dq->alarm_flag;
+  *value = dvc->alarm_flag;
 
   return 0;
 }
 
-int mw100_get_alarm( struct devqueue *dq, int type, int channel,
+int mw100_get_alarm( struct device *dvc, int type, int channel,
                      int sub_channel, int *value)
 // sub_channel = 0 get alarm_status for channel
 {
   switch(type)
     {
     case ADDR_SIGNAL:
-      if( (dq->ch_type[channel-1] == CH_TYPE_NONE) ||
-          (dq->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
+      if( (dvc->ch_type[channel-1] == CH_TYPE_NONE) ||
+          (dvc->ch_type[channel-1] == CH_TYPE_UNKNOWN) )
         return 0;
       if( sub_channel)
-        *value = dq->ch_data[channel-1].alarm[sub_channel-1];
+        *value = dvc->ch_data[channel-1].alarm[sub_channel-1];
       else
-        *value = dq->ch_data[channel-1].alarm_status;
+        *value = dvc->ch_data[channel-1].alarm_status;
       break;
     case ADDR_MATH:
       if( sub_channel)
-        *value = dq->calc_data[channel-1].alarm[sub_channel-1];
+        *value = dvc->calc_data[channel-1].alarm[sub_channel-1];
       else
-        *value = dq->calc_data[channel-1].alarm_status;
+        *value = dvc->calc_data[channel-1].alarm_status;
       break;
     }    
 
   return 0;
 }
 
-int mw100_get_error( struct devqueue *dq, int channel, char *error)
+int mw100_get_error( struct device *dvc, int channel, char *error)
 {
   error[0] = '\0';
-  if( dq->error_flag )
+  if( dvc->error_flag )
     {
-      if( dq->error != NULL)
-        strcpy( error, dq->error->string[channel-1]);
+      if( dvc->error != NULL)
+        strcpy( error, dvc->error->string[channel-1]);
       else if( channel == 0)
         strcpy( error, "Unknown error.");
     }
@@ -2198,34 +1937,34 @@ int mw100_get_error( struct devqueue *dq, int channel, char *error)
   return 0;
 }
 
-int mw100_get_error_flag( struct devqueue *dq, int *flag)
+int mw100_get_error_flag( struct device *dvc, int *flag)
 {
-  *flag = dq->error_flag;
+  *flag = dvc->error_flag;
 
   return 0;
 }
 
-int mw100_get_mode( struct devqueue *dq, int type, int *value)
+int mw100_get_mode( struct device *dvc, int type, int *value)
 {
   switch(type)
     {
     case MODE_SETTINGS:
-      *value = dq->settings_mode;
+      *value = dvc->settings_mode;
       break;
     case MODE_MEASUREMENT:
-      *value = dq->measurement_mode;
+      *value = dvc->measurement_mode;
       break;
     case MODE_COMPUTE:
-      *value = dq->compute_mode;
+      *value = dvc->compute_mode;
       break;
     }
 
   return 0;
 }
 
-int mw100_get_status_byte( struct devqueue *dq, int channel, int *value)
+int mw100_get_status_byte( struct device *dvc, int channel, int *value)
 {
-  *value = dq->status[channel-1];
+  *value = dvc->status[channel-1];
 
   return 0;
 }
