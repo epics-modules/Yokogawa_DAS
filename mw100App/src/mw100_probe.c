@@ -346,9 +346,7 @@ int main( int argc, char *argv[])
   printf("MW100 unit found at %s\n", ip_address);
   for( i = 0; i < 6; i++)
     if( modules[i].use_flag)
-      {
-        printf("  slot %d: %s\n", i, modules[i].module_string);
-      }
+      printf("  slot %d: %s\n", i, modules[i].module_string);
     else
       printf("  slot %d: empty\n", i);
 
@@ -357,12 +355,17 @@ int main( int argc, char *argv[])
   if( (fptr_subst == NULL) || (fptr_req == NULL) )
     {
       printf("\nERROR: Can't create output files.\n");
-      fcloseall();
+      if( fptr_subst != NULL)
+        fclose(fptr_subst);
+      if( fptr_req != NULL)
+        fclose(fptr_req);
+
       return 1;
     }
   print_sf( fptr_subst, fptr_req, modules);
 
-  fcloseall();
+  fclose(fptr_subst);
+  fclose(fptr_req);
 
   return 0;
 }
