@@ -1,0 +1,13 @@
+driver( drvGM10)
+registrar( gm10Register)
+
+
+device(ai,INST_IO,devGM10_ai,"Yokogawa GM10")
+device(ao,INST_IO,devGM10_ao,"Yokogawa GM10")
+device(bi,INST_IO,devGM10_bi,"Yokogawa GM10")
+device(bo,INST_IO,devGM10_bo,"Yokogawa GM10")
+device(mbbi,INST_IO,devGM10_mbbi,"Yokogawa GM10")
+device(mbbo,INST_IO,devGM10_mbbo,"Yokogawa GM10")
+device(longin,INST_IO,devGM10_longin,"Yokogawa GM10")
+device(stringin,INST_IO,devGM10_stringin,"Yokogawa GM10")
+

@@ -1,0 +1,297 @@
+record(stringin, "$(P)$(DAU):IPAddress")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) IP_ADDR")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+
+record(stringin, "$(P)$(DAU):Module0")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:0")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module0:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:0")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module1")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:1")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module1:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:1")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module2")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:2")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module2:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:2")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module3")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:3")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module3:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:3")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module4")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:4")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module4:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:4")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module5")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:5")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module5:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:5")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module6")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:6")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module6:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:6")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module7")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:7")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module7:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:7")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module8")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:8")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module8:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:8")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):Module9")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_STRING:9")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+record(bi,"$(P)$(DAU):Module9:Presence")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) MODULE_PRESENCE:9")
+    field(ZNAM, "Not Present")
+    field(ONAM, "Present")
+    field(SCAN, "Passive")
+    field(PINI, "YES")
+}
+
+
+
+record(bi,"$(P)$(DAU):ErrorFlag")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) ERROR_FLAG")
+    field(ZNAM, "No Error")
+    field(ONAM, "Error")
+    field(ZSV,  "NO_ALARM")
+    field(OSV,  "MAJOR")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):ErrorMessage1")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) ERROR:1")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):ErrorMessage2")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) ERROR:2")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(stringin, "$(P)$(DAU):ErrorMessage3")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) ERROR:3")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(bo,"$(P)$(DAU):ErrorClear")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(OUT, "@$(HANDLE) ERROR_CLEAR")
+}
+record(bi,"$(P)$(DAU):AlarmFlag")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP, "@$(HANDLE) ALARM_FLAG")
+    field(ZNAM, "No Alarm")
+    field(ONAM, "Alarm")
+    field(ZSV, "NO_ALARM")
+    field(OSV, "MAJOR")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(bo,"$(P)$(DAU):AlarmAck")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(OUT, "@$(HANDLE) ALARM_ACK")
+}
+
+record(bo, "$(P)$(DAU):InputPoll")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(OUT, "@$(HANDLE) INP_TRIG")
+    field(SCAN, "1 second")
+}
+
+record(bo, "$(P)$(DAU):OutputPoll")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(OUT, "@$(HANDLE) OUT_TRIG")
+    field(SCAN, "1 second")
+}
+
+record(bo, "$(P)$(DAU):StatusPoll")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(OUT, "@$(HANDLE) STAT_TRIG")
+    field(SCAN, "1 second")
+}
+
+record(bi,"$(P)$(DAU):Settings")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP,  "@$(HANDLE) SETTINGS_MODE")
+    field(ZNAM, "Frozen")
+    field(ONAM, "Unfrozen")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+
+
+record(bi,"$(P)$(DAU):Recording")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP,  "@$(HANDLE) RECORDING_MODE")
+    field(ZNAM, "Running")
+    field(ONAM, "Stopped")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(bo,"$(P)$(DAU):RecordingSet")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(OUT,  "@$(HANDLE) RECORDING_MODE")
+    field(ZNAM, "Start")
+    field(ONAM, "Stop")
+}
+
+
+record(bi,"$(P)$(DAU):Computation")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(INP,  "@$(HANDLE) COMPUTE_MODE")
+    field(ZNAM, "Running")
+    field(ONAM, "Stopped")
+    field(SCAN, "I/O Intr")
+    field(PINI, "YES")
+}
+record(mbbo,"$(P)$(DAU):ComputationSet")
+{
+    field(DTYP, "Yokogawa GM10")
+    field(OUT,  "@$(HANDLE) COMPUTE_CMD")
+    field(ZRST, "Start")
+    field(ZRVL, "0")
+    field(ONST, "Stop") 
+    field(ONVL, "1") 
+    field(TWST, "Reset")
+    field(TWVL, "2")
+    field(THST, "Clear")
+    field(THVL, "3")
+}

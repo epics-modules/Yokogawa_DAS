@@ -1,0 +1,37 @@
+#!/bin/bash
+
+EPICS_APP=/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_DAS/das
+EPICS_APP_ADL_DIR=${EPICS_APP}/yokogawaDasApp/op/adl
+
+#######################################
+# Prepare MEDM path
+# EDP is temporary EPICS_DISPLAY_PATH
+#
+function append_EDP { # note: in bash, macros are not expanded in aliases
+  if [ -d $1 ]  # this will keep keep out nonexistent directories
+  then
+    EDP=${EDP}:$1
+  fi
+}
+EDP=.
+append_EDP  ${EPICS_APP_ADL_DIR}
+
+if [ -z "$EPICS_DISPLAY_PATH" ] 
+then
+    export EPICS_DISPLAY_PATH=${EDP}
+else
+    export EPICS_DISPLAY_PATH=${EDP}:${EPICS_DISPLAY_PATH}
+fi
+echo ${EPICS_DISPLAY_PATH}
+
+if [ -z "${MEDM_EXEC_LIST}" ] 
+then
+    export MEDM_EXEC_LIST='Probe;probe &P &'
+fi
+
+# This should agree with the environment variable set by the ioc
+# see 'putenv "EPICS_CA_MAX_ARRAY_BYTES=64008"' in iocBoot/ioc<target>/st.cmd
+#export EPICS_CA_MAX_ARRAY_BYTES=64008
+
+cd ${EPICS_APP_ADL_DIR}
+medm -x ${EPICS_APP}/iocBoot/iocYokogawaDasEx/dasTest.adl &

@@ -1,0 +1,683 @@
+
+file {
+	name="/home/oxygen/DOHNARMS/epicsdev/hardware/Yokogawa_DAS/das/yokogawaDasApp/op/adl/gx90ya-04_label.adl"
+	version=030111
+}
+display {
+	object {
+		x=497
+		y=283
+		width=570
+		height=150
+	}
+	clr=14
+	bclr=3
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=1
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+"text entry" {
+	object {
+		x=430
+		y=50
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):0$(M)01:Set"
+		clr=14
+		bclr=55
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=430
+		y=75
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):0$(M)02:Set"
+		clr=14
+		bclr=55
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=430
+		y=100
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):0$(M)03:Set"
+		clr=14
+		bclr=55
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=430
+		y=125
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):0$(M)04:Set"
+		clr=14
+		bclr=55
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=35
+		y=0
+		width=400
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(P)$(DAU) GX90YA-04 Analog Outputs"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=495
+		y=50
+		width=40
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)01:Unit"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=495
+		y=75
+		width=40
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)02:Unit"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=494
+		y=100
+		width=40
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)03:Unit"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=495
+		y=125
+		width=40
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)04:Unit"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=546
+		y=50
+		width=20
+		height=20
+	}
+	display[0] {
+		name="gm10_analog_output_tweak.adl"
+		args="P=$(P),DAU=$(DAU),L=0$(M)01"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=546
+		y=75
+		width=20
+		height=20
+	}
+	display[0] {
+		name="gm10_analog_output_tweak.adl"
+		args="P=$(P),DAU=$(DAU),L=0$(M)02"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=545
+		y=100
+		width=20
+		height=20
+	}
+	display[0] {
+		name="gm10_analog_output_tweak.adl"
+		args="P=$(P),DAU=$(DAU),L=0$(M)03"
+	}
+	clr=0
+	bclr=64
+}
+"related display" {
+	object {
+		x=546
+		y=125
+		width=20
+		height=20
+	}
+	display[0] {
+		name="gm10_analog_output_tweak.adl"
+		args="P=$(P),DAU=$(DAU),L=0$(M)04"
+	}
+	clr=0
+	bclr=64
+}
+"text update" {
+	object {
+		x=210
+		y=50
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)01:ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=75
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)02:ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=100
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)03:ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=210
+		y=125
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)04:ChStatus"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+polyline {
+	object {
+		x=0
+		y=25
+		width=569
+		height=2
+	}
+	"basic attribute" {
+		clr=44
+		width=2
+	}
+	points {
+		(1,26)
+		(568,26)
+	}
+}
+text {
+	object {
+		x=215
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Status"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=490
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Unit"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=345
+		y=125
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)04"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=100
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)03"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=345
+		y=75
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)02"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=360
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Value"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=345
+		y=50
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)01"
+		clr=14
+		bclr=50
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=530
+		y=0
+		width=40
+		height=20
+	}
+	display[0] {
+		name="gx90ya-04.adl"
+		args="P=$(P),DAU=$(DAU),M=$(M)"
+		policy="replace display"
+	}
+	clr=0
+	bclr=64
+	label="-Less"
+}
+"text entry" {
+	object {
+		x=5
+		y=50
+		width=150
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):0$(M)01:Label"
+		clr=14
+		bclr=1
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=5
+		y=75
+		width=150
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):0$(M)02:Label"
+		clr=14
+		bclr=1
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=5
+		y=100
+		width=150
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):0$(M)03:Label"
+		clr=14
+		bclr=1
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=5
+		y=125
+		width=150
+		height=20
+	}
+	control {
+		chan="$(P)$(DAU):0$(M)04:Label"
+		clr=14
+		bclr=1
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=55
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Label"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=280
+		y=30
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Mode"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=275
+		y=50
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)01:Mode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=275
+		y=75
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)02:Mode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=275
+		y=100
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)03:Mode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=275
+		y=125
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(DAU):0$(M)04:Mode"
+		clr=14
+		bclr=51
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=165
+		y=50
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="0$(M)01"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=165
+		y=75
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="0$(M)02"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=165
+		y=100
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="0$(M)03"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=165
+		y=125
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="0$(M)04"
+	align="horiz. centered"
+}
