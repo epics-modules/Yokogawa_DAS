@@ -6,10 +6,11 @@ include $(TOP)/configure/CONFIG
 # Install databases, templates & substitutions like this
 #DB += MW100test.db
 
-#DB += MW100_channel.db
-#DB += MW100.substitutions
+DB += $(patsubst ../%, %, $(wildcard ../*.template))
+DB += $(patsubst ../%, %, $(wildcard ../*.db))
+DB += $(patsubst ../%, %, $(wildcard ../*.vdb))
 
-#DB += dbExample2.db
+REQ += $(patsubst ../%, %, $(wildcard ../*.req))
 
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_TEMPLATE = <templatename>
