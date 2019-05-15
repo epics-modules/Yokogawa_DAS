@@ -155,7 +155,7 @@ static long get_ioint_info( int cmd, struct longinRecord *pgmlongin,
       /* switch( dpvt->rec_type) */
       /*   { */
       /*   case REC_VAL: */
-      *ppvt = gm10_channel_io_handler(dpvt->dq, dpvt->sub_type);
+      *ppvt = gm10_address_io_handler(dpvt->dq, dpvt->sub_type);
         /*   break; */
         /* } */
     }

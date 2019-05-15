@@ -206,7 +206,7 @@ static long get_ioint_info( int cmd, struct mbbiRecord *pgmmbbi,
         case REC_VAL_STATUS:
         case REC_ALARM:
         case REC_ALARMS:
-          *ppvt = gm10_channel_io_handler(dpvt->dq, dpvt->sub_type);
+          *ppvt = gm10_address_io_handler(dpvt->dq, dpvt->sub_type);
           break;
         case REC_CH_STATUS:
         case REC_CH_MODE:

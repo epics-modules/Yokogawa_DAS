@@ -117,15 +117,15 @@ static long init_record(struct boRecord *pgmbo)
     {
       if(arg != NULL)
         return 1;
-      if( !strcmp("INP_TRIG", cmd))
+      if( !strcmp("CHAN_TRIG", cmd))
         {
           dpvt->rec_type = REC_TRIG;
-          dpvt->sub_type = TRIG_INPUT;
+          dpvt->sub_type = TRIG_CHANNELS;
         }
-      else if( !strcmp("OUT_TRIG", cmd))
+      else if( !strcmp("MISC_TRIG", cmd))
         {
           dpvt->rec_type = REC_TRIG;
-          dpvt->sub_type = TRIG_OUTPUT;
+          dpvt->sub_type = TRIG_MISC;
         }
       else if( !strcmp("INFO_TRIG", cmd))
         {

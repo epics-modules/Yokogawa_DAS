@@ -11,7 +11,7 @@
 //      0001-0999   A001-A200  C001-C500  K001-K100     W001-W100
 enum { ADDR_SIGNAL, ADDR_MATH, ADDR_COMM, ADDR_CONST, ADDR_VARCONST };
 
-enum { TRIG_INFO, TRIG_INPUT, TRIG_OUTPUT, TRIG_STATUS };
+enum { TRIG_INFO, TRIG_CHANNELS, TRIG_MISC, TRIG_STATUS };
 
 enum { MODE_SETTINGS, MODE_COMPUTE, MODE_COMPUTE_CMD, MODE_RECORDING };
 
@@ -29,11 +29,11 @@ int gm10_test_integer_signal( struct devqueue *dq, int channel);
 int gm10_test_output_analog_signal( devqueue *dq, int channel);
 int gm10_test_output_binary_signal( devqueue *dq, int channel);
 
-IOSCANPVT gm10_channel_io_handler( devqueue *dq, int type);
+IOSCANPVT gm10_address_io_handler( devqueue *dq, int type);
 IOSCANPVT gm10_info_io_handler( devqueue *dq);
 IOSCANPVT gm10_status_io_handler( devqueue *dq);
 IOSCANPVT gm10_error_io_handler( devqueue *dq);
-IOSCANPVT gm10_input_io_handler( devqueue *dq);
+IOSCANPVT gm10_channel_io_handler( devqueue *dq);
 
 int gm10_system_info( struct devqueue *dq, int which, char *info);
 int gm10_module_info( struct devqueue *dq, int type, int module,

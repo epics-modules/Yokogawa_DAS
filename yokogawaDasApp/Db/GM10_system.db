@@ -223,17 +223,17 @@ record(bo,"$(P)$(DAU):AlarmAck")
     field(OUT, "@$(HANDLE) ALARM_ACK")
 }
 
-record(bo, "$(P)$(DAU):InputPoll")
+record(bo, "$(P)$(DAU):ChannelPoll")
 {
     field(DTYP, "Yokogawa GM10")
-    field(OUT, "@$(HANDLE) INP_TRIG")
+    field(OUT, "@$(HANDLE) CHAN_TRIG")
     field(SCAN, "1 second")
 }
 
-record(bo, "$(P)$(DAU):OutputPoll")
+record(bo, "$(P)$(DAU):MiscPoll")
 {
     field(DTYP, "Yokogawa GM10")
-    field(OUT, "@$(HANDLE) OUT_TRIG")
+    field(OUT, "@$(HANDLE) MISC_TRIG")
     field(SCAN, "1 second")
 }
 
@@ -244,6 +244,7 @@ record(bo, "$(P)$(DAU):StatusPoll")
     field(SCAN, "1 second")
 }
 
+
 record(bi,"$(P)$(DAU):Settings")
 {
     field(DTYP, "Yokogawa GM10")
@@ -253,7 +254,6 @@ record(bi,"$(P)$(DAU):Settings")
     field(SCAN, "I/O Intr")
     field(PINI, "YES")
 }
-
 
 record(bi,"$(P)$(DAU):Recording")
 {

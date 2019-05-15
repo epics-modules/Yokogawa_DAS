@@ -25,7 +25,7 @@
 ////////////////////////////////////
 
 enum { ADDR_SIGNAL, ADDR_MATH, ADDR_COMM, ADDR_CONST, ADDR_VARCONST };
-enum { TRIG_INFO, TRIG_INPUT, TRIG_OUTPUT, TRIG_STATUS };
+enum { TRIG_INFO, TRIG_CHANNELS, TRIG_MISC, TRIG_STATUS };
 enum { MODE_SETTINGS, MODE_COMPUTE, MODE_COMPUTE_CMD, MODE_RECORDING };
 enum { MODULE_PRESENCE, MODULE_STRING };
 
@@ -202,8 +202,8 @@ struct devqueue
   int error_flag; // nonzero if error
   struct error_value error; // NULL if unknown error and flag is set
 
-  IOSCANPVT data_ioscanpvt;  // input channels
-  IOSCANPVT misc_ioscanpvt; // output channels 
+  IOSCANPVT channel_ioscanpvt;  // input channels
+  IOSCANPVT misc_ioscanpvt;  // constants 
   IOSCANPVT info_ioscanpvt;   // info for channels: prec, egu, ...
   IOSCANPVT status_ioscanpvt; // device status
   IOSCANPVT error_ioscanpvt;  // error messages
@@ -1075,7 +1075,7 @@ static int load_data_values( struct devqueue *dq, int type, int channel )
 
   // if alarm_flag got set and it wasn't before, do i/o request
   if( (type == CMD_READ_ALL_DATA) || io_flag )
-    scanIoRequest(dq->data_ioscanpvt );
+    scanIoRequest(dq->channel_ioscanpvt );
 
   return 0;
 }
@@ -1427,7 +1427,7 @@ static int init_gm10( char *device, char *address)
   dq->list = NULL;
 
   dq->name = strdup( device);
-  scanIoInit( &(dq->data_ioscanpvt));
+  scanIoInit( &(dq->channel_ioscanpvt));
   scanIoInit( &(dq->misc_ioscanpvt));
   scanIoInit( &(dq->info_ioscanpvt));
   scanIoInit( &(dq->status_ioscanpvt));
@@ -1551,14 +1551,14 @@ struct devqueue *gm10_connect( char *device)
   return NULL;
 }
 
-IOSCANPVT gm10_channel_io_handler( struct devqueue *dq, int type)
+IOSCANPVT gm10_address_io_handler( struct devqueue *dq, int type)
 {
   switch(type)
     {
     case ADDR_SIGNAL:
     case ADDR_MATH:
     case ADDR_COMM:
-      return dq->data_ioscanpvt;
+      return dq->channel_ioscanpvt;
       break;
     case ADDR_CONST:
     case ADDR_VARCONST:
@@ -1581,9 +1581,9 @@ IOSCANPVT gm10_error_io_handler( struct devqueue *dq)
   return dq->error_ioscanpvt;
 }
 // just for alarm flag
-IOSCANPVT gm10_input_io_handler( struct devqueue *dq)
+IOSCANPVT gm10_channel_io_handler( struct devqueue *dq)
 {
-  return dq->data_ioscanpvt;
+  return dq->channel_ioscanpvt;
 }
 
 
@@ -1673,10 +1673,10 @@ int gm10_trigger( struct devqueue *dq, dbCommon *precord, int type)
     case TRIG_INFO:
       qmesg( dq, precord, CMD_READ_ALL_INFOS, 0, datum_empty());
       break;
-    case TRIG_INPUT:
+    case TRIG_CHANNELS:
       qmesg( dq, precord, CMD_READ_ALL_DATA, 0, datum_empty());
       break;
-    case TRIG_OUTPUT:
+    case TRIG_MISC:
       qmesg( dq, precord, CMD_READ_ALL_MISC, 0, datum_empty());
       break;
     case TRIG_STATUS:

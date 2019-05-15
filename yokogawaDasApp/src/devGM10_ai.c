@@ -181,7 +181,7 @@ static long get_ioint_info( int cmd, struct aiRecord *pgmai, IOSCANPVT *ppvt)
   else
     // return interrupt handler for queue
     //    if( dpvt->rec_type == REC_VAL)
-    *ppvt = gm10_channel_io_handler(dpvt->dq, dpvt->sub_type);
+    *ppvt = gm10_address_io_handler(dpvt->dq, dpvt->sub_type);
 
   return(0);
 }

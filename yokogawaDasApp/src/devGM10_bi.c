@@ -224,7 +224,7 @@ static long get_ioint_info( int cmd, struct biRecord *pgmbi,
       switch( dpvt->rec_type)
         {
         case REC_VAL:
-          *ppvt = gm10_channel_io_handler(dpvt->dq, dpvt->sub_type);
+          *ppvt = gm10_address_io_handler(dpvt->dq, dpvt->sub_type);
           break;
         case REC_MODULE:
           *ppvt = gm10_info_io_handler(dpvt->dq);
@@ -237,7 +237,7 @@ static long get_ioint_info( int cmd, struct biRecord *pgmbi,
           break;
         case REC_ALARM:
           // change is only done when input is read
-          *ppvt = gm10_input_io_handler(dpvt->dq);
+          *ppvt = gm10_channel_io_handler(dpvt->dq);
           break;
         }
     }

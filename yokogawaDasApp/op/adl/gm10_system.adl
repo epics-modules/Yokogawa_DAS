@@ -95,7 +95,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):InputPoll.SCAN"
+		chan="$(P)$(DAU):ChannelPoll.SCAN"
 		clr=14
 		bclr=4
 	}
@@ -110,7 +110,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Inputs"
+	textix="Channels"
 	align="horiz. right"
 }
 "text update" {
@@ -184,7 +184,7 @@ menu {
 		height=20
 	}
 	control {
-		chan="$(P)$(DAU):OutputPoll.SCAN"
+		chan="$(P)$(DAU):MiscPoll.SCAN"
 		clr=14
 		bclr=4
 	}
@@ -199,7 +199,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Outputs"
+	textix="Constants"
 	align="horiz. right"
 }
 menu {
