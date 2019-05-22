@@ -1,4 +1,4 @@
-# Yokogawa Digital Acquisition Systems
+# Yokogawa Data Acquisition Systems
 APS BCDA synApps module: Yokogawa_DAS
 
 This module includes support for the Yokogawa models MW100 and GM10.
