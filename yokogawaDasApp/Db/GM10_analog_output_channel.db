@@ -273,9 +273,9 @@ record(mbbi,"$(P)$(DAU):$(ADDRESS):Mode")
     field(ZRVL, "0")
     field(ZRST, "Skip")
     field(ONVL, "1")
-    field(ONST, "Trans")
+    field(ONST, "Transmit")
     field(TWVL, "2")
-    field(TWST, "Comm")
+    field(TWST, "Manual")
 }
 record(ao, "$(P)$(DAU):$(ADDRESS):TweakVal") 
 {
