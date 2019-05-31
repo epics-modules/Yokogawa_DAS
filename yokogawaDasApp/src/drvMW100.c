@@ -446,7 +446,7 @@ struct queue_link
 };
 
 // just define head of linked list
-struct queue_link *queue_list = NULL; 
+struct queue_link *mw100_queue_list = NULL; 
 
 
 
@@ -474,7 +474,7 @@ LOCAL long mw100_report(int level)
   char buffer[20];
 
   cnt = 0;
-  qlp = queue_list;
+  qlp = mw100_queue_list;
   while( qlp != NULL)
     {
       cnt++;
@@ -1487,7 +1487,7 @@ static int init_mw100( char *device, char *address)
       p++;
     }
   
-  qlp = queue_list;
+  qlp = mw100_queue_list;
   while( qlp != NULL)
     {
       if( !strcmp(qlp->dq->name, device))
@@ -1501,8 +1501,8 @@ static int init_mw100( char *device, char *address)
   qlp = calloc( 1, sizeof( struct queue_link) );
   if( qlp == NULL)
     return 1;
-  qlp->next = queue_list;
-  queue_list = qlp;
+  qlp->next = mw100_queue_list;
+  mw100_queue_list = qlp;
 
   dq = calloc( 1, sizeof(struct devqueue) );
   if( dq == NULL)
@@ -1629,7 +1629,7 @@ struct devqueue *mw100_connect( char *device)
 {
   struct queue_link *qlp;
 
-  qlp = queue_list;
+  qlp = mw100_queue_list;
   while( qlp != NULL)
     {
       if( !strcmp(qlp->dq->name, device))

@@ -169,7 +169,7 @@ static union datum datum_float( double val)
   dt.flt_d = val;
   return dt;
 }
-/* union datum datum_string( char *val) */
+/* static union datum datum_string( char *val) */
 /* { */
 /*   union datum dt; */
 /*   dt.str_d = strdup(val); */
@@ -252,7 +252,7 @@ struct queue_link
 };
 
 // just define head of linked list
-struct queue_link *queue_list = NULL; 
+struct queue_link *gm10_queue_list = NULL; 
 
 
 
@@ -280,7 +280,7 @@ LOCAL long gm10_report(int level)
   char buffer[20];
 
   cnt = 0;
-  qlp = queue_list;
+  qlp = gm10_queue_list;
   while( qlp != NULL)
     {
       cnt++;
@@ -1401,7 +1401,7 @@ static int init_gm10( char *device, char *address)
       p++;
     }
 
-  qlp = queue_list;
+  qlp = gm10_queue_list;
   while( qlp != NULL)
     {
       if( !strcmp(qlp->dq->name, device))
@@ -1415,8 +1415,8 @@ static int init_gm10( char *device, char *address)
   qlp = calloc( 1, sizeof( struct queue_link) );
   if( qlp == NULL)
     return 1;
-  qlp->next = queue_list;
-  queue_list = qlp;
+  qlp->next = gm10_queue_list;
+  gm10_queue_list = qlp;
 
   dq = calloc( 1, sizeof(struct devqueue) );
   if( dq == NULL)
@@ -1540,7 +1540,7 @@ struct devqueue *gm10_connect( char *device)
 {
   struct queue_link *qlp;
 
-  qlp = queue_list;
+  qlp = gm10_queue_list;
   while( qlp != NULL)
     {
       if( !strcmp(qlp->dq->name, device))
