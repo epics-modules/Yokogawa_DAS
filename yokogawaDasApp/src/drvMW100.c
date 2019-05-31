@@ -157,25 +157,25 @@ struct req_pkt
   struct req_pkt *next;
 };
 
-union datum datum_empty( void)
+static union datum datum_empty( void)
 {
   union datum dt;
   dt.int_d = 0;
   return dt;
 }
-union datum datum_int( int val)
+static union datum datum_int( int val)
 {
   union datum dt;
   dt.int_d = val;
   return dt;
 }
-union datum datum_float( double val)
+static union datum datum_float( double val)
 {
   union datum dt;
   dt.flt_d = val;
   return dt;
 }
-/* union datum datum_string( char *val) */
+/* static union datum datum_string( char *val) */
 /* { */
 /*   union datum dt; */
 /*   dt.str_d = strdup(val); */

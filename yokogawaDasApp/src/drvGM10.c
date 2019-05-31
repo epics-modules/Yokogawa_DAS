@@ -151,19 +151,19 @@ struct req_pkt
   struct req_pkt *next;
 };
 
-union datum datum_empty( void)
+static union datum datum_empty( void)
 {
   union datum dt;
   dt.int_d = 0;
   return dt;
 }
-union datum datum_int( int val)
+static union datum datum_int( int val)
 {
   union datum dt;
   dt.int_d = val;
   return dt;
 }
-union datum datum_float( double val)
+static union datum datum_float( double val)
 {
   union datum dt;
   dt.flt_d = val;
@@ -327,7 +327,7 @@ static int qmesg( struct devqueue *dq, dbCommon *precord, int cmd, int channel,
 
 
 // returns rest of string not grabbed
-char *chopstring40( char *dest, char *src)
+static char *chopstring40( char *dest, char *src)
 {
   char *p;
 
