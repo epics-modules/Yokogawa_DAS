@@ -252,7 +252,7 @@ struct queue_link
 };
 
 // just define head of linked list
-struct queue_link *gm10_queue_list = NULL; 
+static struct queue_link *gm10_queue_list = NULL; 
 
 
 
