@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>module_desc</name>
+  <x>1413</x>
+  <y>576</y>
+  <width>400</width>
+  <height>160</height>
+  <background_color>
+    <color red="236" green="236" blue="236">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Module Descriptions</text>
+    <x>15</x>
+    <y>5</y>
+    <width>250</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>MX110 - analog input : ADC and thermocouples</text>
+    <x>15</x>
+    <y>30</y>
+    <width>360</width>
+    <height>16</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>MX112 - analog input : Strain gauges</text>
+    <x>15</x>
+    <y>50</y>
+    <width>360</width>
+    <height>16</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>MX114 - integer digital input : Pulse counter</text>
+    <x>15</x>
+    <y>70</y>
+    <width>360</width>
+    <height>16</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>MX115 - binary digital input : Logic</text>
+    <x>15</x>
+    <y>90</y>
+    <width>360</width>
+    <height>16</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>MX120 - analog output : DAC in mA and V</text>
+    <x>15</x>
+    <y>110</y>
+    <width>360</width>
+    <height>16</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>MX125 - binary digital output : Relays</text>
+    <x>15</x>
+    <y>130</y>
+    <width>360</width>
+    <height>16</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>mw100_main</name>
+  <x>860</x>
+  <y>283</y>
+  <width>300</width>
+  <height>300</height>
+  <background_color>
+    <color red="200" green="200" blue="200">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <widget type="group" version="2.0.0">
+    <name>Grouping Container</name>
+    <x>112</x>
+    <y>150</y>
+    <width>175</width>
+    <height>20</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="!(pv0==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):Computation</pv_name>
+      </rule>
+    </rules>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):OpModeSet</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):OpModeSet</pv_name>
+      <text>Settings</text>
+      <x>90</x>
+      <width>85</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):OpModeSet</pv_name>
+          <value>0</value>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):OpModeSet</pv_name>
+      <text>Measurement</text>
+      <width>85</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Grouping Container</name>
+    <x>30</x>
+    <y>205</y>
+    <width>255</width>
+    <height>20</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="200" green="200" blue="200">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0==0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="!(pv0==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):OpMode</pv_name>
+      </rule>
+    </rules>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+      <text>Stop</text>
+      <width>60</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+          <value>0</value>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+      <text>Start</text>
+      <x>65</x>
+      <width>60</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+          <value>2</value>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+      <text>Reset</text>
+      <x>130</x>
+      <width>60</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+          <value>3</value>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+      <text>Clear</text>
+      <x>195</x>
+      <width>60</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Yokogawa MW100 $(P)$(DAU)</text>
+    <x>27</x>
+    <y>5</y>
+    <width>250</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>mw100_dac.opi</file>
+        <macros>
+          <L1>011</L1>
+          <L2>012</L2>
+          <L3>013</L3>
+          <L4>014</L4>
+          <L5>015</L5>
+          <L6>016</L6>
+          <L7>017</L7>
+          <L8>018</L8>
+        </macros>
+        <target>tab</target>
+        <description>DAC 011-020</description>
+      </action>
+    </actions>
+    <text>DAC</text>
+    <x>99</x>
+    <y>62</y>
+    <width>60</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="26" green="115" blue="9">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>mw100_adc.opi</file>
+        <macros>
+          <L1>001</L1>
+          <L10>010</L10>
+          <L2>002</L2>
+          <L3>003</L3>
+          <L4>004</L4>
+          <L5>005</L5>
+          <L6>006</L6>
+          <L7>007</L7>
+          <L8>008</L8>
+          <L9>009</L9>
+        </macros>
+        <target>tab</target>
+        <description>ADC 001-010</description>
+      </action>
+    </actions>
+    <text>ADC</text>
+    <x>99</x>
+    <y>40</y>
+    <width>60</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="26" green="115" blue="9">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>mw100_relay.opi</file>
+        <macros>
+          <L1>021</L1>
+          <L10>030</L10>
+          <L2>022</L2>
+          <L3>023</L3>
+          <L4>024</L4>
+          <L5>025</L5>
+          <L6>026</L6>
+          <L7>027</L7>
+          <L8>028</L8>
+          <L9>029</L9>
+        </macros>
+        <target>tab</target>
+        <description>Relay 021-030</description>
+      </action>
+    </actions>
+    <text>Relay</text>
+    <x>161</x>
+    <y>62</y>
+    <width>60</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="26" green="115" blue="9">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Operating Mode</text>
+    <x>14</x>
+    <y>128</y>
+    <width>150</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>mw100_di.opi</file>
+        <macros>
+          <L1>021</L1>
+          <L10>030</L10>
+          <L2>022</L2>
+          <L3>023</L3>
+          <L4>024</L4>
+          <L5>025</L5>
+          <L6>026</L6>
+          <L7>027</L7>
+          <L8>028</L8>
+          <L9>029</L9>
+        </macros>
+        <target>tab</target>
+        <description>DI 021-030</description>
+      </action>
+    </actions>
+    <text>DI</text>
+    <x>161</x>
+    <y>40</y>
+    <width>60</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="26" green="115" blue="9">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(P)$(DAU):OpMode</pv_name>
+    <x>169</x>
+    <y>128</y>
+    <height>16</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      </font>
+    </font>
+    <background_color>
+      <color red="153" green="255" blue="255">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Menu Button</name>
+    <actions>
+      <action type="open_display">
+        <file>mw100_math.opi</file>
+        <macros>
+          <L1>A001</L1>
+          <L10>A010</L10>
+          <L2>A002</L2>
+          <L3>A003</L3>
+          <L4>A004</L4>
+          <L5>A005</L5>
+          <L6>A006</L6>
+          <L7>A007</L7>
+          <L8>A008</L8>
+          <L9>A009</L9>
+        </macros>
+        <target>tab</target>
+        <description>A001-A010</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_math.opi</file>
+        <macros>
+          <L1>A011</L1>
+          <L10>A020</L10>
+          <L2>A012</L2>
+          <L3>A013</L3>
+          <L4>A014</L4>
+          <L5>A015</L5>
+          <L6>A016</L6>
+          <L7>A017</L7>
+          <L8>A018</L8>
+          <L9>A019</L9>
+        </macros>
+        <target>tab</target>
+        <description>A011-A020</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_math.opi</file>
+        <macros>
+          <L1>A021</L1>
+          <L10>A030</L10>
+          <L2>A022</L2>
+          <L3>A023</L3>
+          <L4>A024</L4>
+          <L5>A025</L5>
+          <L6>A026</L6>
+          <L7>A027</L7>
+          <L8>A028</L8>
+          <L9>A029</L9>
+        </macros>
+        <target>tab</target>
+        <description>A021-A030</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_math.opi</file>
+        <macros>
+          <L1>A031</L1>
+          <L10>A040</L10>
+          <L2>A032</L2>
+          <L3>A033</L3>
+          <L4>A034</L4>
+          <L5>A035</L5>
+          <L6>A036</L6>
+          <L7>A037</L7>
+          <L8>A038</L8>
+          <L9>A039</L9>
+        </macros>
+        <target>tab</target>
+        <description>A031-A040</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_math.opi</file>
+        <macros>
+          <L1>A041</L1>
+          <L10>A050</L10>
+          <L2>A042</L2>
+          <L3>A043</L3>
+          <L4>A044</L4>
+          <L5>A045</L5>
+          <L6>A046</L6>
+          <L7>A047</L7>
+          <L8>A048</L8>
+          <L9>A049</L9>
+        </macros>
+        <target>tab</target>
+        <description>A041-A050</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_math.opi</file>
+        <macros>
+          <L1>A051</L1>
+          <L10>A060</L10>
+          <L2>A052</L2>
+          <L3>A053</L3>
+          <L4>A054</L4>
+          <L5>A055</L5>
+          <L6>A056</L6>
+          <L7>A057</L7>
+          <L8>A058</L8>
+          <L9>A059</L9>
+        </macros>
+        <target>tab</target>
+        <description>A051-A060</description>
+      </action>
+    </actions>
+    <text>Calc</text>
+    <x>164</x>
+    <y>94</y>
+    <width>60</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="26" green="115" blue="9">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Computation</text>
+    <x>44</x>
+    <y>179</y>
+    <width>120</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(P)$(DAU):Computation</pv_name>
+    <x>174</x>
+    <y>184</y>
+    <height>16</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      </font>
+    </font>
+    <background_color>
+      <color red="153" green="255" blue="255">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Menu Button</name>
+    <actions>
+      <action type="open_display">
+        <file>mw100_comm_input.opi</file>
+        <macros>
+          <L1>C001</L1>
+          <L10>C010</L10>
+          <L2>C002</L2>
+          <L3>C003</L3>
+          <L4>C004</L4>
+          <L5>C005</L5>
+          <L6>C006</L6>
+          <L7>C007</L7>
+          <L8>C008</L8>
+          <L9>C009</L9>
+        </macros>
+        <target>tab</target>
+        <description>Comm Input C001-C010</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_comm_input.opi</file>
+        <macros>
+          <L1>C011</L1>
+          <L10>C020</L10>
+          <L2>C012</L2>
+          <L3>C013</L3>
+          <L4>C014</L4>
+          <L5>C015</L5>
+          <L6>C016</L6>
+          <L7>C017</L7>
+          <L8>C018</L8>
+          <L9>C019</L9>
+        </macros>
+        <target>tab</target>
+        <description>Comm Input C011-C020</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_comm_input.opi</file>
+        <macros>
+          <L1>C021</L1>
+          <L10>C030</L10>
+          <L2>C022</L2>
+          <L3>C023</L3>
+          <L4>C024</L4>
+          <L5>C025</L5>
+          <L6>C026</L6>
+          <L7>C027</L7>
+          <L8>C028</L8>
+          <L9>C029</L9>
+        </macros>
+        <target>tab</target>
+        <description>Comm Input C021-C030</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_comm_input.opi</file>
+        <macros>
+          <L1>C031</L1>
+          <L10>C040</L10>
+          <L2>C032</L2>
+          <L3>C033</L3>
+          <L4>C034</L4>
+          <L5>C035</L5>
+          <L6>C036</L6>
+          <L7>C037</L7>
+          <L8>C038</L8>
+          <L9>C039</L9>
+        </macros>
+        <target>tab</target>
+        <description>Comm Input C031-C040</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_comm_input.opi</file>
+        <macros>
+          <L1>C041</L1>
+          <L10>C050</L10>
+          <L2>C042</L2>
+          <L3>C043</L3>
+          <L4>C044</L4>
+          <L5>C045</L5>
+          <L6>C046</L6>
+          <L7>C047</L7>
+          <L8>C048</L8>
+          <L9>C049</L9>
+        </macros>
+        <target>tab</target>
+        <description>Comm Input C041-C050</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_comm_input.opi</file>
+        <macros>
+          <L1>C051</L1>
+          <L10>C060</L10>
+          <L2>C052</L2>
+          <L3>C053</L3>
+          <L4>C054</L4>
+          <L5>C055</L5>
+          <L6>C056</L6>
+          <L7>C057</L7>
+          <L8>C058</L8>
+          <L9>C059</L9>
+        </macros>
+        <target>tab</target>
+        <description>Comm Input C051-C060</description>
+      </action>
+    </actions>
+    <text>Inputs</text>
+    <x>99</x>
+    <y>94</y>
+    <width>60</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="26" green="115" blue="9">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Hardware</text>
+    <x>11</x>
+    <y>40</y>
+    <width>80</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Math</text>
+    <x>11</x>
+    <y>94</y>
+    <width>80</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>11</x>
+    <y>271</y>
+    <width>280</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="279.0" y="0.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="30" green="144" blue="255">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Error Message</text>
+    <x>14</x>
+    <y>275</y>
+    <width>150</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="222" green="19" blue="9">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pv0!=0">
+          <value>true</value>
+        </exp>
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):ErrorFlag</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <file>mw100_system.opi</file>
+        <target>tab</target>
+        <description>System</description>
+      </action>
+    </actions>
+    <text>System</text>
+    <x>225</x>
+    <y>275</y>
+    <width>60</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="26" green="115" blue="9">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <y>31</y>
+    <width>398</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="397.0" y="0.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="30" green="144" blue="255">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Menu Button</name>
+    <actions>
+      <action type="open_display">
+        <file>mw100_constant.opi</file>
+        <macros>
+          <L1>K01</L1>
+          <L10>K10</L10>
+          <L2>K02</L2>
+          <L3>K03</L3>
+          <L4>K04</L4>
+          <L5>K05</L5>
+          <L6>K06</L6>
+          <L7>K07</L7>
+          <L8>K08</L8>
+          <L9>K09</L9>
+        </macros>
+        <target>tab</target>
+        <description>Constants K01-K10</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_constant.opi</file>
+        <macros>
+          <L1>K11</L1>
+          <L10>K20</L10>
+          <L2>K12</L2>
+          <L3>K13</L3>
+          <L4>K14</L4>
+          <L5>K15</L5>
+          <L6>K16</L6>
+          <L7>K17</L7>
+          <L8>K18</L8>
+          <L9>K19</L9>
+        </macros>
+        <target>tab</target>
+        <description>Constants K11-K20</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_constant.opi</file>
+        <macros>
+          <L1>K21</L1>
+          <L10>K30</L10>
+          <L2>K22</L2>
+          <L3>K23</L3>
+          <L4>K24</L4>
+          <L5>K25</L5>
+          <L6>K26</L6>
+          <L7>K27</L7>
+          <L8>K28</L8>
+          <L9>K29</L9>
+        </macros>
+        <target>tab</target>
+        <description>Constants K21-K30</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_constant.opi</file>
+        <macros>
+          <L1>K31</L1>
+          <L10>K40</L10>
+          <L2>K32</L2>
+          <L3>K33</L3>
+          <L4>K34</L4>
+          <L5>K35</L5>
+          <L6>K36</L6>
+          <L7>K37</L7>
+          <L8>K38</L8>
+          <L9>K39</L9>
+        </macros>
+        <target>tab</target>
+        <description>Constants K31-K40</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_constant.opi</file>
+        <macros>
+          <L1>K41</L1>
+          <L10>K50</L10>
+          <L2>K42</L2>
+          <L3>K43</L3>
+          <L4>K44</L4>
+          <L5>K45</L5>
+          <L6>K46</L6>
+          <L7>K47</L7>
+          <L8>K48</L8>
+          <L9>K49</L9>
+        </macros>
+        <target>tab</target>
+        <description>Constants K41-K50</description>
+      </action>
+      <action type="open_display">
+        <file>mw100_constant.opi</file>
+        <macros>
+          <L1>K51</L1>
+          <L10>K60</L10>
+          <L2>K52</L2>
+          <L3>K53</L3>
+          <L4>K54</L4>
+          <L5>K55</L5>
+          <L6>K56</L6>
+          <L7>K57</L7>
+          <L8>K58</L8>
+          <L9>K59</L9>
+        </macros>
+        <target>tab</target>
+        <description>Constants K51-K60</description>
+      </action>
+    </actions>
+    <text>Const</text>
+    <x>229</x>
+    <y>94</y>
+    <width>60</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="26" green="115" blue="9">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text>Alarm</text>
+    <x>60</x>
+    <y>240</y>
+    <width>50</width>
+    <font>
+      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)$(DAU):AlarmAck.PROC</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(P)$(DAU):AlarmAck.PROC</pv_name>
+    <text>Acknowledge</text>
+    <x>135</x>
+    <y>240</y>
+    <height>20</height>
+    <background_color>
+      <color red="238" green="182" blue="43">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>Polyline</name>
+    <x>11</x>
+    <y>231</y>
+    <width>280</width>
+    <height>1</height>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="279.0" y="0.0">
+      </point>
+    </points>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="30" green="144" blue="255">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse</name>
+    <x>25</x>
+    <y>240</y>
+    <width>20</width>
+    <height>20</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+</display>
