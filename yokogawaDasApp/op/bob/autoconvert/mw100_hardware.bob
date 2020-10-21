@@ -9,236 +9,148 @@
     <color red="200" green="200" blue="200">
     </color>
   </background_color>
-  <actions>
-  </actions>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #6</name>
     <text>$(P)$(DAU) Hardware Values</text>
     <x>100</x>
     <y>5</y>
     <width>300</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #9</name>
     <text>001</text>
     <x>10</x>
     <y>40</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #12</name>
     <text>002</text>
     <x>10</x>
     <y>65</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #15</name>
     <text>003</text>
     <x>10</x>
     <y>90</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #18</name>
     <text>004</text>
     <x>10</x>
     <y>115</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #21</name>
     <text>005</text>
     <x>10</x>
     <y>140</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #24</name>
     <text>006</text>
     <x>10</x>
     <y>165</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #27</name>
     <text>007</text>
     <x>10</x>
     <y>190</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #30</name>
     <text>008</text>
     <x>10</x>
     <y>215</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #33</name>
     <text>009</text>
     <x>10</x>
     <y>240</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #36</name>
     <text>010</text>
     <x>10</x>
     <y>265</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #39</name>
     <pv_name>$(P)$(DAU):010</pv_name>
     <x>45</x>
     <y>265</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -248,23 +160,16 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #43</name>
     <pv_name>$(P)$(DAU):009</pv_name>
     <x>45</x>
     <y>240</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -274,23 +179,16 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #47</name>
     <pv_name>$(P)$(DAU):008</pv_name>
     <x>45</x>
     <y>215</y>
     <width>81</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -300,23 +198,16 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #51</name>
     <pv_name>$(P)$(DAU):007</pv_name>
     <x>45</x>
     <y>190</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -326,23 +217,16 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #55</name>
     <pv_name>$(P)$(DAU):006</pv_name>
     <x>45</x>
     <y>165</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -352,23 +236,16 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #59</name>
     <pv_name>$(P)$(DAU):005</pv_name>
     <x>45</x>
     <y>140</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -378,23 +255,16 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #63</name>
     <pv_name>$(P)$(DAU):004</pv_name>
     <x>45</x>
     <y>115</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -404,23 +274,16 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #67</name>
     <pv_name>$(P)$(DAU):003</pv_name>
     <x>45</x>
     <y>90</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -430,23 +293,16 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #71</name>
     <pv_name>$(P)$(DAU):002</pv_name>
     <x>45</x>
     <y>65</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -456,45 +312,34 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <x>6</x>
-    <y>31</y>
-    <width>515</width>
-    <height>1</height>
+    <name>polyline #75</name>
+    <x>5</x>
+    <y>30</y>
+    <width>516</width>
+    <height>2</height>
     <points>
-      <point x="0.0" y="0.0">
+      <point x="1.0" y="1.0">
       </point>
-      <point x="514.0" y="0.0">
+      <point x="515.0" y="1.0">
       </point>
     </points>
-    <line_width>1</line_width>
+    <line_width>2</line_width>
     <line_color>
-      <color red="30" green="144" blue="255">
+      <color red="52" green="51" blue="134">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #79</name>
     <pv_name>$(P)$(DAU):001</pv_name>
     <x>45</x>
     <y>40</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -504,473 +349,561 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #83</name>
     <text>Setting Mode</text>
     <x>15</x>
     <y>765</y>
     <width>120</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <foreground_color>
       <color red="222" green="19" blue="9">
       </color>
     </foreground_color>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
+    <auto_size>true</auto_size>
     <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
         <exp bool_exp="!(pv0!=0)">
           <value>false</value>
         </exp>
         <pv_name>$(P)$(DAU):OpMode</pv_name>
       </rule>
     </rules>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #87</name>
     <text>Measurement Mode</text>
     <x>15</x>
     <y>765</y>
     <width>160</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <foreground_color>
       <color red="0" green="216" blue="0">
       </color>
     </foreground_color>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
+    <auto_size>true</auto_size>
     <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>true</value>
-        </exp>
+      <rule name="vis_if_zero" prop_id="visible" out_exp="false">
         <exp bool_exp="!(pv0==0)">
           <value>false</value>
         </exp>
         <pv_name>$(P)$(DAU):OpMode</pv_name>
       </rule>
     </rules>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <x>1</x>
-    <y>751</y>
-    <width>518</width>
-    <height>1</height>
+    <name>polyline #91</name>
+    <y>750</y>
+    <width>519</width>
+    <height>2</height>
     <points>
-      <point x="0.0" y="0.0">
+      <point x="1.0" y="1.0">
       </point>
-      <point x="517.0" y="0.0">
+      <point x="518.0" y="1.0">
       </point>
     </points>
-    <line_width>1</line_width>
+    <line_width>2</line_width>
     <line_color>
-      <color red="30" green="144" blue="255">
+      <color red="52" green="51" blue="134">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #95</name>
     <x>130</x>
     <y>40</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):001:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #99</name>
     <x>130</x>
     <y>65</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):002:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #103</name>
     <x>130</x>
     <y>90</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):003:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #107</name>
     <x>130</x>
     <y>115</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):004:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #111</name>
     <x>130</x>
     <y>140</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):005:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #115</name>
     <x>130</x>
     <y>165</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):006:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #119</name>
     <x>130</x>
     <y>190</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):007:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #123</name>
     <x>130</x>
     <y>215</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):008:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #127</name>
     <x>130</x>
     <y>240</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):009:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #131</name>
     <x>130</x>
     <y>265</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):010:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #135</name>
     <text>001</text>
     <x>10</x>
     <y>300</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #138</name>
     <text>002</text>
     <x>10</x>
     <y>325</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #141</name>
     <text>003</text>
     <x>10</x>
     <y>350</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #144</name>
     <text>004</text>
     <x>10</x>
     <y>375</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #147</name>
     <text>005</text>
     <x>10</x>
     <y>400</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #150</name>
     <text>006</text>
     <x>10</x>
     <y>425</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #153</name>
     <text>007</text>
     <x>10</x>
     <y>450</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #156</name>
     <text>008</text>
     <x>10</x>
     <y>475</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #159</name>
     <text>009</text>
     <x>10</x>
     <y>500</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #162</name>
     <text>010</text>
     <x>10</x>
     <y>525</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #165</name>
     <pv_name>$(P)$(DAU):010:ADC</pv_name>
     <x>45</x>
     <y>525</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -980,23 +913,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #169</name>
     <pv_name>$(P)$(DAU):009:ADC</pv_name>
     <x>45</x>
     <y>500</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1006,23 +932,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #173</name>
     <pv_name>$(P)$(DAU):008:ADC</pv_name>
     <x>45</x>
     <y>475</y>
     <width>81</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1032,23 +951,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #177</name>
     <pv_name>$(P)$(DAU):007:ADC</pv_name>
     <x>45</x>
     <y>450</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1058,23 +970,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #181</name>
     <pv_name>$(P)$(DAU):006:ADC</pv_name>
     <x>45</x>
     <y>425</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1084,23 +989,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #185</name>
     <pv_name>$(P)$(DAU):005:ADC</pv_name>
     <x>45</x>
     <y>400</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1110,23 +1008,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #189</name>
     <pv_name>$(P)$(DAU):004:ADC</pv_name>
     <x>45</x>
     <y>375</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1136,23 +1027,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #193</name>
     <pv_name>$(P)$(DAU):003:ADC</pv_name>
     <x>45</x>
     <y>350</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1162,23 +1046,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #197</name>
     <pv_name>$(P)$(DAU):002:ADC</pv_name>
     <x>45</x>
     <y>325</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1188,23 +1065,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #201</name>
     <pv_name>$(P)$(DAU):001:ADC</pv_name>
     <x>45</x>
     <y>300</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1214,383 +1084,496 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #205</name>
     <x>130</x>
     <y>300</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):001:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #209</name>
     <x>130</x>
     <y>325</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):002:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #213</name>
     <x>130</x>
     <y>350</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):003:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #217</name>
     <x>130</x>
     <y>375</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):004:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #221</name>
     <x>130</x>
     <y>400</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):005:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #225</name>
     <x>130</x>
     <y>425</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):006:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #229</name>
     <x>130</x>
     <y>450</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):007:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #233</name>
     <x>130</x>
     <y>475</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):008:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #237</name>
     <x>130</x>
     <y>500</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):009:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #241</name>
     <x>130</x>
     <y>525</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):010:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #245</name>
     <text>011</text>
     <x>180</x>
     <y>40</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #248</name>
     <text>012</text>
     <x>180</x>
     <y>65</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #251</name>
     <text>003</text>
     <x>180</x>
     <y>90</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #254</name>
     <text>004</text>
     <x>180</x>
     <y>115</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #257</name>
     <text>005</text>
     <x>180</x>
     <y>140</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #260</name>
     <text>006</text>
     <x>180</x>
     <y>165</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #263</name>
     <text>007</text>
     <x>180</x>
     <y>190</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #266</name>
     <text>008</text>
     <x>180</x>
     <y>215</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #269</name>
     <text>009</text>
     <x>180</x>
     <y>240</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #272</name>
     <text>010</text>
     <x>180</x>
     <y>265</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #275</name>
     <pv_name>$(P)$(DAU):010:ADC</pv_name>
     <x>215</x>
     <y>265</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1600,23 +1583,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #279</name>
     <pv_name>$(P)$(DAU):009:ADC</pv_name>
     <x>215</x>
     <y>240</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1626,23 +1602,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #283</name>
     <pv_name>$(P)$(DAU):008:ADC</pv_name>
     <x>215</x>
     <y>215</y>
     <width>81</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1652,23 +1621,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #287</name>
     <pv_name>$(P)$(DAU):007:ADC</pv_name>
     <x>215</x>
     <y>190</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1678,23 +1640,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #291</name>
     <pv_name>$(P)$(DAU):006:ADC</pv_name>
     <x>215</x>
     <y>165</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1704,23 +1659,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #295</name>
     <pv_name>$(P)$(DAU):005:ADC</pv_name>
     <x>215</x>
     <y>140</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1730,23 +1678,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #299</name>
     <pv_name>$(P)$(DAU):004:ADC</pv_name>
     <x>215</x>
     <y>115</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1756,23 +1697,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #303</name>
     <pv_name>$(P)$(DAU):003:ADC</pv_name>
     <x>215</x>
     <y>90</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1782,23 +1716,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #307</name>
     <pv_name>$(P)$(DAU):012</pv_name>
     <x>215</x>
     <y>65</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1808,23 +1735,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #311</name>
     <pv_name>$(P)$(DAU):011</pv_name>
     <x>215</x>
     <y>40</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1834,383 +1754,496 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #315</name>
     <x>300</x>
     <y>40</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):011:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #319</name>
     <x>300</x>
     <y>65</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):002:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #323</name>
     <x>300</x>
     <y>90</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):003:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #327</name>
     <x>300</x>
     <y>115</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):004:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #331</name>
     <x>300</x>
     <y>140</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):005:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #335</name>
     <x>300</x>
     <y>165</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):006:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #339</name>
     <x>300</x>
     <y>190</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):007:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #343</name>
     <x>300</x>
     <y>215</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):008:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #347</name>
     <x>300</x>
     <y>240</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):009:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #351</name>
     <x>300</x>
     <y>265</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):010:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #355</name>
     <text>001</text>
     <x>180</x>
     <y>300</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #358</name>
     <text>002</text>
     <x>180</x>
     <y>325</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #361</name>
     <text>003</text>
     <x>180</x>
     <y>350</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #364</name>
     <text>004</text>
     <x>180</x>
     <y>375</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #367</name>
     <text>005</text>
     <x>180</x>
     <y>400</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #370</name>
     <text>006</text>
     <x>180</x>
     <y>425</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #373</name>
     <text>007</text>
     <x>180</x>
     <y>450</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #376</name>
     <text>008</text>
     <x>180</x>
     <y>475</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #379</name>
     <text>009</text>
     <x>180</x>
     <y>500</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #382</name>
     <text>010</text>
     <x>180</x>
     <y>525</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #385</name>
     <pv_name>$(P)$(DAU):010:ADC</pv_name>
     <x>215</x>
     <y>525</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2220,23 +2253,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #389</name>
     <pv_name>$(P)$(DAU):009:ADC</pv_name>
     <x>215</x>
     <y>500</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2246,23 +2272,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #393</name>
     <pv_name>$(P)$(DAU):008:ADC</pv_name>
     <x>215</x>
     <y>475</y>
     <width>81</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2272,23 +2291,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #397</name>
     <pv_name>$(P)$(DAU):007:ADC</pv_name>
     <x>215</x>
     <y>450</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2298,23 +2310,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #401</name>
     <pv_name>$(P)$(DAU):006:ADC</pv_name>
     <x>215</x>
     <y>425</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2324,23 +2329,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #405</name>
     <pv_name>$(P)$(DAU):005:ADC</pv_name>
     <x>215</x>
     <y>400</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2350,23 +2348,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #409</name>
     <pv_name>$(P)$(DAU):004:ADC</pv_name>
     <x>215</x>
     <y>375</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2376,23 +2367,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #413</name>
     <pv_name>$(P)$(DAU):003:ADC</pv_name>
     <x>215</x>
     <y>350</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2402,23 +2386,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #417</name>
     <pv_name>$(P)$(DAU):002:ADC</pv_name>
     <x>215</x>
     <y>325</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2428,23 +2405,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #421</name>
     <pv_name>$(P)$(DAU):001:ADC</pv_name>
     <x>215</x>
     <y>300</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2454,383 +2424,496 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #425</name>
     <x>300</x>
     <y>300</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):001:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #429</name>
     <x>300</x>
     <y>325</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):002:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #433</name>
     <x>300</x>
     <y>350</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):003:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #437</name>
     <x>300</x>
     <y>375</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):004:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #441</name>
     <x>300</x>
     <y>400</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):005:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #445</name>
     <x>300</x>
     <y>425</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):006:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #449</name>
     <x>300</x>
     <y>450</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):007:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #453</name>
     <x>300</x>
     <y>475</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):008:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #457</name>
     <x>300</x>
     <y>500</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):009:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #461</name>
     <x>300</x>
     <y>525</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):010:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #465</name>
     <text>001</text>
     <x>350</x>
     <y>40</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #468</name>
     <text>002</text>
     <x>350</x>
     <y>65</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #471</name>
     <text>003</text>
     <x>350</x>
     <y>90</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #474</name>
     <text>004</text>
     <x>350</x>
     <y>115</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #477</name>
     <text>005</text>
     <x>350</x>
     <y>140</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #480</name>
     <text>006</text>
     <x>350</x>
     <y>165</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #483</name>
     <text>007</text>
     <x>350</x>
     <y>190</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #486</name>
     <text>008</text>
     <x>350</x>
     <y>215</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #489</name>
     <text>009</text>
     <x>350</x>
     <y>240</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #492</name>
     <text>010</text>
     <x>350</x>
     <y>265</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #495</name>
     <pv_name>$(P)$(DAU):010:ADC</pv_name>
     <x>385</x>
     <y>265</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2840,23 +2923,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #499</name>
     <pv_name>$(P)$(DAU):009:ADC</pv_name>
     <x>385</x>
     <y>240</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2866,23 +2942,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #503</name>
     <pv_name>$(P)$(DAU):008:ADC</pv_name>
     <x>385</x>
     <y>215</y>
     <width>81</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2892,23 +2961,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #507</name>
     <pv_name>$(P)$(DAU):007:ADC</pv_name>
     <x>385</x>
     <y>190</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2918,23 +2980,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #511</name>
     <pv_name>$(P)$(DAU):006:ADC</pv_name>
     <x>385</x>
     <y>165</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2944,23 +2999,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #515</name>
     <pv_name>$(P)$(DAU):005:ADC</pv_name>
     <x>385</x>
     <y>140</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2970,23 +3018,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #519</name>
     <pv_name>$(P)$(DAU):004:ADC</pv_name>
     <x>385</x>
     <y>115</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -2996,23 +3037,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #523</name>
     <pv_name>$(P)$(DAU):003:ADC</pv_name>
     <x>385</x>
     <y>90</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3022,23 +3056,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #527</name>
     <pv_name>$(P)$(DAU):002:ADC</pv_name>
     <x>385</x>
     <y>65</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3048,23 +3075,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #531</name>
     <pv_name>$(P)$(DAU):001:ADC</pv_name>
     <x>385</x>
     <y>40</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3074,383 +3094,496 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #535</name>
     <x>470</x>
     <y>40</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):001:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #539</name>
     <x>470</x>
     <y>65</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):002:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #543</name>
     <x>470</x>
     <y>90</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):003:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #547</name>
     <x>470</x>
     <y>115</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):004:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #551</name>
     <x>470</x>
     <y>140</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):005:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #555</name>
     <x>470</x>
     <y>165</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):006:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #559</name>
     <x>470</x>
     <y>190</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):007:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #563</name>
     <x>470</x>
     <y>215</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):008:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #567</name>
     <x>470</x>
     <y>240</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):009:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #571</name>
     <x>470</x>
     <y>265</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):010:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #575</name>
     <text>001</text>
     <x>350</x>
     <y>300</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #578</name>
     <text>002</text>
     <x>350</x>
     <y>325</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #581</name>
     <text>003</text>
     <x>350</x>
     <y>350</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #584</name>
     <text>004</text>
     <x>350</x>
     <y>375</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #587</name>
     <text>005</text>
     <x>350</x>
     <y>400</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #590</name>
     <text>006</text>
     <x>350</x>
     <y>425</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #593</name>
     <text>007</text>
     <x>350</x>
     <y>450</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #596</name>
     <text>008</text>
     <x>350</x>
     <y>475</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #599</name>
     <text>009</text>
     <x>350</x>
     <y>500</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #602</name>
     <text>010</text>
     <x>350</x>
     <y>525</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #605</name>
     <pv_name>$(P)$(DAU):010:ADC</pv_name>
     <x>385</x>
     <y>525</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3460,23 +3593,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #609</name>
     <pv_name>$(P)$(DAU):009:ADC</pv_name>
     <x>385</x>
     <y>500</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3486,23 +3612,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #613</name>
     <pv_name>$(P)$(DAU):008:ADC</pv_name>
     <x>385</x>
     <y>475</y>
     <width>81</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3512,23 +3631,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #617</name>
     <pv_name>$(P)$(DAU):007:ADC</pv_name>
     <x>385</x>
     <y>450</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3538,23 +3650,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #621</name>
     <pv_name>$(P)$(DAU):006:ADC</pv_name>
     <x>385</x>
     <y>425</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3564,23 +3669,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #625</name>
     <pv_name>$(P)$(DAU):005:ADC</pv_name>
     <x>385</x>
     <y>400</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3590,23 +3688,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #629</name>
     <pv_name>$(P)$(DAU):004:ADC</pv_name>
     <x>385</x>
     <y>375</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3616,23 +3707,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #633</name>
     <pv_name>$(P)$(DAU):003:ADC</pv_name>
     <x>385</x>
     <y>350</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3642,23 +3726,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #637</name>
     <pv_name>$(P)$(DAU):002:ADC</pv_name>
     <x>385</x>
     <y>325</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3668,23 +3745,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #641</name>
     <pv_name>$(P)$(DAU):001:ADC</pv_name>
     <x>385</x>
     <y>300</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -3694,173 +3764,366 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #645</name>
     <x>470</x>
     <y>300</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):001:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #649</name>
     <x>470</x>
     <y>325</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):002:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #653</name>
     <x>470</x>
     <y>350</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):003:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #657</name>
     <x>470</x>
     <y>375</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):004:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #661</name>
     <x>470</x>
     <y>400</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):005:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #665</name>
     <x>470</x>
     <y>425</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):006:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #669</name>
     <x>470</x>
     <y>450</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):007:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #673</name>
     <x>470</x>
     <y>475</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):008:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #677</name>
     <x>470</x>
     <y>500</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):009:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #681</name>
     <x>470</x>
     <y>525</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="0" green="0" blue="0">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):010:ADC_Alarm</pv_name>
+      </script>
+    </scripts>
   </widget>
 </display>

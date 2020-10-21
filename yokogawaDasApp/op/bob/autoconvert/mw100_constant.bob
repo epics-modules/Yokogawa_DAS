@@ -9,178 +9,64 @@
     <color red="200" green="200" blue="200">
     </color>
   </background_color>
-  <actions>
-  </actions>
-  <widget type="group" version="2.0.0">
-    <name>Grouping Container</name>
-    <x>5</x>
-    <y>341</y>
-    <width>150</width>
-    <height>20</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="200" green="200" blue="200">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0==0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):OpMode</pv_name>
-      </rule>
-    </rules>
-    <widget type="label" version="2.0.0">
-      <name>Label</name>
-      <text>Computation Off</text>
-      <width>150</width>
-      <font>
-        <font family="Sans" style="REGULAR" size="10.891089108910892">
-        </font>
-      </font>
-      <foreground_color>
-        <color red="222" green="19" blue="9">
-        </color>
-      </foreground_color>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <rules>
-        <rule name="Visibility" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0==0">
-            <value>true</value>
-          </exp>
-          <exp bool_exp="!(pv0==0)">
-            <value>false</value>
-          </exp>
-          <pv_name>$(P)$(DAU):Computation</pv_name>
-        </rule>
-      </rules>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-    <widget type="label" version="2.0.0">
-      <name>Label</name>
-      <text>Computation On</text>
-      <width>150</width>
-      <font>
-        <font family="Sans" style="REGULAR" size="10.891089108910892">
-        </font>
-      </font>
-      <foreground_color>
-        <color red="0" green="216" blue="0">
-        </color>
-      </foreground_color>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <rules>
-        <rule name="Visibility" prop_id="visible" out_exp="false">
-          <exp bool_exp="pv0!=0">
-            <value>true</value>
-          </exp>
-          <exp bool_exp="!(pv0!=0)">
-            <value>false</value>
-          </exp>
-          <pv_name>$(P)$(DAU):Computation</pv_name>
-        </rule>
-      </rules>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-  </widget>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #6</name>
     <text>Measurements On</text>
     <x>5</x>
     <y>315</y>
     <width>150</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <foreground_color>
       <color red="222" green="19" blue="9">
       </color>
     </foreground_color>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
+    <auto_size>true</auto_size>
     <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>true</value>
-        </exp>
+      <rule name="vis_if_zero" prop_id="visible" out_exp="false">
         <exp bool_exp="!(pv0==0)">
           <value>false</value>
         </exp>
         <pv_name>$(P)$(DAU):OpMode</pv_name>
       </rule>
     </rules>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #10</name>
     <text>Settings On</text>
     <x>5</x>
     <y>315</y>
     <width>150</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <foreground_color>
       <color red="0" green="216" blue="0">
       </color>
     </foreground_color>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
+    <auto_size>true</auto_size>
     <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
         <exp bool_exp="!(pv0!=0)">
           <value>false</value>
         </exp>
         <pv_name>$(P)$(DAU):OpMode</pv_name>
       </rule>
     </rules>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #14</name>
     <pv_name>$(P)$(DAU):$(L1):Set</pv_name>
     <x>140</x>
     <y>60</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -189,22 +75,16 @@
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #18</name>
     <pv_name>$(P)$(DAU):$(L2):Set</pv_name>
     <x>140</x>
     <y>85</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -213,22 +93,16 @@
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #22</name>
     <pv_name>$(P)$(DAU):$(L3):Set</pv_name>
     <x>140</x>
     <y>110</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -237,22 +111,16 @@
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #26</name>
     <pv_name>$(P)$(DAU):$(L4):Set</pv_name>
     <x>140</x>
     <y>135</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -261,22 +129,16 @@
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #30</name>
     <pv_name>$(P)$(DAU):$(L5):Set</pv_name>
     <x>140</x>
     <y>160</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -285,22 +147,16 @@
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #34</name>
     <pv_name>$(P)$(DAU):$(L6):Set</pv_name>
     <x>140</x>
     <y>185</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -309,22 +165,16 @@
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #38</name>
     <pv_name>$(P)$(DAU):$(L7):Set</pv_name>
     <x>140</x>
     <y>210</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -333,22 +183,16 @@
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #42</name>
     <pv_name>$(P)$(DAU):$(L8):Set</pv_name>
     <x>140</x>
     <y>235</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -357,224 +201,141 @@
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #46</name>
     <text>$(P)$(DAU)</text>
     <x>5</x>
     <y>5</y>
     <width>200</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #49</name>
     <text>$(L1)</text>
     <x>5</x>
     <y>60</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #52</name>
     <text>$(L2)</text>
     <x>5</x>
     <y>85</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #55</name>
     <text>$(L3)</text>
     <x>5</x>
     <y>110</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #58</name>
     <text>$(L4)</text>
     <x>5</x>
     <y>135</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #61</name>
     <text>$(L5)</text>
     <x>5</x>
     <y>160</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #64</name>
     <text>$(L6)</text>
     <x>5</x>
     <y>185</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #67</name>
     <text>$(L7)</text>
     <x>5</x>
     <y>210</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #70</name>
     <text>$(L8)</text>
     <x>5</x>
     <y>235</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <x>1</x>
-    <y>51</y>
-    <width>218</width>
-    <height>1</height>
+    <name>polyline #73</name>
+    <y>50</y>
+    <width>219</width>
+    <height>2</height>
     <points>
-      <point x="0.0" y="0.0">
+      <point x="1.0" y="1.0">
       </point>
-      <point x="217.0" y="0.0">
+      <point x="218.0" y="1.0">
       </point>
     </points>
-    <line_width>1</line_width>
+    <line_width>2</line_width>
     <line_color>
-      <color red="30" green="144" blue="255">
+      <color red="52" green="51" blue="134">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #77</name>
     <pv_name>$(P)$(DAU):$(L8)</pv_name>
     <x>55</x>
     <y>235</y>
     <width>81</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -584,23 +345,16 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #81</name>
     <pv_name>$(P)$(DAU):$(L7)</pv_name>
     <x>55</x>
     <y>210</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -610,23 +364,16 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #85</name>
     <pv_name>$(P)$(DAU):$(L6)</pv_name>
     <x>55</x>
     <y>185</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -636,23 +383,16 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #89</name>
     <pv_name>$(P)$(DAU):$(L5)</pv_name>
     <x>55</x>
     <y>160</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -662,23 +402,16 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #93</name>
     <pv_name>$(P)$(DAU):$(L4)</pv_name>
     <x>55</x>
     <y>135</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -688,23 +421,16 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #97</name>
     <pv_name>$(P)$(DAU):$(L3)</pv_name>
     <x>55</x>
     <y>110</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -714,23 +440,16 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #101</name>
     <pv_name>$(P)$(DAU):$(L2)</pv_name>
     <x>55</x>
     <y>85</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -740,23 +459,16 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #105</name>
     <pv_name>$(P)$(DAU):$(L1)</pv_name>
     <x>55</x>
     <y>60</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -766,23 +478,16 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #109</name>
     <pv_name>$(P)$(DAU):$(L9):Set</pv_name>
     <x>140</x>
     <y>260</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -791,22 +496,16 @@ $(pv_value)</tooltip>
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textentry" version="3.0.0">
-    <name>Text Input</name>
+    <name>text entry #113</name>
     <pv_name>$(P)$(DAU):$(L10):Set</pv_name>
     <x>140</x>
     <y>285</y>
     <width>75</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -815,62 +514,40 @@ $(pv_value)</tooltip>
     </background_color>
     <format>5</format>
     <show_units>false</show_units>
-    <actions>
-    </actions>
     <border_alarm_sensitive>false</border_alarm_sensitive>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #117</name>
     <text>$(L9)</text>
     <x>5</x>
     <y>260</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #120</name>
     <text>$(L10)</text>
     <x>5</x>
     <y>285</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #123</name>
     <pv_name>$(P)$(DAU):$(L10)</pv_name>
     <x>55</x>
     <y>285</y>
     <width>81</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -880,23 +557,16 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #127</name>
     <pv_name>$(P)$(DAU):$(L9)</pv_name>
     <x>55</x>
     <y>260</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -906,59 +576,39 @@ $(pv_value)</tooltip>
     <format>5</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #131</name>
     <text>Constants</text>
     <x>5</x>
     <y>25</y>
     <width>200</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <x>1</x>
-    <y>311</y>
-    <width>218</width>
-    <height>1</height>
+    <name>polyline #134</name>
+    <y>310</y>
+    <width>219</width>
+    <height>2</height>
     <points>
-      <point x="0.0" y="0.0">
+      <point x="1.0" y="1.0">
       </point>
-      <point x="217.0" y="0.0">
+      <point x="218.0" y="1.0">
       </point>
     </points>
-    <line_width>1</line_width>
+    <line_width>2</line_width>
     <line_color>
-      <color red="30" green="144" blue="255">
+      <color red="52" green="51" blue="134">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #138</name>
     <actions>
       <action type="open_display">
         <file>mw100_constant_label.opi</file>
@@ -978,7 +628,66 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #141</name>
+    <x>5</x>
+    <y>341</y>
+    <width>150</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):OpMode</pv_name>
+      </rule>
+    </rules>
+    <widget type="label" version="2.0.0">
+      <name>text #144</name>
+      <text>Computation Off</text>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="222" green="19" blue="9">
+        </color>
+      </foreground_color>
+      <auto_size>true</auto_size>
+      <rules>
+        <rule name="vis_if_zero" prop_id="visible" out_exp="false">
+          <exp bool_exp="!(pv0==0)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(DAU):Computation</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #148</name>
+      <text>Computation On</text>
+      <width>150</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="0" green="216" blue="0">
+        </color>
+      </foreground_color>
+      <auto_size>true</auto_size>
+      <rules>
+        <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+          <exp bool_exp="!(pv0!=0)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(DAU):Computation</pv_name>
+        </rule>
+      </rules>
+    </widget>
   </widget>
 </display>

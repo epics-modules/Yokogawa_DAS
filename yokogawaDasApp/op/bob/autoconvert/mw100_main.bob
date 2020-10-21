@@ -9,202 +9,22 @@
     <color red="200" green="200" blue="200">
     </color>
   </background_color>
-  <actions>
-  </actions>
-  <widget type="group" version="2.0.0">
-    <name>Grouping Container</name>
-    <x>112</x>
-    <y>150</y>
-    <width>175</width>
-    <height>20</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="200" green="200" blue="200">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0==0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):Computation</pv_name>
-      </rule>
-    </rules>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="write_pv">
-          <pv_name>$(P)$(DAU):OpModeSet</pv_name>
-          <value>1</value>
-        </action>
-      </actions>
-      <pv_name>$(P)$(DAU):OpModeSet</pv_name>
-      <text>Settings</text>
-      <x>90</x>
-      <width>85</width>
-      <height>20</height>
-      <background_color>
-        <color red="235" green="241" blue="181">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="write_pv">
-          <pv_name>$(P)$(DAU):OpModeSet</pv_name>
-          <value>0</value>
-        </action>
-      </actions>
-      <pv_name>$(P)$(DAU):OpModeSet</pv_name>
-      <text>Measurement</text>
-      <width>85</width>
-      <height>20</height>
-      <background_color>
-        <color red="235" green="241" blue="181">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-  </widget>
-  <widget type="group" version="2.0.0">
-    <name>Grouping Container</name>
-    <x>30</x>
-    <y>205</y>
-    <width>255</width>
-    <height>20</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <background_color>
-      <color red="200" green="200" blue="200">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0==0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):OpMode</pv_name>
-      </rule>
-    </rules>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="write_pv">
-          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
-          <value>1</value>
-        </action>
-      </actions>
-      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
-      <text>Stop</text>
-      <width>60</width>
-      <height>20</height>
-      <background_color>
-        <color red="235" green="241" blue="181">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="write_pv">
-          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
-          <value>0</value>
-        </action>
-      </actions>
-      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
-      <text>Start</text>
-      <x>65</x>
-      <width>60</width>
-      <height>20</height>
-      <background_color>
-        <color red="235" green="241" blue="181">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="write_pv">
-          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
-          <value>2</value>
-        </action>
-      </actions>
-      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
-      <text>Reset</text>
-      <x>130</x>
-      <width>60</width>
-      <height>20</height>
-      <background_color>
-        <color red="235" green="241" blue="181">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="write_pv">
-          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
-          <value>3</value>
-        </action>
-      </actions>
-      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
-      <text>Clear</text>
-      <x>195</x>
-      <width>60</width>
-      <height>20</height>
-      <background_color>
-        <color red="235" green="241" blue="181">
-        </color>
-      </background_color>
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-    </widget>
-  </widget>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #6</name>
     <text>Yokogawa MW100 $(P)$(DAU)</text>
     <x>27</x>
     <y>5</y>
     <width>250</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #9</name>
     <actions>
       <action type="open_display">
         <file>mw100_dac.opi</file>
@@ -235,11 +55,9 @@
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #12</name>
     <actions>
       <action type="open_display">
         <file>mw100_adc.opi</file>
@@ -272,11 +90,9 @@
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #15</name>
     <actions>
       <action type="open_display">
         <file>mw100_relay.opi</file>
@@ -309,31 +125,21 @@
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #18</name>
     <text>Operating Mode</text>
     <x>14</x>
     <y>128</y>
     <width>150</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #21</name>
     <actions>
       <action type="open_display">
         <file>mw100_di.opi</file>
@@ -366,17 +172,15 @@
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #24</name>
     <pv_name>$(P)$(DAU):OpMode</pv_name>
     <x>169</x>
     <y>128</y>
     <height>16</height>
     <font>
-      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -386,17 +190,10 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Menu Button</name>
+    <name>related display #28</name>
     <actions>
       <action type="open_display">
         <file>mw100_math.opi</file>
@@ -514,37 +311,27 @@
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #36</name>
     <text>Computation</text>
     <x>44</x>
     <y>179</y>
     <width>120</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #39</name>
     <pv_name>$(P)$(DAU):Computation</pv_name>
     <x>174</x>
     <y>184</y>
     <height>16</height>
     <font>
-      <font family="Sans" style="REGULAR" size="6.930693069306931">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -554,17 +341,10 @@
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Menu Button</name>
+    <name>related display #43</name>
     <actions>
       <action type="open_display">
         <file>mw100_comm_input.opi</file>
@@ -682,107 +462,75 @@
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #51</name>
     <text>Hardware</text>
     <x>11</x>
     <y>40</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #54</name>
     <text>Math</text>
     <x>11</x>
     <y>94</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <x>11</x>
-    <y>271</y>
-    <width>280</width>
-    <height>1</height>
+    <name>polyline #57</name>
+    <x>10</x>
+    <y>270</y>
+    <width>281</width>
+    <height>2</height>
     <points>
-      <point x="0.0" y="0.0">
+      <point x="1.0" y="1.0">
       </point>
-      <point x="279.0" y="0.0">
+      <point x="280.0" y="1.0">
       </point>
     </points>
-    <line_width>1</line_width>
+    <line_width>2</line_width>
     <line_color>
-      <color red="30" green="144" blue="255">
+      <color red="52" green="51" blue="134">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #61</name>
     <text>Error Message</text>
     <x>14</x>
     <y>275</y>
     <width>150</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <foreground_color>
       <color red="222" green="19" blue="9">
       </color>
     </foreground_color>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
+    <auto_size>true</auto_size>
     <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
         <exp bool_exp="!(pv0!=0)">
           <value>false</value>
         </exp>
         <pv_name>$(P)$(DAU):ErrorFlag</pv_name>
       </rule>
     </rules>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #65</name>
     <actions>
       <action type="open_display">
         <file>mw100_system.opi</file>
@@ -803,32 +551,81 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <y>31</y>
-    <width>398</width>
-    <height>1</height>
+    <name>polyline #68</name>
+    <x>-50</x>
+    <y>30</y>
+    <width>399</width>
+    <height>2</height>
     <points>
-      <point x="0.0" y="0.0">
+      <point x="-49.0" y="1.0">
       </point>
-      <point x="397.0" y="0.0">
+      <point x="348.0" y="1.0">
       </point>
     </points>
-    <line_width>1</line_width>
+    <line_width>2</line_width>
     <line_color>
-      <color red="30" green="144" blue="255">
+      <color red="52" green="51" blue="134">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #72</name>
+    <x>112</x>
+    <y>150</y>
+    <width>175</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):Computation</pv_name>
+      </rule>
+    </rules>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #75</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):OpModeSet</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):OpModeSet</pv_name>
+      <text>Settings</text>
+      <x>90</x>
+      <width>85</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #78</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):OpModeSet</pv_name>
+          <value>0</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):OpModeSet</pv_name>
+      <text>Measurement</text>
+      <width>85</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+    </widget>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Menu Button</name>
+    <name>related display #82</name>
     <actions>
       <action type="open_display">
         <file>mw100_constant.opi</file>
@@ -946,35 +743,118 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #90</name>
+    <x>30</x>
+    <y>205</y>
+    <width>255</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):OpMode</pv_name>
+      </rule>
+    </rules>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #93</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+          <value>1</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+      <text>Stop</text>
+      <width>60</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #96</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+          <value>0</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+      <text>Start</text>
+      <x>65</x>
+      <width>60</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #99</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+          <value>2</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+      <text>Reset</text>
+      <x>130</x>
+      <width>60</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>message button #102</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+          <value>3</value>
+          <description>Write</description>
+        </action>
+      </actions>
+      <pv_name>$(P)$(DAU):ComputationSet</pv_name>
+      <text>Clear</text>
+      <x>195</x>
+      <width>60</width>
+      <height>20</height>
+      <background_color>
+        <color red="235" green="241" blue="181">
+        </color>
+      </background_color>
+    </widget>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #106</name>
     <text>Alarm</text>
     <x>60</x>
     <y>240</y>
     <width>50</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>message button #109</name>
     <actions>
       <action type="write_pv">
         <pv_name>$(P)$(DAU):AlarmAck.PROC</pv_name>
         <value>1</value>
+        <description>Write</description>
       </action>
     </actions>
     <pv_name>$(P)$(DAU):AlarmAck.PROC</pv_name>
@@ -986,44 +866,59 @@ $(pv_value)</tooltip>
       <color red="238" green="182" blue="43">
       </color>
     </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <x>11</x>
-    <y>231</y>
-    <width>280</width>
-    <height>1</height>
+    <name>polyline #112</name>
+    <x>10</x>
+    <y>230</y>
+    <width>281</width>
+    <height>2</height>
     <points>
-      <point x="0.0" y="0.0">
+      <point x="1.0" y="1.0">
       </point>
-      <point x="279.0" y="0.0">
+      <point x="280.0" y="1.0">
       </point>
     </points>
-    <line_width>1</line_width>
+    <line_width>2</line_width>
     <line_color>
-      <color red="30" green="144" blue="255">
+      <color red="52" green="51" blue="134">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #116</name>
     <x>25</x>
     <y>240</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):AlarmFlag</pv_name>
+      </script>
+    </scripts>
   </widget>
 </display>

@@ -9,462 +9,128 @@
     <color red="200" green="200" blue="200">
     </color>
   </background_color>
-  <actions>
-  </actions>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>53</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L1):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>78</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L2):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>128</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L4):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>103</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L3):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>153</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L5):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>178</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L6):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>228</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L8):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>253</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L9):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>278</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L10):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <x>120</x>
-    <y>203</y>
-    <width>84</width>
-    <height>24</height>
-    <line_width>0</line_width>
-    <line_color>
-      <color red="253" green="0" blue="0">
-      </color>
-    </line_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
-        <exp bool_exp="!(pv0!=0)">
-          <value>false</value>
-        </exp>
-        <pv_name>$(P)$(DAU):$(L7):ValStatus</pv_name>
-      </rule>
-    </rules>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #6</name>
     <text>Computation Off</text>
     <x>10</x>
     <y>310</y>
     <width>150</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <foreground_color>
       <color red="222" green="19" blue="9">
       </color>
     </foreground_color>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
+    <auto_size>true</auto_size>
     <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>true</value>
-        </exp>
+      <rule name="vis_if_zero" prop_id="visible" out_exp="false">
         <exp bool_exp="!(pv0==0)">
           <value>false</value>
         </exp>
         <pv_name>$(P)$(DAU):Computation</pv_name>
       </rule>
     </rules>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #10</name>
     <text>Computation On</text>
     <x>10</x>
     <y>310</y>
     <width>150</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <foreground_color>
       <color red="0" green="216" blue="0">
       </color>
     </foreground_color>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
+    <auto_size>true</auto_size>
     <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0!=0">
-          <value>true</value>
-        </exp>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
         <exp bool_exp="!(pv0!=0)">
           <value>false</value>
         </exp>
         <pv_name>$(P)$(DAU):Computation</pv_name>
       </rule>
     </rules>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #14</name>
     <text>$(P)$(DAU) Math Calcs</text>
     <x>55</x>
     <y>5</y>
     <width>200</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #17</name>
     <text>Unit</text>
     <x>202</x>
     <y>30</y>
     <width>50</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #20</name>
     <text>Value</text>
     <x>132</x>
     <y>30</y>
     <width>50</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <x>1</x>
-    <y>26</y>
+    <name>polyline #23</name>
+    <y>25</y>
+    <width>311</width>
+    <height>2</height>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="310.0" y="1.0">
+      </point>
+    </points>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="52" green="51" blue="134">
+      </color>
+    </line_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #27</name>
+    <y>305</y>
     <width>310</width>
-    <height>1</height>
+    <height>2</height>
     <points>
-      <point x="0.0" y="0.0">
+      <point x="1.0" y="1.0">
       </point>
-      <point x="309.0" y="0.0">
+      <point x="309.0" y="1.0">
       </point>
     </points>
-    <line_width>1</line_width>
+    <line_width>2</line_width>
     <line_color>
-      <color red="30" green="144" blue="255">
+      <color red="52" green="51" blue="134">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-  </widget>
-  <widget type="polyline" version="2.0.0">
-    <name>Polyline</name>
-    <x>1</x>
-    <y>306</y>
-    <width>309</width>
-    <height>1</height>
-    <points>
-      <point x="0.0" y="0.0">
-      </point>
-      <point x="308.0" y="0.0">
-      </point>
-    </points>
-    <line_width>1</line_width>
-    <line_color>
-      <color red="30" green="144" blue="255">
-      </color>
-    </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #31</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_label.opi</file>
@@ -484,11 +150,9 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #34</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_less.opi</file>
@@ -508,217 +172,135 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #37</name>
     <text>$(L1)</text>
     <x>10</x>
     <y>55</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #40</name>
     <text>$(L2)</text>
     <x>10</x>
     <y>80</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #43</name>
     <text>$(L3)</text>
     <x>10</x>
     <y>105</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #46</name>
     <text>$(L4)</text>
     <x>10</x>
     <y>130</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #49</name>
     <text>$(L5)</text>
     <x>10</x>
     <y>155</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #52</name>
     <text>$(L6)</text>
     <x>10</x>
     <y>180</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #55</name>
     <text>$(L7)</text>
     <x>10</x>
     <y>205</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #58</name>
     <text>$(L8)</text>
     <x>10</x>
     <y>230</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #61</name>
     <text>$(L9)</text>
     <x>10</x>
     <y>255</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #64</name>
     <text>$(L10)</text>
     <x>10</x>
     <y>280</y>
     <width>30</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #67</name>
     <pv_name>$(P)$(DAU):$(L10)</pv_name>
     <x>122</x>
     <y>280</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -728,23 +310,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #71</name>
     <pv_name>$(P)$(DAU):$(L10):Unit</pv_name>
     <x>212</x>
     <y>280</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -754,23 +329,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #75</name>
     <pv_name>$(P)$(DAU):$(L9)</pv_name>
     <x>122</x>
     <y>255</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -780,23 +348,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #79</name>
     <pv_name>$(P)$(DAU):$(L9):Unit</pv_name>
     <x>212</x>
     <y>255</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -806,23 +367,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #83</name>
     <pv_name>$(P)$(DAU):$(L1):ChStatus</pv_name>
     <x>50</x>
     <y>55</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -832,23 +386,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #87</name>
     <pv_name>$(P)$(DAU):$(L2):ChStatus</pv_name>
     <x>50</x>
     <y>80</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -858,23 +405,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #91</name>
     <pv_name>$(P)$(DAU):$(L3):ChStatus</pv_name>
     <x>50</x>
     <y>105</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -884,23 +424,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #95</name>
     <pv_name>$(P)$(DAU):$(L4):ChStatus</pv_name>
     <x>50</x>
     <y>130</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -910,23 +443,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #99</name>
     <pv_name>$(P)$(DAU):$(L5):ChStatus</pv_name>
     <x>50</x>
     <y>155</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -936,23 +462,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #103</name>
     <pv_name>$(P)$(DAU):$(L6):ChStatus</pv_name>
     <x>50</x>
     <y>180</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -962,23 +481,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #107</name>
     <pv_name>$(P)$(DAU):$(L7):ChStatus</pv_name>
     <x>50</x>
     <y>205</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -988,23 +500,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #111</name>
     <pv_name>$(P)$(DAU):$(L8):ChStatus</pv_name>
     <x>50</x>
     <y>230</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1014,23 +519,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #115</name>
     <pv_name>$(P)$(DAU):$(L9):ChStatus</pv_name>
     <x>50</x>
     <y>255</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1040,23 +538,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #119</name>
     <pv_name>$(P)$(DAU):$(L10):ChStatus</pv_name>
     <x>50</x>
     <y>280</y>
     <width>60</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1066,23 +557,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #123</name>
     <pv_name>$(P)$(DAU):$(L8)</pv_name>
     <x>122</x>
     <y>230</y>
     <width>81</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1092,23 +576,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #127</name>
     <pv_name>$(P)$(DAU):$(L8):Unit</pv_name>
     <x>212</x>
     <y>230</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1118,23 +595,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #131</name>
     <pv_name>$(P)$(DAU):$(L7)</pv_name>
     <x>122</x>
     <y>205</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1144,23 +614,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #135</name>
     <pv_name>$(P)$(DAU):$(L7):Unit</pv_name>
     <x>212</x>
     <y>205</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1170,23 +633,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #139</name>
     <pv_name>$(P)$(DAU):$(L6)</pv_name>
     <x>122</x>
     <y>180</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1196,23 +652,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #143</name>
     <pv_name>$(P)$(DAU):$(L6):Unit</pv_name>
     <x>212</x>
     <y>180</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1222,23 +671,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #147</name>
     <pv_name>$(P)$(DAU):$(L5)</pv_name>
     <x>122</x>
     <y>155</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1248,23 +690,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #151</name>
     <pv_name>$(P)$(DAU):$(L5):Unit</pv_name>
     <x>212</x>
     <y>155</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1274,23 +709,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #155</name>
     <pv_name>$(P)$(DAU):$(L4)</pv_name>
     <x>122</x>
     <y>130</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1300,23 +728,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #159</name>
     <pv_name>$(P)$(DAU):$(L4):Unit</pv_name>
     <x>212</x>
     <y>130</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1326,23 +747,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #163</name>
     <pv_name>$(P)$(DAU):$(L3):Unit</pv_name>
     <x>212</x>
     <y>105</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1352,23 +766,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #167</name>
     <pv_name>$(P)$(DAU):$(L3)</pv_name>
     <x>122</x>
     <y>105</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1378,23 +785,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #171</name>
     <pv_name>$(P)$(DAU):$(L2)</pv_name>
     <x>122</x>
     <y>80</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1404,23 +804,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #175</name>
     <pv_name>$(P)$(DAU):$(L2):Unit</pv_name>
     <x>212</x>
     <y>80</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1430,23 +823,16 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #179</name>
     <pv_name>$(P)$(DAU):$(L1):Unit</pv_name>
     <x>212</x>
     <y>55</y>
     <width>40</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1456,83 +842,52 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #183</name>
     <text>Unit</text>
     <x>202</x>
     <y>30</y>
     <width>50</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #186</name>
     <text>Value</text>
     <x>132</x>
     <y>30</y>
     <width>50</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #189</name>
     <text>Status</text>
     <x>55</x>
     <y>30</y>
     <width>50</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
   </widget>
   <widget type="textupdate" version="2.0.0">
-    <name>Text Update</name>
+    <name>text update #192</name>
     <pv_name>$(P)$(DAU):$(L1)</pv_name>
     <x>122</x>
     <y>55</y>
     <width>80</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <background_color>
@@ -1542,17 +897,10 @@ $(pv_value)</tooltip>
     <format>1</format>
     <show_units>false</show_units>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #196</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1576,27 +924,45 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #199</name>
     <x>260</x>
     <y>55</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L1):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #203</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1620,11 +986,9 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #206</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1648,11 +1012,9 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #209</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1676,11 +1038,9 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #212</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1704,11 +1064,9 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #215</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1732,11 +1090,9 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #218</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1760,11 +1116,9 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #221</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1788,11 +1142,9 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #224</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1816,11 +1168,9 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
+    <name>related display #227</name>
     <actions>
       <action type="open_display">
         <file>mw100_math_single.opi</file>
@@ -1844,171 +1194,801 @@ $(pv_value)</tooltip>
       <color red="26" green="115" blue="9">
       </color>
     </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #230</name>
     <x>260</x>
     <y>80</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L2):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #234</name>
     <x>260</x>
     <y>105</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L3):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #238</name>
     <x>260</x>
     <y>130</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L4):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #242</name>
     <x>260</x>
     <y>155</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L5):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #246</name>
     <x>260</x>
     <y>180</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L6):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #250</name>
     <x>260</x>
     <y>205</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L7):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #254</name>
     <x>260</x>
     <y>230</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L8):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #258</name>
     <x>260</x>
     <y>255</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L9):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="ellipse" version="2.0.0">
-    <name>Ellipse</name>
+    <name>oval #262</name>
     <x>260</x>
     <y>280</y>
     <width>20</width>
     <height>20</height>
-    <line_width>0</line_width>
     <line_color>
-      <color red="128" green="0" blue="255">
+      <color red="251" green="243" blue="74">
       </color>
     </line_color>
-    <actions>
-    </actions>
-    <tooltip>$(pv_name)
-$(pv_value)</tooltip>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L10):AlarmStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
   <widget type="label" version="2.0.0">
-    <name>Label</name>
+    <name>text #266</name>
     <text>AL</text>
     <x>260</x>
     <y>30</y>
     <width>20</width>
     <font>
-      <font family="Sans" style="REGULAR" size="10.891089108910892">
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
       </font>
     </font>
     <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <wrap_words>false</wrap_words>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #269</name>
+    <x>120</x>
+    <y>53</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
       </color>
-    </border_color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L1):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L1):ValStatus</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #273</name>
+    <x>120</x>
+    <y>78</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L2):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L2):ValStatus</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #277</name>
+    <x>120</x>
+    <y>128</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L4):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L4):ValStatus</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #281</name>
+    <x>120</x>
+    <y>103</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L3):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L3):ValStatus</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #285</name>
+    <x>120</x>
+    <y>153</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L5):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L5):ValStatus</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #289</name>
+    <x>120</x>
+    <y>178</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L6):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L6):ValStatus</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #293</name>
+    <x>120</x>
+    <y>228</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L8):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L8):ValStatus</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #297</name>
+    <x>120</x>
+    <y>253</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L9):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L9):ValStatus</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #301</name>
+    <x>120</x>
+    <y>278</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L10):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L10):ValStatus</pv_name>
+      </script>
+    </scripts>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #305</name>
+    <x>120</x>
+    <y>203</y>
+    <width>84</width>
+    <height>24</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(DAU):$(L7):ValStatus</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy">
+        <text><![CDATA[from org.csstudio.display.builder.runtime.script import PVUtil
+from org.csstudio.display.builder.model.persist import WidgetColorService
+sevr = PVUtil.getSeverity(pvs[0])
+if sevr==1:
+    name = 'MINOR'
+elif sevr==2:
+    name = 'MAJOR'
+elif sevr==3:
+    name = 'INVALID'
+elif sevr==4:
+    name = 'DISCONNECTED'
+else:
+    name = 'OK'
+color = WidgetColorService.getColor(name)
+widget.setPropertyValue('background_color', color)
+]]></text>
+        <pv_name>$(P)$(DAU):$(L7):ValStatus</pv_name>
+      </script>
+    </scripts>
   </widget>
 </display>
