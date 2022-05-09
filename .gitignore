@@ -2,7 +2,7 @@
 .svn
 O.*
 bin/
-db/
+/db/
 dbd/
 lib/
 iocBoot/iocmw100Ex/envPaths
