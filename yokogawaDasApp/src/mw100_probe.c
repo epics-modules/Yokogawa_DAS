@@ -357,12 +357,14 @@ int main( int argc, char *argv[])
   if( (fptr_subst == NULL) || (fptr_req == NULL) )
     {
       printf("\nERROR: Can't create output files.\n");
-      fcloseall();
+      fclose(fptr_subst);
+      fclose(fptr_req);
       return 1;
     }
   print_sf( fptr_subst, fptr_req, modules);
 
-  fcloseall();
+  fclose(fptr_subst);
+  fclose(fptr_req);
 
   return 0;
 }
