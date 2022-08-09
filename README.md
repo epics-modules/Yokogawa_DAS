@@ -1,3 +1,5 @@
+[![YOKOGAWA_DAS](https://github.com/epics-modules/Yokogawa_DAS/actions/workflows/ci-scripts-build.yml/badge.svg)](https://github.com/epics-modules/Yokogawa_DAS/actions/workflows/ci-scripts-build.yml)
+
 # Yokogawa Data Acquisition Systems
 APS BCDA synApps module: Yokogawa_DAS
 
