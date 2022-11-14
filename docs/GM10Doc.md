@@ -115,15 +115,15 @@ a circuit closure or a voltage level.
 
 The GX90YD and GX90WD digital output modules act as relays, and are
 typically used in one of two modes. One is direct control from EPICS
-(\"Manual\"), and the other is for it to be controlled by a GM10 alarm
-(\"Alarm\").
+("Manual"), and the other is for it to be controlled by a GM10 alarm
+("Alarm").
 
 ### Driver
 
 The EPICS driver for the GM10 needs to be loaded using the command
 gm10Init.
 
-`     gm10Init( instrument handle, IP address)   `
+     gm10Init( instrument handle, IP address)   
 
 The *instrument handle* is a string, provided by the user, that is used
 by records to refer to this particular GM10. For each GM10 loaded, a
@@ -185,7 +185,7 @@ need sub-addressing.
 ### DTYP format
 
 When using the supported records with the commands, **DTYP** needs to be
-set to \"Yokogawa GM10\".
+set to "Yokogawa GM10".
 
 ### INP and OUT format
 
@@ -193,9 +193,9 @@ For each GM10, the handle provided to the driver is used with record
 device support. The general format of the **INP** or **OUT** field is
 one of the following.
 
--   \"\@handle command\"
--   \"\@handle command:address\"
--   \"\@handle command:address.sub\_address\"
+-   "@handle command"
+-   "@handle command:address"
+-   "@handle command:address.sub\_address"
 
 ### Interrupts
 
@@ -206,17 +206,17 @@ although only the first three are necessary, as an information read is
 typically called when the status read notices a mode change into
 measurements mode.
 
--   **Channels** - This interrupt is called after reading all the
-    channels.
+-   **Channels**      - This interrupt is called after reading all the
+                        channels.
 -   **Miscellaneous** - This interrupt is called after reading all the
-    constants and variable constants.
--   **Status** - This interrupt is called after reading the operational
-    statuses of the GM10.
--   **Information** - This interrupt is called after reading the GM10
-    and channel information that can\'t be changed during measurement
-    mode.
--   **Error** - This interrupt is called after the error state of the
-    GM10 occurs.
+                        constants and variable constants.
+-   **Status**        - This interrupt is called after reading the operational
+                        statuses of the GM10.
+-   **Information**   - This interrupt is called after reading the GM10
+                        and channel information that can\'t be changed during measurement
+                        mode.
+-   **Error**         - This interrupt is called after the error state of the
+                        GM10 occurs.
 
 ### Addresses
 
@@ -225,7 +225,7 @@ options. The format of the addresses comes directly from the GM10, and
 this is how they are used internally.
 
 -   Module addresses: **0-9**
--   Hardware channel addresses: **0001-0999**\
+-   Hardware channel addresses: **0001-0999**
     Each module (of the ten possible modules) can use at most 99
     hardware addresses. If module 3 has ten channels, it uses addresses
     0301-0310, etc.
@@ -236,11 +236,11 @@ this is how they are used internally.
 
 ### Commands
 
-**MODULE\_STRING** - Shows the module identification string for a location, or \"empty\" if one doesn\'t exist. Linked to information interrupt.
-:   **stringin record:** Uses module address.
+**MODULE\_STRING** - Shows the module identification string for a location, or "empty" if one doesn\'t exist. Linked to information interrupt.
+* *stringin record:* Uses module address.
 
 **MODULE\_PRESENCE** - Shows whether a module is at a location. Linked to information interrupt.
-:   **bi record:** Uses module address.
+* *bi record:* Uses module address.
     -   **0** - Not present
     -   **1** - Present
 
@@ -260,7 +260,7 @@ this is how they are used internally.
         addresses.
 
 **VAL\_STATUS** - Shows any special status for a value read from a channel. Records are linked to either the input interrupt (input channels) or the output interrupt (output channels).
-:   **mbbi record:** Uses any hardware, calculation, or communication
+* *mbbi record:* Uses any hardware, calculation, or communication
     addresses.
     -   **0** - Normal
     -   **1** - Skip
@@ -275,7 +275,7 @@ this is how they are used internally.
     -   **32** - Unknown
 
 **ALARMS** - Shows the alarms set for an input channel. Records are linked to the channel interrupt.
-:   **mbbi record:** Uses any hardware or calculation addresses. Each
+* *mbbi record:* Uses any hardware or calculation addresses. Each
     bit of the 4-bit value corresponds to the status of an alarm, as
     multiple alarms can occur simultaneously; bit 0 is defined as the
     least significant bit.
@@ -289,7 +289,7 @@ this is how they are used internally.
     -   **value 1** - Alarm on
 
 **ALARM** - Shows the status for a particular alarm for an input channel. Records are linked to the channel interrupt.
-:   **mbbi record:** Uses any hardware, calculation, or communication
+* *mbbi record:* Uses any hardware, calculation, or communication
     addresses; with sub-address of 1-4. The value definitions follow,
     although the possible values for a record are actually determined by
     the module and the channel mode.
@@ -304,20 +304,20 @@ this is how they are used internally.
     -   **8** - Delay Low Limit
 
 **ALARM\_FLAG** - Shows if an alarm for any channel is set. Linked to channel interrupt.
-:   **bi record:** No address used.
+* *bi record:* No address used.
 
 **ALARM\_ACK** - Tells GM10 to acknowledge alarms. This record just needs to be PROC\'d to work.
-:   **bo record:** No address used.
+* *bo record:* No address used.
 
 **CH\_STATUS** - Shows the configuration for a channel. Linked to information interrupt.
-:   **mbbi record:** Uses any hardware, calculation, or communication
+* *mbbi record:* Uses any hardware, calculation, or communication
     addresses.
     -   **0** - Skip
     -   **1** - Normal
     -   **2** - Differential Input
 
 **CH\_MODE** - Shows the operational mode for a channel, which is different depending on the type. Linked to information interrupt.
-:   **mbbi record:** Uses hardware addresses for supported modules.
+* *mbbi record:* Uses hardware addresses for supported modules.
 
     Analog Output Channel
 
@@ -332,22 +332,22 @@ this is how they are used internally.
         -   **2** - Failure
 
 **UNIT** - Shows the unit for a channel. Linked to information interrupt.
-:   **stringin record:** Uses any hardware, calculation, or
+* *stringin record:* Uses any hardware, calculation, or
     communication addresses.
 
 **EXPR** - Shows the expression used for a calculation channel. Linked to information interrupt.
-:   **stringin record:** Uses any calculation addresses.
+* *stringin record:* Uses any calculation addresses.
 
 **IP\_ADDR** - Shows the IP address for the GM10. Linked to information interrupt.
-:   **stringin record:** No address used.
+* *stringin record:* No address used.
 
 **SETTINGS** - Shows the status of the GM10 settings. Linked to status interrupt.
-:   **bi record:** No address used.
+* *bi record:* No address used.
     -   **0** - Frozen
     -   **1** - Unfrozen
 
 **RECORDING\_MODE** - Shows whether the GM10 is in recording mode. Linked to status interrupt.
-:   **bi record:** No address used.
+* *bi record:* No address used.
     -   **0** - Running
     -   **1** - Stopped
 
@@ -356,37 +356,37 @@ this is how they are used internally.
     -   **1** - Stop
 
 **COMPUTE\_MODE** - Shows whether the GM10 has computations running. Linked to status interrupt. This can only be true when MEASURE\_MODE is true.
-:   **bi record:** No address used.
+* *bi record:* No address used.
     -   **0** - Running
     -   **1** - Stopped
 
 **COMPUTE\_CMD** - Send a command regarding the computational mode of the GM10.
-:   **mbbo record:** No address used.
+* *mbbo record:* No address used.
     -   **0** - Start
     -   **1** - Stop
     -   **2** - Reset
     -   **3** - Clear
 
 **CHAN\_TRIG** - Trigger reading the channel records for the GM10, which will then trigger the channel interrupt. This record just needs to be PROC\'d to work; typically the SCAN field is set to a time interval.
-:   **bo record:** No address used.
+* *bo record:* No address used.
 
 **CONST\_TRIG** - Trigger reading the constant records for the GM10, which will then trigger the constant interrupt. This record just needs to be PROC\'d to work; typically the SCAN field is set to a time interval.
-:   **bo record:** No address used.
+* *bo record:* No address used.
 
 **STAT\_TRIG** - Trigger reading the GM10 status, which will then trigger the status interrupt; if an operational mode change to measurements is seen, it will cause a information read which will then trigger the information interrupt. This record just needs to be PROC\'d to work; typically the SCAN field is set to a time interval.
-:   **bo record:** No address used.
+* *bo record:* No address used.
 
 **INFO\_TRIG** - Trigger reading the information for channels and the GM10 that can\'t be changed during measurement mode. This command doesn\'t really need to be used if the STAT\_TRIG command is called periodically. This record just needs to be PROC\'d to work; typically the SCAN field is set to a time interval.
-:   **bo record:** No address used.
+* *bo record:* No address used.
 
 **ERROR\_FLAG** - Shows if an error has happened. Linked to error interrupt.
-:   **bi record:** No address used.
+* *bi record:* No address used.
 
 **ERROR** - Retrieve one of the three error strings used to return vendor-supplied error messages (broken to 40 character lengths). Linked to error interrupt.
-:   **stringin record:** Uses an address of 1-3.
+* *stringin record:* Uses an address of 1-3.
 
 **ERROR\_CLEAR** - Clears the GM10 error. This record just needs to be PROC\'d to work.
-:   **bo record:** No address used.
+* *bo record:* No address used.
 
 EPICS Databases
 ---------------
