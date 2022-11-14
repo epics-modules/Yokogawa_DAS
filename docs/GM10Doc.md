@@ -1,4 +1,4 @@
-GM10 Support Documentation {#gm10-support-documentation align="center"}
+GM10 Support Documentation 
 ==========================
 
 This module has support for the Yokogawa GM10 Digital Acquisition

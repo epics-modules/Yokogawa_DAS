@@ -1,14 +1,14 @@
-Yokogawa\_DAS Release Notes {#yokogawa_das-release-notes align="center"}
+Yokogawa\_DAS Release Notes
 ===========================
 
-Release 2-0-0 {#release-2-0-0 align="center"}
+Release 2-0-0
 -------------
 
 This release adds support for the Yokogawa GM10 Digital Acquisition
 System. Support is included for all modules, except for the PID one
 GX90UT-02-11. It does not allow for the chaining of expansion units.
 
-Release 1-0-0 {#release-1-0-0 align="center"}
+Release 1-0-0
 -------------
 
 This is the first release of the synApps Yokogawa\_DAS module, where DAS

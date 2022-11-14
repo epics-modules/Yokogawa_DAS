@@ -1,4 +1,4 @@
-MW100 Support Documentation {#mw100-support-documentation align="center"}
+MW100 Support Documentation
 ===========================
 
 This module has support for the Yokogawa MW100 Digital Acquisition Unit.
