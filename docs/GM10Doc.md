@@ -245,7 +245,7 @@ this is how they are used internally.
     -   **1** - Present
 
 **VAL** - Send or read a numeric value for a channel. Input records are linked to either the input interrupt (input channels) or the output interrupt (output channels).
-:   This command is associated with several record types.
+* This command is associated with several record types.
     -   **bi record:** Uses hardware addresses for binary digital input
         and output modules.
     -   **bo record:** Uses hardware addresses for binary digital output
