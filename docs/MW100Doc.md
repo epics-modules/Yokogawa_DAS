@@ -234,46 +234,47 @@ this is how they are used internally.
 
 ### Commands
 
+
 **MODULE\_STRING** - Shows the module identification string for a location, or \"empty\" if one doesn\'t exist. Linked to information interrupt.  
-    **stringin record:** Uses module address.
+* *stringin record:* - Uses module address.
 
 **MODULE\_PRESENCE** - Shows whether a module is at a location. Linked to information interrupt.  
-    **bi record:** Uses module address.
+* *bi record:* - Uses module address.
     -   **0** - Not present
     -   **1** - Present
-
+    
 **MODULE\_MODEL** - Shows the module model number, with values being 110, 112, 114, 115, 120, or 125. Linked to information interrupt.  
-    **longin record:** Uses module address.
+* *longin record:* - Uses module address.
 
 **MODULE\_CODE** - Shows the 3 character module code. Linked to information interrupt.  
-    **stringin record:** Uses module address.
+* *stringin record:* Uses module address.
 
 **MODULE\_SPEED** - Shows the module speed. Linked to information interrupt.  
-    **mbbi record:** Uses module address.
+* *mbbi record:* Uses module address.
     -   **0** - Low
     -   **1** - Medium
     -   **2** - High
 
 **MODULE\_NUMBER** - Shows the number of module channels. Linked to information interrupt.  
-    **longin record:** Uses module address.  
+* *longin record:* Uses module address.  
 
 **VAL** - Send or read a numeric value for a channel. Input records are linked to either the input interrupt (input channels) or the output interrupt (output channels).  
-    This command is associated with several record types.
-    -   **bi record:** Uses hardware addresses for binary digital input
+* This command is associated with several record types.
+    -   *bi record:* Uses hardware addresses for binary digital input
         and output modules.
-    -   **bo record:** Uses hardware addresses for binary digital output
+    -   *bo record:* Uses hardware addresses for binary digital output
         modules.
-    -   **longin record:** Uses hardware addresses for binary integer
+    -   *longin record:* Uses hardware addresses for binary integer
         input modules.
-    -   **ai record:** Uses hardware addresses for analog input and
+    -   *ai record:* Uses hardware addresses for analog input and
         output modules, as well as calculation, communication, and
         contant addresses.
-    -   **ao record:** Uses hardware addresses for analog output
+    -   *ao record:* Uses hardware addresses for analog output
         modules, as well as calculation, communication, and contant
         addresses.
 
 **VAL\_STATUS** - Shows any special status for a value read from a channel. Records are linked to either the input interrupt (input channels) or the output interrupt (output channels).  
-    **mbbi record:** Uses any hardware or calculation addresses.
+* *mbbi record:* Uses any hardware or calculation addresses.
     -   **0** - Normal
     -   **1** - Overrange
     -   **2** - Underrange
@@ -282,7 +283,7 @@ this is how they are used internally.
     -   **5** - Value Uncertain
 
 **ALARMS** - Shows the alarms set for an input channel. Records are linked to either the input interrupt (input channels) or the output interrupt (output channels).  
-    **mbbi record:** Uses any hardware or calculation addresses. Each
+* *mbbi record:* Uses any hardware or calculation addresses. Each
     bit of the 4-bit value corresponds to the status of an alarm, as
     multiple alarms can occur simultaneously; bit 0 is defined as the
     least significant bit.
@@ -290,13 +291,12 @@ this is how they are used internally.
     -   **bit 1** - Alarm 2
     -   **bit 2** - Alarm 3
     -   **bit 3** - Alarm 4
-
-    The bit value is defined as the following.
+* The bit value is defined as the following.
     -   **value 0** - Alarm off
     -   **value 1** - Alarm on
 
 **ALARM** - Shows the status for a particular alarm for an input channel. Records are linked to either the input interrupt (input modules) or the output interrupt (output modules).  
-    **mbbi record:** Uses any hardware or calculation addresses, with
+* *mbbi record:* Uses any hardware or calculation addresses, with
     sub-address of 1-4. The value definitions follow, although the
     possible values for a record are actually determined by the module
     and the channel mode.
@@ -311,27 +311,27 @@ this is how they are used internally.
     -   **8** - Delay Low Limit
 
 **ALARM\_FLAG** - Shows if an alarm for any channel is set. Linked to input interrupt, as it is assumed to be set more often than the output interrupt.  
-    **bi record:** No address used.
+* *bi record:* No address used.
 
 **ALARM\_ACK** - Tells MW100 to acknowledge alarms. This record just needs to be PROC\'d to work.  
-    **bo record:** No address used.
+* *bo record:* No address used.
 
 **CH\_STATUS** - Shows the configuration for a channel. Linked to information interrupt.  
-    **mbbi record:** Uses any hardware or calculation addresses.
+* *mbbi record:* Uses any hardware or calculation addresses.
     -   **0** - Skip
     -   **1** - Normal
     -   **2** - Differential Input
 
 **CH\_MODE** - Shows the operational mode for a channel, which is different each type of module (if it exists). Linked to information interrupt.  
-    **mbbi record:** Uses hardware addresses for supported modules.
+* *mbbi record:* Uses hardware addresses for supported modules.
 
-    Series **120** module (DAC)
+    - Series **120** module (DAC)
 
         -   **0** - Skip
         -   **1** - Transmission
         -   **2** - Communication
 
-    Series **125** module (relay)
+    - Series **125** module (relay)
 
         -   **0** - Skip
         -   **1** - Alarm
@@ -341,61 +341,61 @@ this is how they are used internally.
         -   **5** - Error
 
 **UNIT** - Shows the unit for a channel. Linked to information interrupt.  
-    **stringin record:** Uses any hardware or calculation addresses.
+* *stringin record:* Uses any hardware or calculation addresses.
 
 **EXPR** - Shows the expression used for a calculation channel. Linked to information interrupt.  
-    **stringin record:** Uses any calculation addresses.
+* *stringin record:* Uses any calculation addresses.
 
 **IP\_ADDR** - Shows the IP address for the MW100. Linked to information interrupt.  
-    **stringin record:** No address used.
+* *stringin record:* No address used.
 
 **SETTINGS\_MODE** - Shows whether the MW100 is in settings mode. Linked to status interrupt.  
-    **bi record:** No address used.
+* *bi record:* No address used.
     -   **0** - False
     -   **1** - True
 
 **MEASURE\_MODE** - Shows whether the MW100 is in measurement mode. Linked to status interrupt. This command is somewhat redundant to SETTINGS\_MODE as they seem to always be the opposite of each other, but they come from different bits being set, so not sure.  
-    **bi record:** No address used.
+* *bi record:* No address used.
     -   **0** - False
     -   **1** - True
 
 **OPMODE** - Set the operational mode of the MW100.  
-    **bo record:** No address used.
+* *bo record:* No address used.
     -   **0** - Measurement
     -   **1** - Settings
 
 **COMPUTE\_MODE** - Shows whether the MW100 has computations running. Linked to status interrupt. This can only be true when MEASURE\_MODE is true.  
-    **bi record:** No address used.
+* *bi record:* No address used.
     -   **0** - False
     -   **1** - True
 
 **COMPUTE\_CMD** - Send a command regarding the computational mode of the MW100.  
-    **mbbo record:** No address used.
+* *mbbo record:* No address used.
     -   **0** - Start
     -   **1** - Stop
     -   **2** - Reset
     -   **3** - Clear
 
 **INP\_TRIG** - Trigger reading the input records for the MW100, which will then trigger the input interrupt. This record just needs to be PROC\'d to work; typically the SCAN field is set to a time interval.  
-    **bo record:** No address used.
+* *bo record:* No address used.
 
 **OUT\_TRIG** - Trigger reading the output records for the MW100, which will then trigger the input interrupt. This record just needs to be PROC\'d to work; typically the SCAN field is set to a time interval.  
-    **bo record:** No address used.
+* *bo record:* No address used.
 
 **STAT\_TRIG** - Trigger reading the MW100 status, which will then trigger the status interrupt; if an operational mode change to measurements is seen, it will cause a information read which will then trigger the information interrupt. This record just needs to be PROC\'d to work; typically the SCAN field is set to a time interval.  
-    **bo record:** No address used.
+* *bo record:* No address used.
 
 **INFO\_TRIG** - Trigger reading the information for channels and the MW100 that can\'t be changed during measurement mode. This command doesn\'t really need to be used if the STAT\_TRIG command is called periodically. This record just needs to be PROC\'d to work; typically the SCAN field is set to a time interval.  
-    **bo record:** No address used.
+* *bo record:* No address used.
 
 **ERROR\_FLAG** - Shows if an error has happened. Linked to error interrupt.  
-    **bi record:** No address used.
+* *bi record:* No address used.
 
 **ERROR** - Retrieve one of the three error strings used to return vendor-supplied error messages (broken to 40 character lengths). Linked to error interrupt.  
-    **stringin record:** Uses an address of 1-3.
+* *stringin record:* Uses an address of 1-3.
 
 **ERROR\_CLEAR** - Clears the MW100 error. This record just needs to be PROC\'d to work.  
-    **bo record:** No address used.
+* *bo record:* No address used.
 
 EPICS Databases
 ---------------
