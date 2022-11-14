@@ -1,3 +1,10 @@
+---
+layout: default
+title: Release Notes
+nav_order: 3
+---
+
+
 Yokogawa\_DAS Release Notes
 ===========================
 

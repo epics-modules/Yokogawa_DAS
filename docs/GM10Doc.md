@@ -1,3 +1,10 @@
+---
+layout: default
+title: GM10
+nav_order: 5
+---
+
+
 GM10 Support Documentation 
 ==========================
 
