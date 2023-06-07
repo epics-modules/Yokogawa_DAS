@@ -8,6 +8,18 @@ nav_order: 3
 Yokogawa\_DAS Release Notes
 ===========================
 
+Release 2-0-2
+-------------
+
+Updated autoconverted .bob files
+
+Documentation moved to github pages
+
+Release 2-0-1
+-------------
+
+Minor code changes to address building issues on certain platforms.
+
 Release 2-0-0
 -------------
 
