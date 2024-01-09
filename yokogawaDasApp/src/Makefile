@@ -5,7 +5,7 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS BELOW HERE
 
 # Build an IOC support library and application
-ifneq ($(OS_CLASS), WIN32)
+ifeq ($(OS_CLASS), Linux)
 LIBRARY_IOC += mw100
 LIBRARY_IOC += gm10
 PROD_HOST += mw100_probe
