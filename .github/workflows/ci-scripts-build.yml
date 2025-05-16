@@ -44,19 +44,13 @@ jobs:
       matrix:
         # Job names also name artifacts, character limitations apply
         include:
-          - os: ubuntu-20.04
+          - os: ubuntu-24.04
             cmp: gcc
             configuration: default
             set: 7_0
             name: "Linux 7.0"
-
-          - os: ubuntu-20.04
-            cmp: gcc
-            configuration: default
-            set: 3_16
-            name: "Linux 3.16"
             
-          - os: ubuntu-20.04
+          - os: ubuntu-24.04
             cmp: gcc
             configuration: default
             set: 3_15
@@ -75,7 +69,7 @@ jobs:
             name: "Windows 7.0"
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: true
     - name: Automatic core dumper analysis
@@ -99,7 +93,7 @@ jobs:
     - name: Run main module tests
       run: python .ci/cue.py -T 15M test
     - name: Upload tapfiles Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: tapfiles ${{ matrix.name }}
         path: '**/O.*/*.tap'
