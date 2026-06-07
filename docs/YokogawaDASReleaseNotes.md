@@ -1,42 +1,36 @@
 ---
 layout: default
 title: Release Notes
-nav_order: 3
+nav_order: 2
 ---
 
+# Release Notes
+{: .no_toc}
 
-Yokogawa\_DAS Release Notes
-===========================
+## Table of contents
+{: .no_toc .text-delta}
 
-Release 2-0-2
--------------
+- TOC
+{:toc}
 
-Updated autoconverted .bob files
+## Release 2-0-2
 
-Documentation moved to github pages
+- **Updated display files** -- Updated autoconverted .bob files.
+- **Documentation migration** -- Documentation moved to GitHub Pages.
 
-Release 2-0-1
--------------
+## Release 2-0-1
 
-Minor code changes to address building issues on certain platforms.
+- **Build fix** -- Minor code changes to address building issues on
+  certain platforms.
 
-Release 2-0-0
--------------
+## Release 2-0-0
 
-This release adds support for the Yokogawa GM10 Digital Acquisition
-System. Support is included for all modules, except for the PID one
-GX90UT-02-11. It does not allow for the chaining of expansion units.
+- **GM10 support** -- Added support for the Yokogawa GM10 Digital
+  Acquisition System. All modules are supported except the PID module
+  GX90UT-02-11. Chaining of expansion units is not supported.
 
-Release 1-0-0
--------------
+## Release 1-0-0
 
-This is the first release of the synApps Yokogawa\_DAS module, where DAS
-stands for Data Acquisition Systems. There are two models that are to be
-supported, being the older MW100 and the newer GM10. Currently, only the
-MW100 is supported by this module.
-
-The support was developed using EPICS base 3.14.12, but earlier 3.14
-releases should work.
-
-Dohn Arms\
-Advanced Photon Source
+- **Initial release** -- First release of the synApps Yokogawa\_DAS
+  module, providing support for the Yokogawa MW100 Digital Acquisition
+  Unit. Developed using EPICS base 3.14.12.
