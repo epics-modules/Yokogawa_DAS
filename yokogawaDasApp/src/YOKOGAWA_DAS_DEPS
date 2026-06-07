@@ -1,0 +1,4 @@
+ifeq ($(OS_CLASS),Linux)
+YOKOGAWA_DAS_IOC_DBDS = mw100Support.dbd gm10Support.dbd
+YOKOGAWA_DAS_IOC_LIBS = mw100 gm10
+endif

@@ -30,6 +30,9 @@ CROSS_COMPILER_TARGET_ARCHS =
 #   a Microsoft FTP server say, or on some NFS configurations.
 #IOCS_APPL_TOP = </IOC's/absolute/path/to/install/top>
 
+# Canonical module name for cfg-based dependency declarations.
+MODULE = YOKOGAWA_DAS
+
 # These allow developers to override the CONFIG_SITE variable
 # settings without having to modify the configure/CONFIG_SITE
 # file itself.

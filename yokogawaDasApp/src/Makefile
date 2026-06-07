@@ -4,6 +4,9 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS BELOW HERE
 
+# Install cfg declaration file for downstream IOC dependency resolution
+CFG += YOKOGAWA_DAS_DEPS
+
 # Build an IOC support library and application
 ifeq ($(OS_CLASS), Linux)
 LIBRARY_IOC += mw100

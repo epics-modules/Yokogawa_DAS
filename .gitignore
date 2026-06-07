@@ -2,6 +2,7 @@
 .svn
 O.*
 bin/
+cfg/
 /db/
 dbd/
 lib/
