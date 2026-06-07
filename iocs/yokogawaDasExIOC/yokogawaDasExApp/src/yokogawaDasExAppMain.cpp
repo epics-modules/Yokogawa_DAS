@@ -1,5 +1,4 @@
-/* mw100exMain.cpp */
-/* Author:  Marty Kraimer Date:    17MAR2000 */
+/* yokogawaDasExAppMain.cpp */
 
 #include <stddef.h>
 #include <stdlib.h>

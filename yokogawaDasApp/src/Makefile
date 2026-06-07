@@ -7,13 +7,12 @@ include $(TOP)/configure/CONFIG
 # Install cfg declaration file for downstream IOC dependency resolution
 CFG += YOKOGAWA_DAS_DEPS
 
-# Build an IOC support library and application
+# Build an IOC support library
 ifeq ($(OS_CLASS), Linux)
 LIBRARY_IOC += mw100
 LIBRARY_IOC += gm10
 PROD_HOST += mw100_probe
 PROD_HOST += gm10_probe
-PROD_IOC = yokogawaDasExample
 endif
 
 # xxxRecord.h will be created from xxxRecord.dbd
@@ -69,26 +68,6 @@ gm10_probe_SRCS += gm10_probe.c
 #gm10_probe_LIBS += 
 
 #################################################
-
-# mw100ex.dbd will be created and installed
-DBD += yokogawaDasExample.dbd
-
-# mw100ex.dbd will include these files:
-yokogawaDasExample_DBD += base.dbd
-yokogawaDasExample_DBD += mw100Support.dbd gm10Support.dbd
-
-# mw100_registerRecordDeviceDriver.cpp derives from mw100ex.dbd
-yokogawaDasExample_SRCS += yokogawaDasExample_registerRecordDeviceDriver.cpp
-
-# Build the main IOC entry point where needed
-yokogawaDasExample_SRCS_DEFAULT += yokogawaDasExampleMain.cpp
-yokogawaDasExample_SRCS_vxWorks += -nil-
-
-# Link in the code from our support library
-yokogawaDasExample_LIBS += mw100 gm10
-
-# Finally link IOC to the EPICS Base libraries
-yokogawaDasExample_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 include $(TOP)/configure/RULES
 #----------------------------------------

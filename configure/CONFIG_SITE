@@ -8,6 +8,10 @@
 #   CONFIG_SITE.Common.$(T_A)
 #   CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
 
+# Build IOC applications.
+# Set to YES in configure/CONFIG_SITE.local to build the IOC.
+BUILD_IOCS = NO
+
 # CHECK_RELEASE controls the consistency checking of the support
 #   applications pointed to by the RELEASE* files.
 # Normally CHECK_RELEASE should be set to YES.

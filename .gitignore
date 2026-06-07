@@ -6,6 +6,5 @@ cfg/
 /db/
 dbd/
 lib/
-iocBoot/iocmw100Ex/envPaths
+CONFIG_SITE.local
 RELEASE.local
-

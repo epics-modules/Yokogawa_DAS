@@ -1,0 +1,13 @@
+# RELEASE - Location of external support modules
+
+YOKOGAWA_DAS = $(TOP)/../..
+
+# Pull in EPICS_BASE and other paths from the parent module.
+# Use hardcoded $(TOP)/../.. paths instead of $(YOKOGAWA_DAS) because
+# the parent's RELEASE file may redefine YOKOGAWA_DAS to a different path.
+-include $(TOP)/../../configure/RELEASE
+-include $(TOP)/../../configure/RELEASE.local
+
+# These lines allow developers to override these RELEASE settings
+# without having to modify this file directly.
+-include $(TOP)/configure/RELEASE.local

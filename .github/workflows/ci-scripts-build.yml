@@ -88,6 +88,8 @@ jobs:
       if: matrix.utoolchain
     - name: Prepare and compile dependencies
       run: python .ci/cue.py prepare
+    - name: Enable IOC builds
+      run: echo "BUILD_IOCS = YES" >> configure/CONFIG_SITE.local
     - name: Build main module
       run: python .ci/cue.py build
     - name: Run main module tests
