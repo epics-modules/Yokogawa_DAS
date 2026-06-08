@@ -1,0 +1,6 @@
+BASE="7.0"
+
+MODULES="sncseq"
+
+SNCSEQ="master"
+SNCSEQ_REPONAME="sequencer"

@@ -3,3 +3,4 @@ BASE="3.15"
 MODULES="sncseq"
 
 SNCSEQ="R2-2-9"
+SNCSEQ_REPONAME="sequencer"
