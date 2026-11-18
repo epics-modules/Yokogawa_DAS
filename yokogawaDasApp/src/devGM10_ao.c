@@ -25,9 +25,9 @@
 #include "devGM10_common.h"
 
 /*Create the dset for devGM10_ao */
-static long init();
-static long init_record();
-static long write_ao();
+static long init(int pass);
+static long init_record(struct aoRecord *pgmao);
+static long write_ao(struct aoRecord *pgmao);
 /* static long special_linconv(); */
 struct 
 {
@@ -42,10 +42,10 @@ struct
   {
     6,
     NULL,
-    init,
-    init_record,
+    (DEVSUPFUN) init,
+    (DEVSUPFUN) init_record,
     NULL,
-    write_ao,
+    (DEVSUPFUN) write_ao,
     NULL /* special_linconv */
   };
 epicsExportAddress(dset,devGM10_ao);

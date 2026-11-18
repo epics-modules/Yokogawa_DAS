@@ -25,9 +25,9 @@
 #include "devMW100_common.h"
 
 /*Create the dset for devMW100_ao */
-static long init();
-static long init_record();
-static long write_ao();
+static long init(int pass);
+static long init_record(struct aoRecord *pmwao);
+static long write_ao(struct aoRecord *pmwao);
 /* static long special_linconv(); */
 struct 
 {
@@ -42,10 +42,10 @@ struct
   {
     6,
     NULL,
-    init,
-    init_record,
+    (DEVSUPFUN) init,
+    (DEVSUPFUN) init_record,
     NULL,
-    write_ao,
+    (DEVSUPFUN) write_ao,
     NULL /* special_linconv */
   };
 epicsExportAddress(dset,devMW100_ao);

@@ -25,10 +25,10 @@
 #include "devGM10_common.h"
 
 /*Create the dset for devGM10_ai */
-static long init();
-static long init_record();
-static long get_ioint_info();
-static long read_ai();
+static long init(int pass);
+static long init_record(struct aiRecord *pgmai);
+static long get_ioint_info(int cmd, struct aiRecord *pgmai, IOSCANPVT *ppvt);
+static long read_ai(struct aiRecord *pgmai);
 /* static long special_linconv(); */
 struct 
 {
@@ -43,10 +43,10 @@ struct
   {
     6,
     NULL,
-    init,
-    init_record,
-    get_ioint_info,
-    read_ai,
+    (DEVSUPFUN) init,
+    (DEVSUPFUN) init_record,
+    (DEVSUPFUN) get_ioint_info,
+    (DEVSUPFUN) read_ai,
     NULL /* special_linconv */
   };
 epicsExportAddress(dset,devGM10_ai);

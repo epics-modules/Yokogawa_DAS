@@ -120,15 +120,15 @@ struct module
 /////////////////////////////////////
 
 
-LOCAL long gm10_report();
-LOCAL long gm10_init();
+LOCAL long gm10_report(int level);
+LOCAL long gm10_init(void);
 
 struct 
 {
   long number;
   DRVSUPFUN report;
   DRVSUPFUN init;
-} drvGM10 = { 2, gm10_report, gm10_init };
+} drvGM10 = { 2, (DRVSUPFUN) gm10_report, (DRVSUPFUN) gm10_init };
 
 epicsExportAddress(drvet,drvGM10);
 
@@ -1332,7 +1332,7 @@ static void *queue_func(void *arg)
         {
           prset = (struct rset *) (pkt->precord->rset);
           dbScanLock(pkt->precord);
-          (*prset->process)(pkt->precord);
+          ((long (*)(dbCommon *))prset->process)(pkt->precord);
           dbScanUnlock(pkt->precord);
         }
 

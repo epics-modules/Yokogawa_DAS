@@ -25,10 +25,10 @@
 #include "devGM10_common.h"
 
 /*Create the dset for devGM10_longin */
-static long init();
-static long init_record();
-static long get_ioint_info();
-static long read_longin();
+static long init(int pass);
+static long init_record(struct longinRecord *pgmlongin);
+static long get_ioint_info(int cmd, struct longinRecord *pgmlongin, IOSCANPVT *ppvt);
+static long read_longin(struct longinRecord *pgmlongin);
 /* static long special_linconv(); */
 struct 
 {
@@ -42,10 +42,10 @@ struct
   {
     5,
     NULL,
-    init,
-    init_record,
-    get_ioint_info,
-    read_longin
+    (DEVSUPFUN) init,
+    (DEVSUPFUN) init_record,
+    (DEVSUPFUN) get_ioint_info,
+    (DEVSUPFUN) read_longin
   };
 epicsExportAddress(dset,devGM10_longin);
 
