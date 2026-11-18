@@ -26,10 +26,10 @@
 
 
 /*Create the dset for devMW100_bo */
-static long init();
-static long init_record();
+static long init(int pass);
+static long init_record(struct boRecord *pmwbo);
 /* static long get_ioint_info(); */
-static long write_bo();
+static long write_bo(struct boRecord *pmwbo);
 /* static long special_linconv(); */
 struct 
 {
@@ -43,10 +43,10 @@ struct
   {
     5,
     NULL,
-    init,
-    init_record,
+    (DEVSUPFUN) init,
+    (DEVSUPFUN) init_record,
     NULL,
-    write_bo
+    (DEVSUPFUN) write_bo
   };
 epicsExportAddress(dset,devMW100_bo);
 

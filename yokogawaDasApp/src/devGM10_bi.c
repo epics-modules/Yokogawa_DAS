@@ -25,10 +25,10 @@
 #include "devGM10_common.h"
 
 /*Create the dset for devGM10_bi */
-static long init();
-static long init_record();
-static long get_ioint_info();
-static long read_bi();
+static long init(int pass);
+static long init_record(struct biRecord *pgmbi);
+static long get_ioint_info(int cmd, struct biRecord *pgmbi, IOSCANPVT *ppvt);
+static long read_bi(struct biRecord *pgmbi);
 /* static long special_linconv(); */
 struct 
 {
@@ -42,10 +42,10 @@ struct
   {
     5,
     NULL,
-    init,
-    init_record,
-    get_ioint_info,
-    read_bi
+    (DEVSUPFUN) init,
+    (DEVSUPFUN) init_record,
+    (DEVSUPFUN) get_ioint_info,
+    (DEVSUPFUN) read_bi
   };
 epicsExportAddress(dset,devGM10_bi);
 

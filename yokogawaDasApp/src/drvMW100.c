@@ -126,15 +126,15 @@ static int unscaled_value( double value, char scale)
 /////////////////////////////////////
 
 
-LOCAL long mw100_report();
-LOCAL long mw100_init();
+LOCAL long mw100_report(int level);
+LOCAL long mw100_init(void);
 
 struct 
 {
   long number;
   DRVSUPFUN report;
   DRVSUPFUN init;
-} drvMW100 = { 2, mw100_report, mw100_init };
+} drvMW100 = { 2, (DRVSUPFUN) mw100_report, (DRVSUPFUN) mw100_init };
 
 epicsExportAddress(drvet,drvMW100);
 
@@ -1419,7 +1419,7 @@ static void *queue_func(void *arg)
         {
           prset = (struct rset *) (pkt->precord->rset);
           dbScanLock(pkt->precord);
-          (*prset->process)(pkt->precord);
+          ((long (*)(dbCommon *))prset->process)(pkt->precord);
           dbScanUnlock(pkt->precord);
         }
 

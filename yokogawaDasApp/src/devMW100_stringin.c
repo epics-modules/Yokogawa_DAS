@@ -25,10 +25,10 @@
 #include "devMW100_common.h"
 
 /*Create the dset for devMW100_stringin */
-static long init();
-static long init_record();
-static long get_ioint_info();
-static long read_stringin();
+static long init(int pass);
+static long init_record(struct stringinRecord *pmwstringin);
+static long get_ioint_info(int cmd, struct stringinRecord *pmwstringin, IOSCANPVT *ppvt);
+static long read_stringin(struct stringinRecord *pmwstringin);
 /* static long special_linconv(); */
 struct 
 {
@@ -43,10 +43,10 @@ struct
   {
     6,
     NULL,
-    init,
-    init_record,
-    get_ioint_info,
-    read_stringin,
+    (DEVSUPFUN) init,
+    (DEVSUPFUN) init_record,
+    (DEVSUPFUN) get_ioint_info,
+    (DEVSUPFUN) read_stringin,
     NULL /* special_linconv */
   };
 epicsExportAddress(dset,devMW100_stringin);
